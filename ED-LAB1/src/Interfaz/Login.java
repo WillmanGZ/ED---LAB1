@@ -3,22 +3,25 @@ package Interfaz;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
 import java.awt.Cursor;
+import java.awt.TextField;
 import javax.swing.JFrame;
-
+import javax.swing.JTextField;
 
 public class Login extends javax.swing.JFrame {
 
-
     public Login() {
+        //ATRIBUTOS
         initComponents();
-        this.setSize(700,447);
         this.setResizable(false);
+        // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
+        this.setLocationRelativeTo(null);
     }
 
-    public static void MostrarLogin(){
-    Login login = new Login();
-    login.setVisible(true);
+    public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
+        Login login = new Login();
+        login.setVisible(true);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +33,7 @@ public class Login extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         registrate_boton = new javax.swing.JButton();
+        inicio_sesion_boton = new javax.swing.JButton();
         campo_usuario = new javax.swing.JTextField();
         campo_contraseña = new javax.swing.JTextField();
         login_screen = new javax.swing.JLabel();
@@ -62,6 +66,26 @@ public class Login extends javax.swing.JFrame {
         });
         background.add(registrate_boton);
         registrate_boton.setBounds(550, 108, 51, 10);
+
+        inicio_sesion_boton.setBorderPainted(false);
+        inicio_sesion_boton.setContentAreaFilled(false);
+        inicio_sesion_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                inicio_sesion_botonMouseMoved(evt);
+            }
+        });
+        inicio_sesion_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                inicio_sesion_botonMouseExited(evt);
+            }
+        });
+        inicio_sesion_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inicio_sesion_botonActionPerformed(evt);
+            }
+        });
+        background.add(inicio_sesion_boton);
+        inicio_sesion_boton.setBounds(440, 330, 166, 35);
 
         campo_usuario.setBackground(new java.awt.Color(255, 255, 255));
         campo_usuario.setForeground(new java.awt.Color(0, 0, 0));
@@ -114,28 +138,45 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void menu_instruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_instruccionesActionPerformed
-        mostrarInstrucciones();
+        mostrarInstrucciones();  //MUESTRA LAS INSTRUCCIONES CLICKEANDO EN EL BOTON INSTRUCCIONES DEL MENU DE BARRA
     }//GEN-LAST:event_menu_instruccionesActionPerformed
 
     private void registrate_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrate_botonMouseMoved
-        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO PASES EL MOUSE POR ENCIMA DEL BOTON "REGISTRARSE" CAMBIE A LA MANITO
     }//GEN-LAST:event_registrate_botonMouseMoved
 
     private void registrate_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrate_botonMouseExited
-        this.setCursor(DEFAULT_CURSOR);
+        this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_registrate_botonMouseExited
 
     private void registrate_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrate_botonActionPerformed
-        dispose();
+        dispose(); //CIERRA LA VENTANA LOGIN Y LUEGO ABRE LA VENTANA REGISTRO
         mostrarRegistro();
     }//GEN-LAST:event_registrate_botonActionPerformed
 
-    
+    private void inicio_sesion_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicio_sesion_botonActionPerformed
+        String usuario = campo_usuario.getText(); //EXTRAE EL TEXTO DE LOS CAMPOS Y LOS ALMACENA EN EL STRING
+        String contraseña = campo_contraseña.getText();
+        System.out.println(usuario + " " + contraseña);
+
+    }//GEN-LAST:event_inicio_sesion_botonActionPerformed
+
+    private void inicio_sesion_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO EL CURSOR PASE POR ENCIMA DEL BOTON "INICIO DE SESION", SE TRANSFORME EN LA MANITO
+    }//GEN-LAST:event_inicio_sesion_botonMouseMoved
+
+    private void inicio_sesion_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "INICIO DE SESION" VUELVA A SER EL MOUSE NORMAL
+    }//GEN-LAST:event_inicio_sesion_botonMouseExited
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JTextField campo_contraseña;
     private javax.swing.JTextField campo_usuario;
+    private javax.swing.JButton inicio_sesion_boton;
     private javax.swing.JLabel login_screen;
     private javax.swing.JMenuBar menu_barra;
     private javax.swing.JMenuItem menu_instrucciones;

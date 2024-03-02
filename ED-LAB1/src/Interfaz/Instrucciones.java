@@ -1,46 +1,26 @@
-
 package Interfaz;
 
 import javax.swing.JFrame;
 
 public class Instrucciones extends javax.swing.JFrame {
 
-    
     public Instrucciones() {
+        //ATRIBUTOS
         initComponents();
-        // Establece el título de la ventana
         this.setTitle("Instrucciones");
-        
-        // Establece el tamaño de la ventana (ancho, alto)
         this.setSize(300, 200);
-        
         this.setResizable(false);
-        
         // Establece el comportamiento de cierre (terminar la aplicación cuando se cierra la ventana)
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
-         
     }
 
     public static void mostrarInstrucciones() {
-        // Instancia la ventana
-        Instrucciones instrucciones = new Instrucciones();
-        
-        // Hace visible la ventana
+        Instrucciones instrucciones = new Instrucciones(); //HACE QUE SE MUESTRE LA VENTANA INSTRUCCIONES
         instrucciones.setVisible(true);
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,10 +71,7 @@ public class Instrucciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JLabel titulo_instrucciones;
