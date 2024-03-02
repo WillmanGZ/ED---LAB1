@@ -1,6 +1,9 @@
 package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
+import static Interfaz.Registro.mostrarRegistro;
+import java.awt.Cursor;
+import javax.swing.JFrame;
 
 
 public class Login extends javax.swing.JFrame {
@@ -8,12 +11,13 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
+        this.setSize(700,447);
         this.setResizable(false);
     }
 
     public static void MostrarLogin(){
-    Login login1 = new Login();
-    login1.setVisible(true);
+    Login login = new Login();
+    login.setVisible(true);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -25,6 +29,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
+        registrate_boton = new javax.swing.JButton();
         campo_usuario = new javax.swing.JTextField();
         campo_contraseña = new javax.swing.JTextField();
         login_screen = new javax.swing.JLabel();
@@ -36,6 +41,27 @@ public class Login extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setLayout(null);
+
+        registrate_boton.setBackground(new java.awt.Color(51, 51, 51));
+        registrate_boton.setBorderPainted(false);
+        registrate_boton.setContentAreaFilled(false);
+        registrate_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                registrate_botonMouseMoved(evt);
+            }
+        });
+        registrate_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                registrate_botonMouseExited(evt);
+            }
+        });
+        registrate_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrate_botonActionPerformed(evt);
+            }
+        });
+        background.add(registrate_boton);
+        registrate_boton.setBounds(550, 108, 51, 10);
 
         campo_usuario.setBackground(new java.awt.Color(255, 255, 255));
         campo_usuario.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,6 +118,19 @@ public class Login extends javax.swing.JFrame {
         mostrarInstrucciones();
     }//GEN-LAST:event_menu_instruccionesActionPerformed
 
+    private void registrate_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrate_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_registrate_botonMouseMoved
+
+    private void registrate_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrate_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_registrate_botonMouseExited
+
+    private void registrate_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrate_botonActionPerformed
+        dispose();
+        mostrarRegistro();
+    }//GEN-LAST:event_registrate_botonActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
@@ -101,5 +140,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JMenuBar menu_barra;
     private javax.swing.JMenuItem menu_instrucciones;
     private javax.swing.JMenu menu_opciones;
+    private javax.swing.JButton registrate_boton;
     // End of variables declaration//GEN-END:variables
 }
