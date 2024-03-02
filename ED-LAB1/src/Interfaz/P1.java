@@ -44,14 +44,19 @@ public class P1 extends javax.swing.JFrame {
         btnRegistroUM2 = new javax.swing.JButton();
         btnCancelar2 = new javax.swing.JButton();
         btnRegistrarMedico2 = new javax.swing.JButton();
-        JPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
-        txtContraseña = new javax.swing.JPasswordField();
-        btnIniciar = new javax.swing.JButton();
-        txtUsuario = new javax.swing.JTextField();
         btnCrearCuenta = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        btnIniciar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        JPanel = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         JMenu_Bar = new javax.swing.JMenuBar();
         JM_Opciones = new javax.swing.JMenu();
         JM_Instrucciones = new javax.swing.JMenuItem();
@@ -220,56 +225,17 @@ public class P1 extends javax.swing.JFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        JPanel.setBackground(new java.awt.Color(255, 255, 255));
-        JPanel.setForeground(new java.awt.Color(255, 255, 255));
-        JPanel.setLayout(null);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IU/Logo.png"))); // NOI18N
+        jLabel2.setMaximumSize(new java.awt.Dimension(250, 70));
+        jLabel2.setPreferredSize(new java.awt.Dimension(250, 90));
 
         lblUsuario.setBackground(new java.awt.Color(0, 0, 0));
         lblUsuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblUsuario.setText("Usuario");
-        JPanel.add(lblUsuario);
-        lblUsuario.setBounds(30, 100, 70, 22);
 
         lblContraseña.setBackground(new java.awt.Color(255, 255, 255));
         lblContraseña.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         lblContraseña.setText("Contraseña");
-        JPanel.add(lblContraseña);
-        lblContraseña.setBounds(14, 150, 100, 22);
-
-        txtContraseña.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtContraseña.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContraseñaActionPerformed(evt);
-            }
-        });
-        JPanel.add(txtContraseña);
-        txtContraseña.setBounds(140, 150, 190, 22);
-
-        btnIniciar.setBackground(new java.awt.Color(0, 51, 204));
-        btnIniciar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciar.setText("INICIAR");
-        btnIniciar.setBorderPainted(false);
-        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIniciarActionPerformed(evt);
-            }
-        });
-        JPanel.add(btnIniciar);
-        btnIniciar.setBounds(14, 211, 64, 29);
-
-        txtUsuario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtUsuario.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
-        JPanel.add(txtUsuario);
-        txtUsuario.setBounds(140, 100, 190, 22);
 
         btnCrearCuenta.setBackground(new java.awt.Color(0, 51, 204));
         btnCrearCuenta.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -281,14 +247,66 @@ public class P1 extends javax.swing.JFrame {
                 btnCrearCuentaActionPerformed(evt);
             }
         });
-        JPanel.add(btnCrearCuenta);
-        btnCrearCuenta.setBounds(160, 210, 172, 28);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IU/Logo.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(250, 70));
-        jLabel2.setPreferredSize(new java.awt.Dimension(250, 90));
-        JPanel.add(jLabel2);
-        jLabel2.setBounds(70, -80, 390, 260);
+        btnIniciar.setBackground(new java.awt.Color(0, 51, 204));
+        btnIniciar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciar.setText("INICIAR");
+        btnIniciar.setBorderPainted(false);
+        btnIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Login.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
+        txtUsuario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtUsuario.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+
+        txtContraseña.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtContraseña.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContraseñaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Log Screen.png"))); // NOI18N
+        jLabel6.setText("Log Screen");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        JPanel.setBackground(new java.awt.Color(255, 255, 255));
+        JPanel.setForeground(new java.awt.Color(255, 255, 255));
+        JPanel.setLayout(null);
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        JPanel.add(jTextField1);
+        jTextField1.setBounds(410, 170, 230, 30);
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField2.setBorder(null);
+        JPanel.add(jTextField2);
+        jTextField2.setBounds(410, 242, 230, 30);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Login Screen.png"))); // NOI18N
+        jLabel7.setText("Login Screen");
+        JPanel.add(jLabel7);
+        jLabel7.setBounds(0, 0, 700, 447);
 
         JM_Opciones.setText("Opciones");
         JM_Opciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -348,11 +366,14 @@ public class P1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+            .addComponent(JPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -466,6 +487,10 @@ public class P1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnRegistrarMedico2ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JM_Instrucciones;
     private javax.swing.JMenu JM_Modos;
@@ -486,16 +511,21 @@ public class P1 extends javax.swing.JFrame {
     public static javax.swing.JButton btnRegistroUM1;
     public static javax.swing.JButton btnRegistroUM2;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lbl_Titulo;
