@@ -1,9 +1,11 @@
 package Logica;
 
+import static Interfaz.Login.MostrarLogin;
+
 public class Main {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        MostrarLogin();
     }
     
 }
