@@ -2,14 +2,17 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
-import static Logica.Archivo.añadirRegistros;
+import static Logica.ArchivoUsuarios.añadirRegistros;
 import Logica.Usuario;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Registro extends javax.swing.JFrame {
 
@@ -208,7 +211,14 @@ public class Registro extends javax.swing.JFrame {
         String correo = correo_campo.getText();
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
-        añadirRegistros(usuario, contraseña, nombres_apellidos, cedula, telefono, correo);
+        try {
+            añadirRegistros(usuario, contraseña, nombres_apellidos, cedula, telefono, correo); //Añade la informacion al archivo y luego muestra un mensaje en caso de ser exitoso, cierra el programa y abre el login
+            JOptionPane.showMessageDialog(null, "Su registro ha sido exitoso");
+            dispose();
+            mostrarLogin();
+        } catch (IOException ex) {
+            Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.out.println(nombres_apellidos + " " + telefono + " " + cedula + " " + correo + " " + usuario + " " + contraseña);
     }//GEN-LAST:event_registrarse_botonActionPerformed
 
