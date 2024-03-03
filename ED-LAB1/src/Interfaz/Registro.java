@@ -3,6 +3,7 @@ package Interfaz;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
 import static Logica.ArchivoUsuarios.añadirRegistros;
+import static Logica.ArchivoUsuarios.verificarYAgregarUsuario;
 import Logica.Usuario;
 import java.awt.Cursor;
 import java.awt.Desktop;
@@ -212,8 +213,7 @@ public class Registro extends javax.swing.JFrame {
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
         try {
-            añadirRegistros(usuario, contraseña, nombres_apellidos, cedula, telefono, correo); //Añade la informacion al archivo y luego muestra un mensaje en caso de ser exitoso, cierra el programa y abre el login
-            JOptionPane.showMessageDialog(null, "Su registro ha sido exitoso");
+            verificarYAgregarUsuario(nombres_apellidos, telefono, cedula, correo, usuario, contraseña);
             dispose();
             mostrarLogin();
         } catch (IOException ex) {
