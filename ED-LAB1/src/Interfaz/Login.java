@@ -1,5 +1,6 @@
 package Interfaz;
 
+import static Interfaz.Especialidades.mostrarEspecialidades;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
 import static Logica.ArchivoUsuarios.verificarUsuarioContraseña;
@@ -115,7 +116,7 @@ public class Login extends javax.swing.JFrame {
 
         menu_opciones.setText("Opciones");
 
-        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/ICON2.png"))); // NOI18N
+        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
         menu_instrucciones.setText("Instrucciones");
         menu_instrucciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,11 +171,14 @@ public class Login extends javax.swing.JFrame {
         String usuario = campo_usuario.getText(); //EXTRAE EL TEXTO DE LOS CAMPOS Y LOS ALMACENA EN EL STRING
         String contraseña = campo_contraseña.getText();
         try {
-            if (verificarUsuarioContraseña(usuario, contraseña)){
+            if (verificarUsuarioContraseña(usuario, contraseña)) {
                 JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                
-            }else {
+                mostrarEspecialidades();
+                JOptionPane.showMessageDialog(null, "Bienvenido a nuestro sistema de citas", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Porfavor elija la especialidad a la cual desea dirijirse", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         } catch (FileNotFoundException ex) {

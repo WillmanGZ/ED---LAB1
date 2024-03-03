@@ -177,7 +177,7 @@ public class Registro extends javax.swing.JFrame {
 
         menu_bar.setText("Opciones");
 
-        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/ICON2.png"))); // NOI18N
+        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
         instrucciones_menu.setText("Instrucciones");
         instrucciones_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

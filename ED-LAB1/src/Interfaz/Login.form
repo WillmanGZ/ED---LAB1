@@ -12,7 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_instrucciones">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaz/Imagenes/ICON2.png"/>
+                  <Image iconType="3" name="/Interfaz/Imagenes/Instrucciones Icono.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Instrucciones"/>
               </Properties>
