@@ -1,4 +1,4 @@
-package Logica;
+package Main;
 
 import static Interfaz.Login.mostrarLogin;
 

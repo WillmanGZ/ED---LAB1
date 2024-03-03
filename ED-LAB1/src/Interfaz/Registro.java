@@ -2,6 +2,8 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
+import static Logica.Archivo.añadirRegistros;
+import Logica.Usuario;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.io.IOException;
@@ -206,6 +208,7 @@ public class Registro extends javax.swing.JFrame {
         String correo = correo_campo.getText();
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
+        añadirRegistros(usuario, contraseña, nombres_apellidos, cedula, telefono, correo);
         System.out.println(nombres_apellidos + " " + telefono + " " + cedula + " " + correo + " " + usuario + " " + contraseña);
     }//GEN-LAST:event_registrarse_botonActionPerformed
 
