@@ -2,13 +2,18 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
+import static Logica.ArchivoUsuarios.verificarUsuarioContraseña;
 import java.awt.Cursor;
 import java.awt.TextField;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Login extends javax.swing.JFrame {
-    
+
     public Login() {
         //ATRIBUTOS
         initComponents();
@@ -16,7 +21,7 @@ public class Login extends javax.swing.JFrame {
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
     }
-    
+
     public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
         Login login = new Login();
         login.setVisible(true);
@@ -164,7 +169,17 @@ public class Login extends javax.swing.JFrame {
     private void inicio_sesion_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicio_sesion_botonActionPerformed
         String usuario = campo_usuario.getText(); //EXTRAE EL TEXTO DE LOS CAMPOS Y LOS ALMACENA EN EL STRING
         String contraseña = campo_contraseña.getText();
-        System.out.println(usuario + " " + contraseña);
+        try {
+            if (verificarUsuarioContraseña(usuario, contraseña)){
+                JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                
+            }else {
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_inicio_sesion_botonActionPerformed
 

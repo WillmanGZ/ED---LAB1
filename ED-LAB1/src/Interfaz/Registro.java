@@ -226,7 +226,6 @@ public class Registro extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(nombres_apellidos + " " + telefono + " " + cedula + " " + correo + " " + usuario + " " + contraseña);
     }//GEN-LAST:event_registrarse_botonActionPerformed
 
     private void registrarse_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseMoved
