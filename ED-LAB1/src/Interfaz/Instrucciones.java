@@ -8,7 +8,6 @@ public class Instrucciones extends javax.swing.JFrame {
         //ATRIBUTOS
         initComponents();
         this.setTitle("Instrucciones");
-        this.setSize(300, 200);
         this.setResizable(false);
         // Establece el comportamiento de cierre (terminar la aplicación cuando se cierra la ventana)
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -31,42 +30,34 @@ public class Instrucciones extends javax.swing.JFrame {
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
-        titulo_instrucciones = new javax.swing.JLabel();
+        instrucciones_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 447));
+        getContentPane().setLayout(null);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
+        Background.setPreferredSize(new java.awt.Dimension(700, 447));
 
-        titulo_instrucciones.setForeground(new java.awt.Color(0, 0, 0));
-        titulo_instrucciones.setText("INSTRUCCIONES");
+        instrucciones_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Screen.png"))); // NOI18N
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(153, 153, 153)
-                .addComponent(titulo_instrucciones)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addComponent(instrucciones_screen)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(titulo_instrucciones)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addComponent(instrucciones_screen)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(Background);
+        Background.setBounds(0, 0, 700, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -74,6 +65,6 @@ public class Instrucciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JLabel titulo_instrucciones;
+    private javax.swing.JLabel instrucciones_screen;
     // End of variables declaration//GEN-END:variables
 }

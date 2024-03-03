@@ -3,6 +3,10 @@ package Interfaz;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
 import java.awt.Cursor;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javax.swing.JFrame;
 
 public class Registro extends javax.swing.JFrame {
@@ -39,6 +43,7 @@ public class Registro extends javax.swing.JFrame {
         contraseña_campo = new javax.swing.JTextField();
         registrarse_boton = new javax.swing.JButton();
         inicio_sesion_back_boton = new javax.swing.JButton();
+        terminos_condiciones_boton = new javax.swing.JButton();
         registro_screen = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu_bar = new javax.swing.JMenu();
@@ -131,6 +136,27 @@ public class Registro extends javax.swing.JFrame {
         Background.add(inicio_sesion_back_boton);
         inicio_sesion_back_boton.setBounds(540, 420, 60, 10);
 
+        terminos_condiciones_boton.setBorder(null);
+        terminos_condiciones_boton.setBorderPainted(false);
+        terminos_condiciones_boton.setContentAreaFilled(false);
+        terminos_condiciones_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                terminos_condiciones_botonMouseMoved(evt);
+            }
+        });
+        terminos_condiciones_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                terminos_condiciones_botonMouseExited(evt);
+            }
+        });
+        terminos_condiciones_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terminos_condiciones_botonActionPerformed(evt);
+            }
+        });
+        Background.add(terminos_condiciones_boton);
+        terminos_condiciones_boton.setBounds(540, 355, 120, 10);
+
         registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Register Screen.png"))); // NOI18N
         Background.add(registro_screen);
         registro_screen.setBounds(0, -40, 720, 520);
@@ -184,13 +210,30 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarse_botonActionPerformed
 
     private void registrarse_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseMoved
-     this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO PASES EL MOUSE POR ENCIMA DEL BOTON "REGISTRARSE" SE CONVIERTA EN MANITO   
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO PASES EL MOUSE POR ENCIMA DEL BOTON "REGISTRARSE" SE CONVIERTA EN MANITO   
     }//GEN-LAST:event_registrarse_botonMouseMoved
 
     private void registrarse_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseExited
-     this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
+        this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
 
     }//GEN-LAST:event_registrarse_botonMouseExited
+
+    private void terminos_condiciones_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminos_condiciones_botonActionPerformed
+        try {
+            // Intenta abrir el enlace en el navegador predeterminado
+            Desktop.getDesktop().browse(new URI("https://cofca.com/proteccion-de-datos-personales/"));
+        } catch (IOException | URISyntaxException ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_terminos_condiciones_botonActionPerformed
+
+    private void terminos_condiciones_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminos_condiciones_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO PASES EL MOUSE POR ENCIMA DEL BOTON "TERMINOS Y CONDICIONES" SE CONVIERTA EN MANITO
+    }//GEN-LAST:event_terminos_condiciones_botonMouseMoved
+
+    private void terminos_condiciones_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminos_condiciones_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
+    }//GEN-LAST:event_terminos_condiciones_botonMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -206,6 +249,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton registrarse_boton;
     private javax.swing.JLabel registro_screen;
     private javax.swing.JTextField telefono_campo;
+    private javax.swing.JButton terminos_condiciones_boton;
     private javax.swing.JTextField usuario_campo;
     // End of variables declaration//GEN-END:variables
 }
