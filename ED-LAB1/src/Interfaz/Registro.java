@@ -31,6 +31,11 @@ public class Registro extends javax.swing.JFrame {
         registro.setVisible(true);
     }
 
+    public static void cerrarRegistro() { //CIERRA LA VENTANA REGISTRO
+        Registro registro = new Registro();
+        registro.dispose();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -213,9 +218,11 @@ public class Registro extends javax.swing.JFrame {
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
         try {
-            verificarYAgregarUsuario(nombres_apellidos, telefono, cedula, correo, usuario, contraseña);
-            dispose();
-            mostrarLogin();
+            if (verificarYAgregarUsuario(usuario, contraseña, nombres_apellidos.trim(), cedula, telefono, correo) == 13) {
+                dispose();
+                mostrarLogin();
+            }
+
         } catch (IOException ex) {
             Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
         }

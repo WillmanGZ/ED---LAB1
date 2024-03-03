@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class Login extends javax.swing.JFrame {
-
+    
     public Login() {
         //ATRIBUTOS
         initComponents();
@@ -16,10 +16,15 @@ public class Login extends javax.swing.JFrame {
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
     }
-
+    
     public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
         Login login = new Login();
         login.setVisible(true);
+    }
+
+    public static void cerrarLogin() { //CIERRA LA VENTANA LOGIN
+        Login login = new Login();
+        login.setVisible(false);
     }
 
     /**
