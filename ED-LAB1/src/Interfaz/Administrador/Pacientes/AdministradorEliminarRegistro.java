@@ -1,4 +1,4 @@
-package Interfaz.Administrador;
+package Interfaz.Administrador.Pacientes;
 
 import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
 import java.awt.Cursor;

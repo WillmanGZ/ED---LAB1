@@ -1,4 +1,6 @@
-package Interfaz.Administrador;
+package Interfaz.Administrador.Pacientes;
+
+
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Login.mostrarLogin;
