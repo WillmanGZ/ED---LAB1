@@ -6,6 +6,7 @@
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Especialidades.java</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Instrucciones%20Screen.png</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/manifest.mf</file>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Splash.gif</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Login%20Screen.png</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Login.java</file>
@@ -16,6 +17,15 @@
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Inicio.gif</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Especialidades%20Screen.png</file>
             <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Logica/Usuario.java</file>
+=======
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Inicio.gif</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Login%20Screen.png</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Login.java</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Especialidades%20Screen.png</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Registro.java</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Interfaz/Imagenes/Instrucciones%20Icono.png</file>
+            <file>file:/C:/Users/Andrea/OneDrive/Estd/ED---LAB1/ED-LAB1/src/Main/Main.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

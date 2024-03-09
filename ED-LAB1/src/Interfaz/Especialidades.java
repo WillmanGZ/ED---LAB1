@@ -60,7 +60,7 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(optometria_boton);
-        optometria_boton.setBounds(30, 20, 250, 220);
+        optometria_boton.setBounds(140, 110, 200, 210);
 
         cataratas_boton.setBorderPainted(false);
         cataratas_boton.setContentAreaFilled(false);
@@ -75,7 +75,7 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(cataratas_boton);
-        cataratas_boton.setBounds(360, 20, 250, 220);
+        cataratas_boton.setBounds(370, 110, 210, 210);
 
         glaucoma_boton.setBorderPainted(false);
         glaucoma_boton.setContentAreaFilled(false);
@@ -90,7 +90,7 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(glaucoma_boton);
-        glaucoma_boton.setBounds(700, 20, 240, 220);
+        glaucoma_boton.setBounds(620, 120, 200, 200);
 
         oftalmologia_general_boton.setBorderPainted(false);
         oftalmologia_general_boton.setContentAreaFilled(false);
@@ -105,7 +105,7 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(oftalmologia_general_boton);
-        oftalmologia_general_boton.setBounds(0, 300, 290, 230);
+        oftalmologia_general_boton.setBounds(140, 350, 200, 210);
 
         oftalmologia_pediatrica_boton.setBorderPainted(false);
         oftalmologia_pediatrica_boton.setContentAreaFilled(false);
@@ -120,7 +120,7 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(oftalmologia_pediatrica_boton);
-        oftalmologia_pediatrica_boton.setBounds(340, 350, 310, 170);
+        oftalmologia_pediatrica_boton.setBounds(380, 350, 200, 210);
 
         retina_vitreo_boton.setBorderPainted(false);
         retina_vitreo_boton.setContentAreaFilled(false);
@@ -135,11 +135,11 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(retina_vitreo_boton);
-        retina_vitreo_boton.setBounds(700, 330, 230, 190);
+        retina_vitreo_boton.setBounds(620, 350, 200, 200);
 
-        especialidades_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Especialidades Screen.png"))); // NOI18N
+        especialidades_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Ojos (2).png"))); // NOI18N
         Background.add(especialidades_screen);
-        especialidades_screen.setBounds(-10, -30, 950, 600);
+        especialidades_screen.setBounds(0, 0, 950, 630);
 
         opciones_menu.setText("Opciones");
 
@@ -169,7 +169,7 @@ public class Especialidades extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE))
+                .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE))
         );
 
         pack();
