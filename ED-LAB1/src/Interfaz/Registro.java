@@ -1,7 +1,7 @@
 package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
-import static Interfaz.Login.mostrarLogin;
+//import static Interfaz.Login.mostrarLogin;
 import static Logica.ArchivoUsuarios.añadirRegistrosNormal;
 import static Logica.ArchivoUsuarios.verificarYAgregarUsuario;
 import Logica.Usuario;
@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -107,6 +108,7 @@ public class Registro extends javax.swing.JFrame {
         Background.add(contraseña_campo);
         contraseña_campo.setBounds(390, 316, 270, 20);
 
+        registrarse_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"))); // NOI18N
         registrarse_boton.setBorderPainted(false);
         registrarse_boton.setContentAreaFilled(false);
         registrarse_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -115,8 +117,17 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         registrarse_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                registrarse_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 registrarse_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                registrarse_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                registrarse_botonMouseReleased(evt);
             }
         });
         registrarse_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -234,6 +245,8 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarse_botonMouseMoved
 
     private void registrarse_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseExited
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"));
+        registrarse_boton.setIcon(II); //Hace que cuando el cursor se aleje del botón, se cambie la foto de vuelta a la original   
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
 
     }//GEN-LAST:event_registrarse_botonMouseExited
@@ -255,6 +268,24 @@ public class Registro extends javax.swing.JFrame {
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_terminos_condiciones_botonMouseExited
 
+    private void registrarse_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseEntered
+        //Hace que cuando el cursor esté por encima del botón, se cambie la foto
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regover.png"));
+        registrarse_boton.setIcon(II);       
+    }//GEN-LAST:event_registrarse_botonMouseEntered
+
+    private void registrarse_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMousePressed
+       //Hace que cuando el cursor presione el botón, se cambie la foto
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regpressed.png"));
+        registrarse_boton.setIcon(II);       
+    }//GEN-LAST:event_registrarse_botonMousePressed
+
+    private void registrarse_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseReleased
+        //Hace que cuando el cursor suelte el botón, se cambie la foto
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"));
+        registrarse_boton.setIcon(II);       
+    }//GEN-LAST:event_registrarse_botonMouseReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
@@ -272,4 +303,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton terminos_condiciones_boton;
     private javax.swing.JTextField usuario_campo;
     // End of variables declaration//GEN-END:variables
+
+    private void mostrarLogin() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

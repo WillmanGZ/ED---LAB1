@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-SplashScreen-Image: Interfaz/Imagenes/Inicio.gif
+SplashScreen-Image: Interfaz/Imagenes/Splash.gif
 
 

@@ -1,7 +1,7 @@
 package Logica;
 
 import Interfaz.Login;
-import static Interfaz.Login.mostrarLogin;
+//import static Interfaz.Login.mostrarLogin;
 import static Interfaz.Registro.cerrarRegistro;
 import Logica.Usuario;
 import java.io.BufferedReader;
@@ -48,72 +48,72 @@ public class ArchivoUsuarios {
 
         // Verificar nombres_apellidos
         if (!Pattern.matches("^[a-zA-Z ]{3,}$", nombres_apellidos.toLowerCase())) {
-            JOptionPane.showMessageDialog(null, "EL nombre digitado es invalido, el nombre y apellido solo puede contener letras, porfavor digite sus nombres y apellidos nuevamente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El nombre digitado es inválido. El nombre y apellido solo puede contener letras, por favor digite sus nombres y apellidos nuevamente.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 1; //APELLIDOS FORMATO INVALIDO
         } else if (usuariosExistentes.stream().anyMatch(u -> u.getNombres_apellidos().equalsIgnoreCase(nombres_apellidos.toLowerCase()))) {
-            JOptionPane.showMessageDialog(null, "El nombre digitado ya se encuentra registrado, porfavor ingrese un nombre nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El nombre digitado ya se encuentra registrado. Por favor ingrese un nombre nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 2; //APELLIDO DUPLICADO 
         } else if (!(conteoEspacios >= 2 && conteoEspacios <= 3)) {
-            JOptionPane.showMessageDialog(null, "El nombre digitado es invalido, el nombre debe tener minimo 1 nombre y 2 apellidos, porfavor digite un nombre valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El nombre digitado es inválido. El nombre debe tener mínimo 1 nombre y 2 apellidos, por favor digite un nombre válido.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 3; //NO TIENE LOS 3 o 4 ESPACIOS, ES DECIR, FALTA APELLIDOS O NOMBRE
         }
 
         // Verificar teléfono
         if (!Pattern.matches("^[0-9]{10}$", telefono)) {
-            JOptionPane.showMessageDialog(null, "El numero de telefono digitado es invalido, el numero debe tener 10 digitos numericos, porfavor digite un numero de telefono valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El número de teléfono digitado es inválido. El número debe tener 10 digitos numéricos, por favor digite un número de teléfono válido.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 4; // EL TELEFONO NO CUMPLE EL FORMATO 
         } else if (usuariosExistentes.stream().anyMatch(u -> u.getTelefono().equals(telefono))) {
-            JOptionPane.showMessageDialog(null, "El numero de telefono digitado ya se encuentra registrado, porfavor digite un nuevo numero de telefono o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El número de teléfono digitado ya se encuentra registrado. Por favor digite un nuevo número de telefono o contacte con nuestro equipo de soporte para recuperar su cuenta.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 5; //EL TELEFONO ESTÁ DUPLICADO
         }
 
         // Verificar cédula
         if (!Pattern.matches("^[0-9]{7,}$", cedula)) {
-            JOptionPane.showMessageDialog(null, "La cedula digitada es invalida, la cedula debe contener solo numeros y tener minimo 7 digitos, porfavor digite un numero de cedula valida", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "La cédula digitada es inválida, la cédula debe contener solo números y tener mínimo 7 dígitos. Por favor digite un número de cédula válida.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 6; // LA CEDULA NO TIENE SOLO NUMEROS
 
         } else if (usuariosExistentes.stream().anyMatch(u -> u.getCedula().equals(cedula))) {
-            JOptionPane.showMessageDialog(null, "La cedula digitada ya se encuentra registrada, porfavor digite un nuevo numero de cedula o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "La cédula digitada ya se encuentra registrada. Por favor digite un nuevo número de cédula o contacte con nuestro equipo de soporte para recuperar su cuenta.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 7; //LA CEDULA ESTÁ DUPLICADA
         }
 
         // Verificar correo
         if (!Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", correo.toLowerCase())) {
-            JOptionPane.showMessageDialog(null, "El correo digitado es invalido, el correo debe seguir el siguiente formato : nombredeusuario@dominio.com, porfavor digite un correo valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El correo digitado es inválido. El correo debe seguir el siguiente formato : nombredeusuario@dominio.com, por favor digite un correo válido", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 8; // EL CORREO 
 
         } else if (usuariosExistentes.stream().anyMatch(u -> u.getCorreo().toLowerCase().equals(correo.toLowerCase()))) {
-            JOptionPane.showMessageDialog(null, "El correo digitado ya se encuentra registrado, porfavor digite un correo nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El correo digitado ya se encuentra registrado. Por favor digite un correo nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 9; // EL CORREO ESTÁ DUPLICADO
         }
 
         // Verificar que el usuario no exista y que cumpla con los requisitos de formato
         if (usuariosExistentes.stream().anyMatch(u -> u.getUsuario().toLowerCase().equals(usuario.toLowerCase()))) {
-            JOptionPane.showMessageDialog(null, "El usuario digitado ya se encuentra registrado, porfavor ingrese un nuevo usuario o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El usuario digitado ya se encuentra registrado. Por favor ingrese un nuevo usuario o contacte con nuestro equipo de soporte para recuperar su cuenta.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 10; //USUARIO DUPLICADO
         } else if (!Pattern.matches("^[a-zA-Z0-9]{5,12}$", usuario)) {
-            JOptionPane.showMessageDialog(null, "El usuario digitado es invalido, el nombre de usuario solo puede contener letras y numeros, y debe tener de 5-12 digitos, porfavor digite un usuario valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El usuario digitado es inválido. El nombre de usuario solo puede contener letras y números, y debe tener de 5-12 dígitos, por favor digite un usuario válido.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 11; // USUARIO NO CUMPLE CON EL FORMATO
         }
 
         // Verificar que la contraseña sea hexadecimal, sin espacios y de máximo 16 dígitos
         if (!Pattern.matches("^[a-zA-Z0-9]{4,16}$", contraseña)) {
-            JOptionPane.showMessageDialog(null, "La contraseña digitada es invalida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "La contraseña digitada es inválida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida.", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 12; // CONTRASEÑA NO VÁLIDA
         }
 
         // Si todas las verificaciones pasan, añadir el registro
         añadirRegistrosNormal(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado);
         System.out.println(estado);
-        JOptionPane.showMessageDialog(null, "Tu cuenta ha sido registrada con exito", "BIENVENIDO!", JOptionPane.INFORMATION_MESSAGE);
-        JOptionPane.showMessageDialog(null, "Seras redirijido a nuestra ventana de inicio de sesion, ahora puedes ingresar con la cuenta que has registrado", "Inicia Sesion", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Tu cuenta ha sido registrada con éxito.", "BIENVENIDO!", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Serás redirijido a nuestra ventana de inicio de sesión, donde podrás ingresar con la cuenta que has registrado.", "Inicia Sesión", JOptionPane.INFORMATION_MESSAGE);
         return 13;
     }
 

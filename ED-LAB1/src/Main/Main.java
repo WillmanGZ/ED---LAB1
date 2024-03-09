@@ -1,10 +1,20 @@
 package Main;
 
-import static Interfaz.Login.mostrarLogin;
+import Interfaz.Login;
 
-public class Main {
+public class Main extends Login {
 
     public static void main(String[] args) {
-        mostrarLogin();
+        java.awt.EventQueue.invokeLater(new Runnable() { //Runnable de diseño
+            public void run() {
+
+                try{
+                    Thread.sleep(3000);
+                }
+                catch(Exception e){
+                }
+                new Login().setVisible(true);
+            }
+        });
     }
 }
