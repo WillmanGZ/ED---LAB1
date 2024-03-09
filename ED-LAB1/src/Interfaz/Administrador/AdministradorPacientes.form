@@ -42,7 +42,7 @@
         <Component class="javax.swing.JButton" name="boton_agregar_paciente">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/AgPacienteDef.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorPaciente/AgPacienteDef.png"/>
             </Property>
           </Properties>
           <Events>
@@ -61,7 +61,7 @@
         <Component class="javax.swing.JButton" name="boton_eliminar_paciente">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/ElPacienteDef.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorPaciente/ElPacienteDef.png"/>
             </Property>
           </Properties>
           <Events>
@@ -69,6 +69,7 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_pacienteMouseExited"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_pacienteMousePressed"/>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_pacienteMouseReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_eliminar_pacienteActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -79,7 +80,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/Registros pacientes.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorPaciente/Registros pacientes.png"/>
             </Property>
           </Properties>
           <Constraints>

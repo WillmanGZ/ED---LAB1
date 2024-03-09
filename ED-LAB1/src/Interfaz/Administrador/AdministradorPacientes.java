@@ -37,7 +37,7 @@ public class AdministradorPacientes extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        boton_agregar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgPacienteDef.png"))); // NOI18N
+        boton_agregar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteDef.png"))); // NOI18N
         boton_agregar_paciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_agregar_pacienteMouseEntered(evt);
@@ -60,7 +60,7 @@ public class AdministradorPacientes extends javax.swing.JFrame {
         jPanel1.add(boton_agregar_paciente);
         boton_agregar_paciente.setBounds(110, 200, 310, 170);
 
-        boton_eliminar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElPacienteDef.png"))); // NOI18N
+        boton_eliminar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacienteDef.png"))); // NOI18N
         boton_eliminar_paciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_eliminar_pacienteMouseEntered(evt);
@@ -75,10 +75,15 @@ public class AdministradorPacientes extends javax.swing.JFrame {
                 boton_eliminar_pacienteMouseReleased(evt);
             }
         });
+        boton_eliminar_paciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_eliminar_pacienteActionPerformed(evt);
+            }
+        });
         jPanel1.add(boton_eliminar_paciente);
         boton_eliminar_paciente.setBounds(540, 200, 310, 170);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registros pacientes.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/Registros pacientes.png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 960, 600);
 
@@ -97,7 +102,7 @@ public class AdministradorPacientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_agregar_pacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_pacienteMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgPacienteOver.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteOver.png"));
         boton_agregar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_agregar_pacienteMouseEntered
 
@@ -106,39 +111,43 @@ public class AdministradorPacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_agregar_pacienteActionPerformed
 
     private void boton_agregar_pacienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_pacienteMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgPacienteDef.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteDef.png"));
         boton_agregar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_agregar_pacienteMouseExited
 
     private void boton_agregar_pacienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_pacienteMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgPacientePressed.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacientePressed.png"));
         boton_agregar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_agregar_pacienteMousePressed
 
     private void boton_agregar_pacienteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_pacienteMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgPacienteOver.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteOver.png"));
         boton_agregar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_agregar_pacienteMouseReleased
 
     private void boton_eliminar_pacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_pacienteMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElPacienteOver.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacienteOver.png"));
         boton_eliminar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_pacienteMouseEntered
 
     private void boton_eliminar_pacienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_pacienteMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElPacienteDef.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacienteDef.png"));
         boton_eliminar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_pacienteMouseExited
 
     private void boton_eliminar_pacienteMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_pacienteMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElPacienteOver.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacienteOver.png"));
         boton_eliminar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_pacienteMouseReleased
 
     private void boton_eliminar_pacienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_pacienteMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElPacientePressed.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacientePressed.png"));
         boton_eliminar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_pacienteMousePressed
+
+    private void boton_eliminar_pacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_pacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton_eliminar_pacienteActionPerformed
 
     /**
      * @param args the command line arguments

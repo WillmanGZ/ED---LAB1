@@ -210,15 +210,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inicio_sesion_botonMouseExited
 
     private void inicio_sesion_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseEntered
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         //Hace que cuando el cursor esté por encima del botón, se cambie la foto
-=======
->>>>>>> Stashed changes
+//=======
+//>>>>>>> Stashed changes
         ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesionover1.png"));
         inicio_sesion_boton.setIcon(II);
     }//GEN-LAST:event_inicio_sesion_botonMouseEntered
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
     private void inicio_sesion_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMousePressed
         //Hace que cuando el cursor esté presionando del botón, se cambie la foto
         ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesionpressed1.png"));
@@ -231,8 +231,8 @@ public class Login extends javax.swing.JFrame {
         inicio_sesion_boton.setIcon(II);
     }//GEN-LAST:event_inicio_sesion_botonMouseReleased
 
-=======
->>>>>>> Stashed changes
+//=======
+//>>>>>>> Stashed changes
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
