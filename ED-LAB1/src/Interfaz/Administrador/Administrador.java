@@ -1,10 +1,14 @@
 package Interfaz.Administrador;
 
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
+import java.awt.Cursor;
+
 public class Administrador extends javax.swing.JFrame {
 
     public Administrador() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Administrador");
 
     }
 
@@ -34,6 +38,21 @@ public class Administrador extends javax.swing.JFrame {
 
         asignar_eliminar_registros_pacientes.setBorderPainted(false);
         asignar_eliminar_registros_pacientes.setContentAreaFilled(false);
+        asignar_eliminar_registros_pacientes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                asignar_eliminar_registros_pacientesMouseMoved(evt);
+            }
+        });
+        asignar_eliminar_registros_pacientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                asignar_eliminar_registros_pacientesMouseExited(evt);
+            }
+        });
+        asignar_eliminar_registros_pacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                asignar_eliminar_registros_pacientesActionPerformed(evt);
+            }
+        });
         background.add(asignar_eliminar_registros_pacientes);
         asignar_eliminar_registros_pacientes.setBounds(230, 310, 230, 130);
 
@@ -54,6 +73,17 @@ public class Administrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void asignar_eliminar_registros_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesActionPerformed
+        dispose();
+        mostrarAdminPacientes();
+    }//GEN-LAST:event_asignar_eliminar_registros_pacientesActionPerformed
+
+    private void asignar_eliminar_registros_pacientesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));    }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseMoved
+
+    private void asignar_eliminar_registros_pacientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseExited
+        this.setCursor(DEFAULT_CURSOR);    }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

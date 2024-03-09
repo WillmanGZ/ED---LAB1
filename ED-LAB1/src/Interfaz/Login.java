@@ -22,6 +22,7 @@ public class Login extends javax.swing.JFrame {
         this.setResizable(false);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Inicio de Sesion");
     }
 
     public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN

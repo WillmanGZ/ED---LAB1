@@ -17,6 +17,7 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     public AdministradorRegistro() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Añadir Paciente");
     }
 
     public static void mostrarRegistroAdmin() {

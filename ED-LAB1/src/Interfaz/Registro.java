@@ -24,6 +24,7 @@ public class Registro extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Registro");
     }
 
     public static void mostrarRegistro() {

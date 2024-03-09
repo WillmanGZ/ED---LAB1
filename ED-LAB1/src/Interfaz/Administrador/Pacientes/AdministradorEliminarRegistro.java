@@ -1,5 +1,7 @@
 package Interfaz.Administrador.Pacientes;
 
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
 import java.awt.Cursor;
 import java.io.IOException;
@@ -12,6 +14,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
     public AdministradorEliminarRegistro() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Eliminar Pacientes");
     }
 
     public static void mostrarEliminarRegistro() {
@@ -33,6 +36,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         usuario_campo = new javax.swing.JTextField();
         contraseña_campo = new javax.swing.JTextField();
         eliminar_boton = new javax.swing.JButton();
+        back_boton = new javax.swing.JButton();
         administrador_eliminar_registro_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -52,7 +56,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         usuario_campo.setBorder(null);
         usuario_campo.setOpaque(false);
         background.add(usuario_campo);
-        usuario_campo.setBounds(390, 232, 280, 30);
+        usuario_campo.setBounds(390, 230, 280, 30);
 
         contraseña_campo.setForeground(new java.awt.Color(255, 255, 255));
         contraseña_campo.setBorder(null);
@@ -79,6 +83,26 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         });
         background.add(eliminar_boton);
         eliminar_boton.setBounds(410, 353, 230, 50);
+
+        back_boton.setBorderPainted(false);
+        back_boton.setContentAreaFilled(false);
+        back_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                back_botonMouseMoved(evt);
+            }
+        });
+        back_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                back_botonMouseExited(evt);
+            }
+        });
+        back_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_botonActionPerformed(evt);
+            }
+        });
+        background.add(back_boton);
+        back_boton.setBounds(655, 490, 40, 40);
 
         administrador_eliminar_registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarUsuario Screen.png"))); // NOI18N
         background.add(administrador_eliminar_registro_screen);
@@ -116,6 +140,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al acceder al archivo de usuarios.", "Error de archivo", JOptionPane.ERROR_MESSAGE);
         }
         dispose();
+        mostrarAdmin();
     }//GEN-LAST:event_eliminar_botonActionPerformed
 
     private void eliminar_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMouseMoved
@@ -126,9 +151,23 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_eliminar_botonMouseExited
 
+    private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
+        dispose();
+        mostrarAdminPacientes();
+    }//GEN-LAST:event_back_botonActionPerformed
+
+    private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_back_botonMouseExited
+
+    private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_back_botonMouseMoved
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel administrador_eliminar_registro_screen;
+    private javax.swing.JButton back_boton;
     private javax.swing.JPanel background;
     private javax.swing.JTextField cedula_campo;
     private javax.swing.JTextField contraseña_campo;
