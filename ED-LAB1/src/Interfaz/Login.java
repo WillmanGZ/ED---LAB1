@@ -171,7 +171,7 @@ public class Login extends javax.swing.JFrame {
         String usuario = campo_usuario.getText(); //EXTRAE EL TEXTO DE LOS CAMPOS Y LOS ALMACENA EN EL STRING
         String contraseña = campo_contraseña.getText();
         try {
-            if (verificarUsuarioContraseña(usuario, contraseña)) {
+            if (verificarUsuarioContraseña(usuario, contraseña) == 2) {
                 JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 mostrarEspecialidades();

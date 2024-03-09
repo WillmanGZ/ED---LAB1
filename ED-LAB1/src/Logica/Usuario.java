@@ -8,14 +8,24 @@ public class Usuario {
     private String cedula;
     private String telefono;
     private String correo;
+    private String estado;
 
-    public Usuario(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo) {
+    public Usuario(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.nombres_apellidos = nombres_apellidos;
         this.cedula = cedula;
         this.telefono = telefono;
         this.correo = correo;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getUsuario() {
@@ -68,7 +78,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return usuario + ";" + contraseña + ";" + nombres_apellidos + ";" + cedula + ";" + telefono + ";" + correo;
+        return usuario + ";" + contraseña + ";" + nombres_apellidos + ";" + cedula + ";" + telefono + ";" + correo + ";" + estado;
     }
 
 }

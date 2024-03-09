@@ -33,13 +33,14 @@ public class ArchivoUsuarios {
         }
     }
 
-    public static void añadirRegistros(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo) throws IOException {
+    public static void añadirRegistrosNormal(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) throws IOException {
         List<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(new Usuario(usuario, contraseña, nombres_apellidos, cedula, telefono, correo));
+        estado = "paciente"; // Aquí fijas el estado a "paciente"
+        usuarios.add(new Usuario(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado));
         escribirUsuariosEnArchivo("listausuarios.txt", usuarios);
     }
 
-    public static int verificarYAgregarUsuario(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo) throws IOException {
+    public static int verificarYAgregarUsuario(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) throws IOException {
         // Cargar usuarios existentes del archivo
         List<Usuario> usuariosExistentes = cargarUsuariosDesdeArchivo("listausuarios.txt");
 
@@ -104,12 +105,13 @@ public class ArchivoUsuarios {
 
         // Verificar que la contraseña sea hexadecimal, sin espacios y de máximo 16 dígitos
         if (!Pattern.matches("^[a-zA-Z0-9]{4,16}$", contraseña)) {
-            JOptionPane.showMessageDialog(null, "La contraseña digitada es invalida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida", "ERROR", JOptionPane.ERROR_MESSAGE);             
+            JOptionPane.showMessageDialog(null, "La contraseña digitada es invalida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 12; // CONTRASEÑA NO VÁLIDA
         }
 
         // Si todas las verificaciones pasan, añadir el registro
-        añadirRegistros(usuario, contraseña, nombres_apellidos, cedula, telefono, correo);
+        añadirRegistrosNormal(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado);
+        System.out.println(estado);
         JOptionPane.showMessageDialog(null, "Tu cuenta ha sido registrada con exito", "BIENVENIDO!", JOptionPane.INFORMATION_MESSAGE);
         JOptionPane.showMessageDialog(null, "Seras redirijido a nuestra ventana de inicio de sesion, ahora puedes ingresar con la cuenta que has registrado", "Inicia Sesion", JOptionPane.INFORMATION_MESSAGE);
         return 13;
@@ -123,23 +125,29 @@ public class ArchivoUsuarios {
                 // Dividir la línea por el delimitador para obtener los campos individuales
                 String[] campos = linea.split(";");
                 // Asumiendo el orden de los campos: usuario, contraseña, nombres y apellidos, cédula, teléfono, correo
-                String usuario = campos[0];
-                String contraseña = campos[1];
-                String nombresApellidos = campos[2];
-                String cedula = campos[3];
-                String telefono = campos[4];
-                String correo = campos[5];
+                if (campos.length < 7) {
+                    // Manejar el error adecuadamente, por ejemplo, saltando esta línea o mostrando un mensaje de error
+                    continue; // Esto saltará al siguiente ciclo del bucle si no hay suficientes campos
+                } else {
+                    String usuario = campos[0];
+                    String contraseña = campos[1];
+                    String nombresApellidos = campos[2];
+                    String cedula = campos[3];
+                    String telefono = campos[4];
+                    String correo = campos[5];
+                    String estado = campos[6];
 
-                // Crear un nuevo objeto Usuario con los campos parseados
-                Usuario nuevoUsuario = new Usuario(usuario, contraseña, nombresApellidos, cedula, telefono, correo);
-                // Añadir el nuevo usuario a la lista de usuarios
-                usuarios.add(nuevoUsuario);
+                    // Crear un nuevo objeto Usuario con los campos parseados
+                    Usuario nuevoUsuario = new Usuario(usuario, contraseña, nombresApellidos, cedula, telefono, correo, estado);
+                    // Añadir el nuevo usuario a la lista de usuarios
+                    usuarios.add(nuevoUsuario);
+                }
             }
         }
         return usuarios;
     }
-    
-    public static boolean verificarUsuarioContraseña(String usuario, String contraseña) throws FileNotFoundException {
+
+    public static int verificarUsuarioContraseña(String usuario, String contraseña) throws FileNotFoundException {
         String listausuarios = "listausuarios.txt";
         File archivo = new File(listausuarios);
         Scanner scanner = new Scanner(archivo);
@@ -147,16 +155,20 @@ public class ArchivoUsuarios {
         while (scanner.hasNextLine()) {
             String linea = scanner.nextLine();
             String[] partes = linea.split(";");
-            if (partes.length >= 6) { // Asegurar que la línea tiene al menos seis partes
+            if (partes.length >= 7) { // Asegurar que la línea tiene al menos seis partes
                 String usuarioArchivo = partes[0];
                 String contraseñaArchivo = partes[1];
                 // No necesitamos usar los demás datos para la verificación de usuario y contraseña
                 if (usuarioArchivo.toLowerCase().equals(usuario.toLowerCase()) && contraseñaArchivo.toLowerCase().equals(contraseña.toLowerCase())) {
-                    return true; // Usuario y contraseña verificados
+                    String estadoArchivo = partes[6];
+                    if (estadoArchivo == "admin") {
+                        return 1;
+                    }
+                    return 2; // Usuario y contraseña verificados
                 }
             }
         }
-        return false; // Usuario o contraseña incorrectos o el archivo no contiene los datos
+        return 3; // Usuario o contraseña incorrectos o el archivo no contiene los datos
     }
-    
+
 }

@@ -2,7 +2,7 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
-import static Logica.ArchivoUsuarios.añadirRegistros;
+import static Logica.ArchivoUsuarios.añadirRegistrosNormal;
 import static Logica.ArchivoUsuarios.verificarYAgregarUsuario;
 import Logica.Usuario;
 import java.awt.Cursor;
@@ -217,8 +217,9 @@ public class Registro extends javax.swing.JFrame {
         String correo = correo_campo.getText();
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
+        String estado = "paciente";
         try {
-            if (verificarYAgregarUsuario(usuario, contraseña, nombres_apellidos.trim(), cedula, telefono, correo) == 13) {
+            if (verificarYAgregarUsuario(usuario, contraseña, nombres_apellidos.trim(), cedula, telefono, correo, estado) == 13) {
                 dispose();
                 mostrarLogin();
             }
