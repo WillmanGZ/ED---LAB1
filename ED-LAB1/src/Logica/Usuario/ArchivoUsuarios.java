@@ -40,6 +40,12 @@ public class ArchivoUsuarios {
         escribirUsuariosEnArchivo("listausuarios.txt", usuarios);
     }
 
+    public static void añadirRegistrosAdmin(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) throws IOException {
+        List<Usuario> usuarios = new ArrayList<>();
+        usuarios.add(new Usuario(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado));
+        escribirUsuariosEnArchivo("listausuarios.txt", usuarios);
+    }
+
     public static int verificarYAgregarUsuario(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) throws IOException {
         // Cargar usuarios existentes del archivo
         List<Usuario> usuariosExistentes = cargarUsuariosDesdeArchivo("listausuarios.txt");
@@ -117,6 +123,85 @@ public class ArchivoUsuarios {
         return 13;
     }
 
+    public static int verificarYAgregarUsuarioAdmin(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo, String estado) throws IOException {
+        // Cargar usuarios existentes del archivo
+        List<Usuario> usuariosExistentes = cargarUsuariosDesdeArchivo("listausuarios.txt");
+
+        long conteoEspacios = nombres_apellidos.chars().filter(ch -> ch == (' ')).count();
+
+        // Verificar nombres_apellidos
+        if (!Pattern.matches("^[a-zA-Z ]{3,}$", nombres_apellidos.toLowerCase())) {
+            JOptionPane.showMessageDialog(null, "EL nombre digitado es invalido, el nombre y apellido solo puede contener letras, porfavor digite sus nombres y apellidos nuevamente", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 1; //APELLIDOS FORMATO INVALIDO
+        } else if (usuariosExistentes.stream().anyMatch(u -> u.getNombres_apellidos().equalsIgnoreCase(nombres_apellidos.toLowerCase()))) {
+            JOptionPane.showMessageDialog(null, "El nombre digitado ya se encuentra registrado, porfavor ingrese un nombre nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 2; //APELLIDO DUPLICADO 
+        } else if (!(conteoEspacios >= 2 && conteoEspacios <= 3)) {
+            JOptionPane.showMessageDialog(null, "El nombre digitado es invalido, el nombre debe tener minimo 1 nombre y 2 apellidos, porfavor digite un nombre valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 3; //NO TIENE LOS 3 o 4 ESPACIOS, ES DECIR, FALTA APELLIDOS O NOMBRE
+        }
+
+        // Verificar teléfono
+        if (!Pattern.matches("^[0-9]{10}$", telefono)) {
+            JOptionPane.showMessageDialog(null, "El numero de telefono digitado es invalido, el numero debe tener 10 digitos numericos, porfavor digite un numero de telefono valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 4; // EL TELEFONO NO CUMPLE EL FORMATO 
+        } else if (usuariosExistentes.stream().anyMatch(u -> u.getTelefono().equals(telefono))) {
+            JOptionPane.showMessageDialog(null, "El numero de telefono digitado ya se encuentra registrado, porfavor digite un nuevo numero de telefono o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 5; //EL TELEFONO ESTÁ DUPLICADO
+        }
+
+        // Verificar cédula
+        if (!Pattern.matches("^[0-9]{7,}$", cedula)) {
+            JOptionPane.showMessageDialog(null, "La cedula digitada es invalida, la cedula debe contener solo numeros y tener minimo 7 digitos, porfavor digite un numero de cedula valida", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 6; // LA CEDULA NO TIENE SOLO NUMEROS
+
+        } else if (usuariosExistentes.stream().anyMatch(u -> u.getCedula().equals(cedula))) {
+            JOptionPane.showMessageDialog(null, "La cedula digitada ya se encuentra registrada, porfavor digite un nuevo numero de cedula o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 7; //LA CEDULA ESTÁ DUPLICADA
+        }
+
+        // Verificar correo
+        if (!Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", correo.toLowerCase())) {
+            JOptionPane.showMessageDialog(null, "El correo digitado es invalido, el correo debe seguir el siguiente formato : nombredeusuario@dominio.com, porfavor digite un correo valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 8; // EL CORREO 
+
+        } else if (usuariosExistentes.stream().anyMatch(u -> u.getCorreo().toLowerCase().equals(correo.toLowerCase()))) {
+            JOptionPane.showMessageDialog(null, "El correo digitado ya se encuentra registrado, porfavor digite un correo nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+            return 9; // EL CORREO ESTÁ DUPLICADO
+        }
+
+        // Verificar que el usuario no exista y que cumpla con los requisitos de formato
+        if (usuariosExistentes.stream().anyMatch(u -> u.getUsuario().toLowerCase().equals(usuario.toLowerCase()))) {
+            JOptionPane.showMessageDialog(null, "El usuario digitado ya se encuentra registrado, porfavor ingrese un nuevo usuario o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 10; //USUARIO DUPLICADO
+        } else if (!Pattern.matches("^[a-zA-Z0-9]{5,12}$", usuario)) {
+            JOptionPane.showMessageDialog(null, "El usuario digitado es invalido, el nombre de usuario solo puede contener letras y numeros, y debe tener de 5-12 digitos, porfavor digite un usuario valido", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 11; // USUARIO NO CUMPLE CON EL FORMATO
+        }
+
+        // Verificar que la contraseña sea hexadecimal, sin espacios y de máximo 16 dígitos
+        if (!Pattern.matches("^[a-zA-Z0-9]{4,16}$", contraseña)) {
+            JOptionPane.showMessageDialog(null, "La contraseña digitada es invalida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 12; // CONTRASEÑA NO VÁLIDA
+        }
+        if (!(estado.equals("admin") || estado.equals("paciente"))) {
+            JOptionPane.showMessageDialog(null, "El estado ingresado es inválido. Debe ser 'admin' o 'paciente'. Por favor, ingrese un estado válido.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return 13; // CÓDIGO DE ESTADO NO VÁLIDO
+        }
+
+        // Si todas las verificaciones pasan, añadir el registro
+        añadirRegistrosAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado);
+        JOptionPane.showMessageDialog(null, "La cuenta ha sido registrada exitosamente", "REGISTRADO!", JOptionPane.INFORMATION_MESSAGE);
+        return 14;
+    }
+
     private static List<Usuario> cargarUsuariosDesdeArchivo(String listausuarios) throws IOException {
         List<Usuario> usuarios = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(listausuarios))) {
@@ -170,6 +255,39 @@ public class ArchivoUsuarios {
             }
         }
         return 3; // Usuario o contraseña incorrectos o el archivo no contiene los datos
+    }
+
+    public static int eliminarUsuario(String cedula, String usuario, String contraseña) throws IOException {
+        List<Usuario> usuariosExistentes = cargarUsuariosDesdeArchivo("listausuarios.txt");
+        boolean encontrado = false;
+
+        for (Iterator<Usuario> iterator = usuariosExistentes.iterator(); iterator.hasNext();) {
+            Usuario usuarioActual = iterator.next();
+            if (usuarioActual.getUsuario().equalsIgnoreCase(usuario)
+                    && usuarioActual.getContraseña().equals(contraseña)
+                    && usuarioActual.getCedula().equals(cedula)) {
+                iterator.remove(); // Elimina el usuario de la lista
+                encontrado = true;
+                break; // Sal del ciclo una vez encontrado y eliminado el usuario
+            }
+        }
+
+        if (encontrado) {
+            // Reescribir el archivo sin el usuario eliminado
+            try (FileWriter fw = new FileWriter("listausuarios.txt", false); // false para sobreescribir el archivo
+                     PrintWriter pw = new PrintWriter(fw)) {
+                for (Usuario usuarioEnLista : usuariosExistentes) {
+                    pw.println(usuarioEnLista.toString());
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("Error al escribir el archivo: " + e.getMessage());
+                return 2; // Error al escribir en el archivo
+            }
+
+            return 0; // Éxito
+        } else {
+            return 1; // Usuario no encontrado
+        }
     }
 
 }

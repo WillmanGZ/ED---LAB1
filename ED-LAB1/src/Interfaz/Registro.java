@@ -76,28 +76,28 @@ public class Registro extends javax.swing.JFrame {
         nombres_apellidos_campo.setBorder(null);
         nombres_apellidos_campo.setOpaque(false);
         Background.add(nombres_apellidos_campo);
-        nombres_apellidos_campo.setBounds(380, 50, 280, 30);
+        nombres_apellidos_campo.setBounds(390, 50, 270, 30);
 
         telefono_campo.setBackground(new java.awt.Color(255, 255, 255));
         telefono_campo.setForeground(new java.awt.Color(0, 0, 0));
         telefono_campo.setBorder(null);
         telefono_campo.setOpaque(false);
         Background.add(telefono_campo);
-        telefono_campo.setBounds(380, 100, 280, 30);
+        telefono_campo.setBounds(390, 100, 270, 30);
 
         cedula_campo.setBackground(new java.awt.Color(255, 255, 255));
         cedula_campo.setForeground(new java.awt.Color(0, 0, 0));
         cedula_campo.setBorder(null);
         cedula_campo.setOpaque(false);
         Background.add(cedula_campo);
-        cedula_campo.setBounds(380, 150, 280, 30);
+        cedula_campo.setBounds(390, 150, 270, 30);
 
         correo_campo.setBackground(new java.awt.Color(255, 255, 255));
         correo_campo.setForeground(new java.awt.Color(0, 0, 0));
         correo_campo.setBorder(null);
         correo_campo.setOpaque(false);
         Background.add(correo_campo);
-        correo_campo.setBounds(390, 200, 270, 30);
+        correo_campo.setBounds(390, 210, 270, 30);
 
         usuario_campo.setBackground(new java.awt.Color(255, 255, 255));
         usuario_campo.setForeground(new java.awt.Color(0, 0, 0));

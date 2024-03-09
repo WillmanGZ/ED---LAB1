@@ -1,5 +1,15 @@
 package Interfaz.Administrador;
 
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
+import static Interfaz.Login.mostrarLogin;
+import Interfaz.Registro;
+import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuario;
+import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuarioAdmin;
+import java.awt.Cursor;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class AdministradorRegistro extends javax.swing.JFrame {
 
     public AdministradorRegistro() {
@@ -25,8 +35,11 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         nombres_apellidos_campo = new javax.swing.JTextField();
         telefono_campo = new javax.swing.JTextField();
         cedula_campo = new javax.swing.JTextField();
-        correo_ = new javax.swing.JTextField();
+        correo_campo = new javax.swing.JTextField();
         usuario_campo = new javax.swing.JTextField();
+        contraseña_campo = new javax.swing.JTextField();
+        estado_campo = new javax.swing.JTextField();
+        registro_boton = new javax.swing.JButton();
         register_admin_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -39,31 +52,63 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         nombres_apellidos_campo.setBorder(null);
         nombres_apellidos_campo.setOpaque(false);
         background.add(nombres_apellidos_campo);
-        nombres_apellidos_campo.setBounds(380, 80, 290, 30);
+        nombres_apellidos_campo.setBounds(390, 90, 280, 30);
 
         telefono_campo.setForeground(new java.awt.Color(255, 255, 255));
         telefono_campo.setBorder(null);
         telefono_campo.setOpaque(false);
         background.add(telefono_campo);
-        telefono_campo.setBounds(380, 130, 290, 30);
+        telefono_campo.setBounds(390, 140, 280, 30);
 
         cedula_campo.setForeground(new java.awt.Color(255, 255, 255));
         cedula_campo.setBorder(null);
         cedula_campo.setOpaque(false);
         background.add(cedula_campo);
-        cedula_campo.setBounds(380, 190, 290, 30);
+        cedula_campo.setBounds(390, 200, 280, 30);
 
-        correo_.setForeground(new java.awt.Color(255, 255, 255));
-        correo_.setBorder(null);
-        correo_.setOpaque(false);
-        background.add(correo_);
-        correo_.setBounds(380, 240, 290, 30);
+        correo_campo.setForeground(new java.awt.Color(255, 255, 255));
+        correo_campo.setBorder(null);
+        correo_campo.setOpaque(false);
+        background.add(correo_campo);
+        correo_campo.setBounds(390, 250, 280, 30);
 
         usuario_campo.setForeground(new java.awt.Color(255, 255, 255));
         usuario_campo.setBorder(null);
         usuario_campo.setOpaque(false);
         background.add(usuario_campo);
-        usuario_campo.setBounds(380, 290, 290, 30);
+        usuario_campo.setBounds(390, 300, 280, 30);
+
+        contraseña_campo.setForeground(new java.awt.Color(255, 255, 255));
+        contraseña_campo.setBorder(null);
+        contraseña_campo.setOpaque(false);
+        background.add(contraseña_campo);
+        contraseña_campo.setBounds(390, 360, 280, 30);
+
+        estado_campo.setForeground(new java.awt.Color(255, 255, 255));
+        estado_campo.setBorder(null);
+        estado_campo.setOpaque(false);
+        background.add(estado_campo);
+        estado_campo.setBounds(390, 410, 280, 30);
+
+        registro_boton.setBorderPainted(false);
+        registro_boton.setContentAreaFilled(false);
+        registro_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                registro_botonMouseMoved(evt);
+            }
+        });
+        registro_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                registro_botonMouseExited(evt);
+            }
+        });
+        registro_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registro_botonActionPerformed(evt);
+            }
+        });
+        background.add(registro_boton);
+        registro_boton.setBounds(410, 460, 230, 40);
 
         register_admin_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistroAdmin Screen.png"))); // NOI18N
         background.add(register_admin_screen);
@@ -85,13 +130,41 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void registro_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registro_botonActionPerformed
+        String nombres_apellidos = nombres_apellidos_campo.getText().trim().toLowerCase(); //EXTRAE LOS TEXTOS DE LOS CAMPOS DE TEXTO
+        String telefono = telefono_campo.getText().trim();
+        String cedula = cedula_campo.getText().trim();
+        String correo = correo_campo.getText().trim();
+        String usuario = usuario_campo.getText().trim().toLowerCase();
+        String contraseña = contraseña_campo.getText().trim();
+        String estado = estado_campo.getText().trim().toLowerCase();
+        try {
+            if (verificarYAgregarUsuarioAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado) == 14) {
+                dispose();
+                mostrarAdmin();
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_registro_botonActionPerformed
+
+    private void registro_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));    }//GEN-LAST:event_registro_botonMouseMoved
+
+    private void registro_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);    }//GEN-LAST:event_registro_botonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JTextField cedula_campo;
-    private javax.swing.JTextField correo_;
+    private javax.swing.JTextField contraseña_campo;
+    private javax.swing.JTextField correo_campo;
+    private javax.swing.JTextField estado_campo;
     private javax.swing.JTextField nombres_apellidos_campo;
     private javax.swing.JLabel register_admin_screen;
+    private javax.swing.JButton registro_boton;
     private javax.swing.JTextField telefono_campo;
     private javax.swing.JTextField usuario_campo;
     // End of variables declaration//GEN-END:variables
