@@ -56,7 +56,7 @@ public class Registro extends javax.swing.JFrame {
         inicio_sesion_back_boton = new javax.swing.JButton();
         terminos_condiciones_boton = new javax.swing.JButton();
         registro_screen = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_barra = new javax.swing.JMenuBar();
         menu_bar = new javax.swing.JMenu();
         instrucciones_menu = new javax.swing.JMenuItem();
 
@@ -74,38 +74,44 @@ public class Registro extends javax.swing.JFrame {
         nombres_apellidos_campo.setBackground(new java.awt.Color(255, 255, 255));
         nombres_apellidos_campo.setForeground(new java.awt.Color(0, 0, 0));
         nombres_apellidos_campo.setBorder(null);
+        nombres_apellidos_campo.setOpaque(false);
         Background.add(nombres_apellidos_campo);
-        nombres_apellidos_campo.setBounds(380, 60, 280, 20);
+        nombres_apellidos_campo.setBounds(380, 50, 280, 30);
 
         telefono_campo.setBackground(new java.awt.Color(255, 255, 255));
         telefono_campo.setForeground(new java.awt.Color(0, 0, 0));
         telefono_campo.setBorder(null);
+        telefono_campo.setOpaque(false);
         Background.add(telefono_campo);
-        telefono_campo.setBounds(380, 110, 280, 20);
+        telefono_campo.setBounds(380, 100, 280, 30);
 
         cedula_campo.setBackground(new java.awt.Color(255, 255, 255));
         cedula_campo.setForeground(new java.awt.Color(0, 0, 0));
         cedula_campo.setBorder(null);
+        cedula_campo.setOpaque(false);
         Background.add(cedula_campo);
-        cedula_campo.setBounds(380, 160, 280, 20);
+        cedula_campo.setBounds(380, 150, 280, 30);
 
         correo_campo.setBackground(new java.awt.Color(255, 255, 255));
         correo_campo.setForeground(new java.awt.Color(0, 0, 0));
         correo_campo.setBorder(null);
+        correo_campo.setOpaque(false);
         Background.add(correo_campo);
-        correo_campo.setBounds(390, 210, 270, 20);
+        correo_campo.setBounds(390, 200, 270, 30);
 
         usuario_campo.setBackground(new java.awt.Color(255, 255, 255));
         usuario_campo.setForeground(new java.awt.Color(0, 0, 0));
         usuario_campo.setBorder(null);
+        usuario_campo.setOpaque(false);
         Background.add(usuario_campo);
-        usuario_campo.setBounds(390, 266, 260, 20);
+        usuario_campo.setBounds(390, 256, 260, 30);
 
         contraseña_campo.setBackground(new java.awt.Color(255, 255, 255));
         contraseña_campo.setForeground(new java.awt.Color(0, 0, 0));
         contraseña_campo.setBorder(null);
+        contraseña_campo.setOpaque(false);
         Background.add(contraseña_campo);
-        contraseña_campo.setBounds(390, 316, 270, 20);
+        contraseña_campo.setBounds(390, 306, 270, 30);
 
         registrarse_boton.setBorderPainted(false);
         registrarse_boton.setContentAreaFilled(false);
@@ -186,9 +192,9 @@ public class Registro extends javax.swing.JFrame {
         });
         menu_bar.add(instrucciones_menu);
 
-        jMenuBar1.add(menu_bar);
+        menu_barra.add(menu_bar);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menu_barra);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,8 +269,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField correo_campo;
     private javax.swing.JButton inicio_sesion_back_boton;
     private javax.swing.JMenuItem instrucciones_menu;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menu_bar;
+    private javax.swing.JMenuBar menu_barra;
     private javax.swing.JTextField nombres_apellidos_campo;
     private javax.swing.JButton registrarse_boton;
     private javax.swing.JLabel registro_screen;
