@@ -1,9 +1,9 @@
-package Logica;
+package Logica.Usuario;
 
 import Interfaz.Login;
 import static Interfaz.Login.mostrarLogin;
 import static Interfaz.Registro.cerrarRegistro;
-import Logica.Usuario;
+import Logica.Usuario.Usuario;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -154,17 +154,18 @@ public class ArchivoUsuarios {
 
         while (scanner.hasNextLine()) {
             String linea = scanner.nextLine();
-            String[] partes = linea.split(";");
-            if (partes.length >= 7) { // Asegurar que la línea tiene al menos seis partes
-                String usuarioArchivo = partes[0];
-                String contraseñaArchivo = partes[1];
+            String[] campos = linea.split(";");
+            if (campos.length >= 7) { // Asegurar que la línea tiene al menos siete partes
+                String usuarioArchivo = campos[0];
+                String contraseñaArchivo = campos[1];
                 // No necesitamos usar los demás datos para la verificación de usuario y contraseña
-                if (usuarioArchivo.toLowerCase().equals(usuario.toLowerCase()) && contraseñaArchivo.toLowerCase().equals(contraseña.toLowerCase())) {
-                    String estadoArchivo = partes[6];
-                    if (estadoArchivo == "admin") {
+                if (usuarioArchivo.equalsIgnoreCase(usuario) && contraseñaArchivo.equalsIgnoreCase(contraseña)) {
+                    String estadoArchivo = campos[6];
+                    if (estadoArchivo.equals("admin")) {
                         return 1;
+                    } else if (estadoArchivo.equals("paciente")) {
+                        return 2; // Usuario y contraseña verificados
                     }
-                    return 2; // Usuario y contraseña verificados
                 }
             }
         }

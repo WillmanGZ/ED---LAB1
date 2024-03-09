@@ -1,9 +1,10 @@
 package Interfaz;
 
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Especialidades.mostrarEspecialidades;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
-import static Logica.ArchivoUsuarios.verificarUsuarioContraseña;
+import static Logica.Usuario.ArchivoUsuarios.verificarUsuarioContraseña;
 import java.awt.Cursor;
 import java.awt.TextField;
 import java.io.FileNotFoundException;
@@ -101,14 +102,16 @@ public class Login extends javax.swing.JFrame {
         campo_usuario.setBackground(new java.awt.Color(255, 255, 255));
         campo_usuario.setForeground(new java.awt.Color(0, 0, 0));
         campo_usuario.setBorder(null);
+        campo_usuario.setOpaque(false);
         background.add(campo_usuario);
-        campo_usuario.setBounds(410, 170, 230, 30);
+        campo_usuario.setBounds(410, 160, 230, 40);
 
         campo_contraseña.setBackground(new java.awt.Color(255, 255, 255));
         campo_contraseña.setForeground(new java.awt.Color(0, 0, 0));
         campo_contraseña.setBorder(null);
+        campo_contraseña.setOpaque(false);
         background.add(campo_contraseña);
-        campo_contraseña.setBounds(410, 246, 230, 30);
+        campo_contraseña.setBounds(410, 236, 230, 40);
 
         login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login Screen.png"))); // NOI18N
         background.add(login_screen);
@@ -178,6 +181,10 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Bienvenido a nuestro sistema de citas", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
                 JOptionPane.showMessageDialog(null, "Porfavor elija la especialidad a la cual desea dirijirse", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
 
+            } else if (verificarUsuarioContraseña(usuario, contraseña) == 1) {
+                JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                mostrarAdmin();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
             }

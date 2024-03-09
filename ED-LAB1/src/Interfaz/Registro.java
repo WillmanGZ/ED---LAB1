@@ -2,9 +2,9 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
-import static Logica.ArchivoUsuarios.añadirRegistrosNormal;
-import static Logica.ArchivoUsuarios.verificarYAgregarUsuario;
-import Logica.Usuario;
+import static Logica.Usuario.ArchivoUsuarios.añadirRegistrosNormal;
+import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuario;
+import Logica.Usuario.Usuario;
 import java.awt.Cursor;
 import java.awt.Desktop;
 import java.io.IOException;
