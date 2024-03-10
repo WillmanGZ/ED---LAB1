@@ -95,7 +95,7 @@ public class ArchivoMedicos {
         return 13;
     }
 
-    private static List<Medico> cargarMedicosDesdeArchivo(String listamedicos) throws IOException {
+    public static List<Medico> cargarMedicosDesdeArchivo(String listamedicos) throws IOException {
         List<Medico> medicos = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(listamedicos))) {
             String linea;

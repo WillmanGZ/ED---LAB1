@@ -202,7 +202,7 @@ public class ArchivoUsuarios {
         return 14;
     }
 
-    private static List<Usuario> cargarUsuariosDesdeArchivo(String listausuarios) throws IOException {
+    public static List<Usuario> cargarUsuariosDesdeArchivo(String listausuarios) throws IOException {
         List<Usuario> usuarios = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(listausuarios))) {
             String linea;

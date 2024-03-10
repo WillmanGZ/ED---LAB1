@@ -1,5 +1,6 @@
 package Interfaz.Administrador;
 
+import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import java.awt.Cursor;
 
@@ -28,6 +29,7 @@ public class Administrador extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         asignar_eliminar_registros_pacientes = new javax.swing.JButton();
+        agregar_eliminar_medicos_boton = new javax.swing.JButton();
         administrador_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -55,6 +57,16 @@ public class Administrador extends javax.swing.JFrame {
         });
         background.add(asignar_eliminar_registros_pacientes);
         asignar_eliminar_registros_pacientes.setBounds(230, 310, 230, 130);
+
+        agregar_eliminar_medicos_boton.setBorderPainted(false);
+        agregar_eliminar_medicos_boton.setContentAreaFilled(false);
+        agregar_eliminar_medicos_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_eliminar_medicos_botonActionPerformed(evt);
+            }
+        });
+        background.add(agregar_eliminar_medicos_boton);
+        agregar_eliminar_medicos_boton.setBounds(645, 143, 240, 130);
 
         administrador_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Administración Screen.png"))); // NOI18N
         background.add(administrador_screen);
@@ -85,9 +97,15 @@ public class Administrador extends javax.swing.JFrame {
     private void asignar_eliminar_registros_pacientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseExited
         this.setCursor(DEFAULT_CURSOR);    }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseExited
 
+    private void agregar_eliminar_medicos_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_eliminar_medicos_botonActionPerformed
+        dispose();
+        mostrarAdminMedicos();
+    }//GEN-LAST:event_agregar_eliminar_medicos_botonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel administrador_screen;
+    private javax.swing.JButton agregar_eliminar_medicos_boton;
     private javax.swing.JButton asignar_eliminar_registros_pacientes;
     private javax.swing.JPanel background;
     // End of variables declaration//GEN-END:variables

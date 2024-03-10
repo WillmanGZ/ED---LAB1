@@ -131,6 +131,8 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
 
             if (resultado == 0) {
                 JOptionPane.showMessageDialog(this, "El usuario ha sido eliminado exitosamente.", "Usuario Eliminado", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                mostrarAdmin();
             } else if (resultado == 1) {
                 JOptionPane.showMessageDialog(this, "No se encontró un usuario que coincida con los datos proporcionados.", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (resultado == 2) {
@@ -139,8 +141,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Error al acceder al archivo de usuarios.", "Error de archivo", JOptionPane.ERROR_MESSAGE);
         }
-        dispose();
-        mostrarAdmin();
+
     }//GEN-LAST:event_eliminar_botonActionPerformed
 
     private void eliminar_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMouseMoved
