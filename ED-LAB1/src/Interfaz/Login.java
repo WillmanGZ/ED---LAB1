@@ -24,11 +24,11 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-   /* public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
+    public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
         Login login = new Login();
         login.setVisible(true);
     }
-    */
+    
 
     public static void cerrarLogin() { //CIERRA LA VENTANA LOGIN
         Login login = new Login();
@@ -80,7 +80,7 @@ public class Login extends javax.swing.JFrame {
         background.add(registrate_boton);
         registrate_boton.setBounds(550, 108, 51, 10);
 
-        inicio_sesion_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesiondefault1.png"))); // NOI18N
+        inicio_sesion_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesiondefault1.png"))); // NOI18N
         inicio_sesion_boton.setBorderPainted(false);
         inicio_sesion_boton.setContentAreaFilled(false);
         inicio_sesion_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -122,13 +122,13 @@ public class Login extends javax.swing.JFrame {
         background.add(campo_contraseña);
         campo_contraseña.setBounds(410, 246, 230, 30);
 
-        login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login Screen.png"))); // NOI18N
+        login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/Login Screen.png"))); // NOI18N
         background.add(login_screen);
         login_screen.setBounds(0, -20, 730, 480);
 
         menu_opciones.setText("Opciones");
 
-        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
+        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones/Instrucciones Icono.png"))); // NOI18N
         menu_instrucciones.setText("Instrucciones");
         menu_instrucciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +204,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inicio_sesion_botonMouseMoved
 
     private void inicio_sesion_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesiondefault1.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesiondefault1.png"));
         inicio_sesion_boton.setIcon(II); //Hace que cuando el cursor se aleje del botón, se cambie la foto de vuelta a la original
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "INICIO DE SESION" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_inicio_sesion_botonMouseExited
@@ -214,20 +214,20 @@ public class Login extends javax.swing.JFrame {
         //Hace que cuando el cursor esté por encima del botón, se cambie la foto
 //=======
 //>>>>>>> Stashed changes
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesionover1.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionover1.png"));
         inicio_sesion_boton.setIcon(II);
     }//GEN-LAST:event_inicio_sesion_botonMouseEntered
 
 //<<<<<<< Updated upstream
     private void inicio_sesion_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMousePressed
         //Hace que cuando el cursor esté presionando del botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesionpressed1.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionpressed1.png"));
         inicio_sesion_boton.setIcon(II);
     }//GEN-LAST:event_inicio_sesion_botonMousePressed
 
     private void inicio_sesion_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseReleased
        //Hace que cuando el cursor suelte el botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/sesiondefault1.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionover1.png"));
         inicio_sesion_boton.setIcon(II);
     }//GEN-LAST:event_inicio_sesion_botonMouseReleased
 

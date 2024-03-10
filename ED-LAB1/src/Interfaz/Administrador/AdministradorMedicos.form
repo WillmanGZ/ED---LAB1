@@ -49,7 +49,7 @@
         <Component class="javax.swing.JButton" name="boton_agregar_medico">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/AgMedicosDef.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorMedico/AgMedicosDef.png"/>
             </Property>
           </Properties>
           <Events>
@@ -65,12 +65,18 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="boton_eliminar_medico">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/ElimMedicosDef.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorMedico/ElimMedicosDef.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_medicoMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_medicoMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_medicoMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_eliminar_medicoMouseReleased"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="540" y="200" width="310" height="170"/>
@@ -80,7 +86,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/Registros m&#xe9;dicos.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministradorMedico/Registros m&#xe9;dicos.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>

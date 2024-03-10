@@ -2,6 +2,7 @@ package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import java.awt.Cursor;
+import javax.swing.ImageIcon;
 
 public class Especialidades extends javax.swing.JFrame {
 
@@ -34,7 +35,7 @@ public class Especialidades extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Especialidades");
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(965, 605));
+        setPreferredSize(new java.awt.Dimension(965, 635));
         setResizable(false);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
@@ -42,7 +43,8 @@ public class Especialidades extends javax.swing.JFrame {
         Background.setPreferredSize(new java.awt.Dimension(960, 600));
         Background.setLayout(null);
 
-        optometria_boton.setBorderPainted(false);
+        optometria_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesOrtoptica/OptOdefault.png"))); // NOI18N
+        optometria_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         optometria_boton.setContentAreaFilled(false);
         optometria_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -50,8 +52,17 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         optometria_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                optometria_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 optometria_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                optometria_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                optometria_botonMouseReleased(evt);
             }
         });
         optometria_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -60,9 +71,10 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         Background.add(optometria_boton);
-        optometria_boton.setBounds(140, 110, 200, 210);
+        optometria_boton.setBounds(130, 100, 200, 210);
 
-        cataratas_boton.setBorderPainted(false);
+        cataratas_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesCataratas/Cataratasdefault.png"))); // NOI18N
+        cataratas_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         cataratas_boton.setContentAreaFilled(false);
         cataratas_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -70,14 +82,29 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         cataratas_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cataratas_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 cataratas_botonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cataratas_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                cataratas_botonMouseReleased(evt);
+            }
+        });
+        cataratas_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cataratas_botonActionPerformed(evt);
+            }
         });
         Background.add(cataratas_boton);
-        cataratas_boton.setBounds(370, 110, 210, 210);
+        cataratas_boton.setBounds(370, 100, 200, 210);
 
-        glaucoma_boton.setBorderPainted(false);
+        glaucoma_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGlaucoma/Glaucomadefault.png"))); // NOI18N
+        glaucoma_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         glaucoma_boton.setContentAreaFilled(false);
         glaucoma_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -85,14 +112,24 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         glaucoma_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                glaucoma_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 glaucoma_botonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                glaucoma_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                glaucoma_botonMouseReleased(evt);
+            }
         });
         Background.add(glaucoma_boton);
-        glaucoma_boton.setBounds(620, 120, 200, 200);
+        glaucoma_boton.setBounds(610, 100, 200, 210);
 
-        oftalmologia_general_boton.setBorderPainted(false);
+        oftalmologia_general_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGeneral/Generaldefault.png"))); // NOI18N
+        oftalmologia_general_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         oftalmologia_general_boton.setContentAreaFilled(false);
         oftalmologia_general_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -100,14 +137,24 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         oftalmologia_general_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                oftalmologia_general_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 oftalmologia_general_botonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                oftalmologia_general_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                oftalmologia_general_botonMouseReleased(evt);
+            }
         });
         Background.add(oftalmologia_general_boton);
-        oftalmologia_general_boton.setBounds(140, 350, 200, 210);
+        oftalmologia_general_boton.setBounds(130, 350, 200, 210);
 
-        oftalmologia_pediatrica_boton.setBorderPainted(false);
+        oftalmologia_pediatrica_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesPediatrica/Pediatricadefault.png"))); // NOI18N
+        oftalmologia_pediatrica_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         oftalmologia_pediatrica_boton.setContentAreaFilled(false);
         oftalmologia_pediatrica_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -115,14 +162,29 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         oftalmologia_pediatrica_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                oftalmologia_pediatrica_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 oftalmologia_pediatrica_botonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                oftalmologia_pediatrica_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                oftalmologia_pediatrica_botonMouseReleased(evt);
+            }
+        });
+        oftalmologia_pediatrica_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oftalmologia_pediatrica_botonActionPerformed(evt);
+            }
         });
         Background.add(oftalmologia_pediatrica_boton);
-        oftalmologia_pediatrica_boton.setBounds(380, 350, 200, 210);
+        oftalmologia_pediatrica_boton.setBounds(370, 350, 200, 210);
 
-        retina_vitreo_boton.setBorderPainted(false);
+        retina_vitreo_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesRetinaVitrio/RVdefault.png"))); // NOI18N
+        retina_vitreo_boton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
         retina_vitreo_boton.setContentAreaFilled(false);
         retina_vitreo_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -130,20 +192,29 @@ public class Especialidades extends javax.swing.JFrame {
             }
         });
         retina_vitreo_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                retina_vitreo_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 retina_vitreo_botonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                retina_vitreo_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                retina_vitreo_botonMouseReleased(evt);
+            }
         });
         Background.add(retina_vitreo_boton);
-        retina_vitreo_boton.setBounds(620, 350, 200, 200);
+        retina_vitreo_boton.setBounds(610, 350, 200, 210);
 
-        especialidades_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Ojos (2).png"))); // NOI18N
+        especialidades_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesFeed/FeedOjos.png"))); // NOI18N
         Background.add(especialidades_screen);
-        especialidades_screen.setBounds(0, 0, 950, 630);
+        especialidades_screen.setBounds(0, 0, 950, 600);
 
         opciones_menu.setText("Opciones");
 
-        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
+        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones/Instrucciones Icono.png"))); // NOI18N
         instrucciones_menu.setText("Instrucciones");
         instrucciones_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +240,8 @@ public class Especialidades extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE))
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,7 +253,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_optometria_botonMouseMoved
 
     private void optometria_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optometria_botonMouseExited
-
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesOrtoptica/OptOdefault.png"));
+        optometria_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR); // HACE QUE EL CURSOR SE VUELVA DEFAULT
     }//GEN-LAST:event_optometria_botonMouseExited
 
@@ -191,7 +264,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_cataratas_botonMouseMoved
 
     private void cataratas_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cataratas_botonMouseExited
-        // TODO add your handling code here:
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesCataratas/Cataratasdefault.png"));
+        cataratas_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_cataratas_botonMouseExited
 
@@ -201,7 +275,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_glaucoma_botonMouseMoved
 
     private void glaucoma_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glaucoma_botonMouseExited
-        // TODO add your handling code here:
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGlaucoma/Glaucomadefault.png"));
+        glaucoma_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_glaucoma_botonMouseExited
 
@@ -211,7 +286,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_oftalmologia_general_botonMouseMoved
 
     private void oftalmologia_general_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_general_botonMouseExited
-        // TODO add your handling code here:
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGeneral/Generaldefault.png"));
+        oftalmologia_general_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_oftalmologia_general_botonMouseExited
 
@@ -221,7 +297,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_oftalmologia_pediatrica_botonMouseMoved
 
     private void oftalmologia_pediatrica_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_pediatrica_botonMouseExited
-        // TODO add your handling code here:
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesPediatrica/Pediatricadefault.png"));
+        oftalmologia_pediatrica_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_oftalmologia_pediatrica_botonMouseExited
 
@@ -231,7 +308,8 @@ public class Especialidades extends javax.swing.JFrame {
     }//GEN-LAST:event_retina_vitreo_botonMouseMoved
 
     private void retina_vitreo_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retina_vitreo_botonMouseExited
-        // TODO add your handling code here:
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesRetinaVitrio/RVdefault.png"));
+        retina_vitreo_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_retina_vitreo_botonMouseExited
 
@@ -242,6 +320,104 @@ public class Especialidades extends javax.swing.JFrame {
     private void instrucciones_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrucciones_menuActionPerformed
         mostrarInstrucciones();            //MUESTRA LA VENTANA INSTRUCCIONES
     }//GEN-LAST:event_instrucciones_menuActionPerformed
+
+    private void optometria_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optometria_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesOrtoptica/OptOover.png"));
+        optometria_boton.setIcon(II);
+    }//GEN-LAST:event_optometria_botonMouseEntered
+
+    private void optometria_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optometria_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesOrtoptica/OptOpressed.png"));
+        optometria_boton.setIcon(II);
+    }//GEN-LAST:event_optometria_botonMousePressed
+
+    private void optometria_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optometria_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesOrtoptica/OptOover.png"));
+        optometria_boton.setIcon(II);
+    }//GEN-LAST:event_optometria_botonMouseReleased
+
+    private void cataratas_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cataratas_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesCataratas/Cataratasover.png"));
+        cataratas_boton.setIcon(II);
+    }//GEN-LAST:event_cataratas_botonMouseEntered
+
+    private void cataratas_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cataratas_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesCataratas/Catarataspressed.png"));
+        cataratas_boton.setIcon(II);
+    }//GEN-LAST:event_cataratas_botonMousePressed
+
+    private void cataratas_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cataratas_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesCataratas/Cataratasover.png"));
+        cataratas_boton.setIcon(II);
+    }//GEN-LAST:event_cataratas_botonMouseReleased
+
+    private void glaucoma_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glaucoma_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGlaucoma/Glaucomaover.png"));
+        glaucoma_boton.setIcon(II);
+    }//GEN-LAST:event_glaucoma_botonMouseEntered
+
+    private void glaucoma_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glaucoma_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGlaucoma/Glaucomapressed.png"));
+        glaucoma_boton.setIcon(II);
+    }//GEN-LAST:event_glaucoma_botonMousePressed
+
+    private void glaucoma_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glaucoma_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGlaucoma/Glaucomaover.png"));
+        glaucoma_boton.setIcon(II);
+    }//GEN-LAST:event_glaucoma_botonMouseReleased
+
+    private void cataratas_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cataratas_botonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cataratas_botonActionPerformed
+
+    private void oftalmologia_general_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_general_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGeneral/Generalover.png"));
+        oftalmologia_general_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_general_botonMouseEntered
+
+    private void oftalmologia_general_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_general_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGeneral/Generalover.png"));
+        oftalmologia_general_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_general_botonMouseReleased
+
+    private void oftalmologia_general_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_general_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesGeneral/Generalpressed.png"));
+        oftalmologia_general_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_general_botonMousePressed
+
+    private void oftalmologia_pediatrica_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oftalmologia_pediatrica_botonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oftalmologia_pediatrica_botonActionPerformed
+
+    private void oftalmologia_pediatrica_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_pediatrica_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesPediatrica/Pediatricaover.png"));
+        oftalmologia_pediatrica_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_pediatrica_botonMouseEntered
+
+    private void oftalmologia_pediatrica_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_pediatrica_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesPediatrica/Pediatricapressed.png"));
+        oftalmologia_pediatrica_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_pediatrica_botonMousePressed
+
+    private void oftalmologia_pediatrica_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oftalmologia_pediatrica_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesPediatrica/Pediatricaover.png"));
+        oftalmologia_pediatrica_boton.setIcon(II);
+    }//GEN-LAST:event_oftalmologia_pediatrica_botonMouseReleased
+
+    private void retina_vitreo_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retina_vitreo_botonMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesRetinaVitrio/RVover.png"));
+        retina_vitreo_boton.setIcon(II);
+    }//GEN-LAST:event_retina_vitreo_botonMouseEntered
+
+    private void retina_vitreo_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retina_vitreo_botonMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesRetinaVitrio/RVpressed.png"));
+        retina_vitreo_boton.setIcon(II);
+    }//GEN-LAST:event_retina_vitreo_botonMousePressed
+
+    private void retina_vitreo_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retina_vitreo_botonMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EspecialidadesRetinaVitrio/RVover.png"));
+        retina_vitreo_boton.setIcon(II);
+    }//GEN-LAST:event_retina_vitreo_botonMouseReleased
 
     public static void mostrarEspecialidades() { //MUESTRA LA VENTANA ESPECIALIDADES
         Especialidades especialidades = new Especialidades();

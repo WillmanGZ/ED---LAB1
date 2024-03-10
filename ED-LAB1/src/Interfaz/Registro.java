@@ -1,8 +1,7 @@
 package Interfaz;
 
 import static Interfaz.Instrucciones.mostrarInstrucciones;
-//import static Interfaz.Login.mostrarLogin;
-import static Logica.ArchivoUsuarios.añadirRegistrosNormal;
+import static Interfaz.Login.mostrarLogin;
 import static Logica.ArchivoUsuarios.verificarYAgregarUsuario;
 import Logica.Usuario;
 import java.awt.Cursor;
@@ -25,6 +24,7 @@ public class Registro extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Registro");
     }
 
     public static void mostrarRegistro() {
@@ -57,7 +57,7 @@ public class Registro extends javax.swing.JFrame {
         inicio_sesion_back_boton = new javax.swing.JButton();
         terminos_condiciones_boton = new javax.swing.JButton();
         registro_screen = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_barra = new javax.swing.JMenuBar();
         menu_bar = new javax.swing.JMenu();
         instrucciones_menu = new javax.swing.JMenuItem();
 
@@ -75,40 +75,46 @@ public class Registro extends javax.swing.JFrame {
         nombres_apellidos_campo.setBackground(new java.awt.Color(255, 255, 255));
         nombres_apellidos_campo.setForeground(new java.awt.Color(0, 0, 0));
         nombres_apellidos_campo.setBorder(null);
+        nombres_apellidos_campo.setOpaque(false);
         Background.add(nombres_apellidos_campo);
-        nombres_apellidos_campo.setBounds(380, 60, 280, 20);
+        nombres_apellidos_campo.setBounds(390, 50, 270, 30);
 
         telefono_campo.setBackground(new java.awt.Color(255, 255, 255));
         telefono_campo.setForeground(new java.awt.Color(0, 0, 0));
         telefono_campo.setBorder(null);
+        telefono_campo.setOpaque(false);
         Background.add(telefono_campo);
-        telefono_campo.setBounds(380, 110, 280, 20);
+        telefono_campo.setBounds(390, 100, 270, 30);
 
         cedula_campo.setBackground(new java.awt.Color(255, 255, 255));
         cedula_campo.setForeground(new java.awt.Color(0, 0, 0));
         cedula_campo.setBorder(null);
+        cedula_campo.setOpaque(false);
         Background.add(cedula_campo);
-        cedula_campo.setBounds(380, 160, 280, 20);
+        cedula_campo.setBounds(390, 150, 270, 30);
 
         correo_campo.setBackground(new java.awt.Color(255, 255, 255));
         correo_campo.setForeground(new java.awt.Color(0, 0, 0));
         correo_campo.setBorder(null);
+        correo_campo.setOpaque(false);
         Background.add(correo_campo);
-        correo_campo.setBounds(390, 210, 270, 20);
+        correo_campo.setBounds(390, 210, 270, 30);
 
         usuario_campo.setBackground(new java.awt.Color(255, 255, 255));
         usuario_campo.setForeground(new java.awt.Color(0, 0, 0));
         usuario_campo.setBorder(null);
+        usuario_campo.setOpaque(false);
         Background.add(usuario_campo);
-        usuario_campo.setBounds(390, 266, 260, 20);
+        usuario_campo.setBounds(390, 256, 260, 30);
 
         contraseña_campo.setBackground(new java.awt.Color(255, 255, 255));
         contraseña_campo.setForeground(new java.awt.Color(0, 0, 0));
         contraseña_campo.setBorder(null);
+        contraseña_campo.setOpaque(false);
         Background.add(contraseña_campo);
-        contraseña_campo.setBounds(390, 316, 270, 20);
+        contraseña_campo.setBounds(390, 306, 270, 30);
 
-        registrarse_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"))); // NOI18N
+        registrarse_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regdefault.png"))); // NOI18N
         registrarse_boton.setBorderPainted(false);
         registrarse_boton.setContentAreaFilled(false);
         registrarse_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -179,7 +185,7 @@ public class Registro extends javax.swing.JFrame {
         Background.add(terminos_condiciones_boton);
         terminos_condiciones_boton.setBounds(540, 355, 120, 10);
 
-        registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Register Screen.png"))); // NOI18N
+        registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/Register Screen.png"))); // NOI18N
         Background.add(registro_screen);
         registro_screen.setBounds(0, -40, 720, 520);
 
@@ -188,7 +194,7 @@ public class Registro extends javax.swing.JFrame {
 
         menu_bar.setText("Opciones");
 
-        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
+        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones/Instrucciones Icono.png"))); // NOI18N
         instrucciones_menu.setText("Instrucciones");
         instrucciones_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,9 +203,9 @@ public class Registro extends javax.swing.JFrame {
         });
         menu_bar.add(instrucciones_menu);
 
-        jMenuBar1.add(menu_bar);
+        menu_barra.add(menu_bar);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menu_barra);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -229,12 +235,11 @@ public class Registro extends javax.swing.JFrame {
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
         String estado = "paciente";
-        try {
+         try {
             if (verificarYAgregarUsuario(usuario, contraseña, nombres_apellidos.trim(), cedula, telefono, correo, estado) == 13) {
                 dispose();
                 mostrarLogin();
             }
-
         } catch (IOException ex) {
             Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -245,8 +250,8 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarse_botonMouseMoved
 
     private void registrarse_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"));
-        registrarse_boton.setIcon(II); //Hace que cuando el cursor se aleje del botón, se cambie la foto de vuelta a la original   
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regdefault.png"));
+        registrarse_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
 
     }//GEN-LAST:event_registrarse_botonMouseExited
@@ -269,21 +274,18 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_terminos_condiciones_botonMouseExited
 
     private void registrarse_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseEntered
-        //Hace que cuando el cursor esté por encima del botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regover.png"));
-        registrarse_boton.setIcon(II);       
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regover.png"));
+        registrarse_boton.setIcon(II);
     }//GEN-LAST:event_registrarse_botonMouseEntered
 
     private void registrarse_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMousePressed
-       //Hace que cuando el cursor presione el botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regpressed.png"));
-        registrarse_boton.setIcon(II);       
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regpressed.png"));
+        registrarse_boton.setIcon(II);
     }//GEN-LAST:event_registrarse_botonMousePressed
 
     private void registrarse_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseReleased
-        //Hace que cuando el cursor suelte el botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/regdefault.png"));
-        registrarse_boton.setIcon(II);       
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regover.png"));
+        registrarse_boton.setIcon(II);
     }//GEN-LAST:event_registrarse_botonMouseReleased
 
 
@@ -294,8 +296,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField correo_campo;
     private javax.swing.JButton inicio_sesion_back_boton;
     private javax.swing.JMenuItem instrucciones_menu;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menu_bar;
+    private javax.swing.JMenuBar menu_barra;
     private javax.swing.JTextField nombres_apellidos_campo;
     private javax.swing.JButton registrarse_boton;
     private javax.swing.JLabel registro_screen;
@@ -303,8 +305,4 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton terminos_condiciones_boton;
     private javax.swing.JTextField usuario_campo;
     // End of variables declaration//GEN-END:variables
-
-    private void mostrarLogin() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

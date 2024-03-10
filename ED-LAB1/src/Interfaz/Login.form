@@ -12,7 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_instrucciones">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Interfaz/Imagenes/Instrucciones Icono.png"/>
+                  <Image iconType="3" name="/Interfaz/Imagenes/Instrucciones/Instrucciones Icono.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Instrucciones"/>
               </Properties>
@@ -99,7 +99,7 @@
         <Component class="javax.swing.JButton" name="inicio_sesion_boton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/sesiondefault1.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/InicioSesion/sesiondefault1.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -157,7 +157,7 @@
         <Component class="javax.swing.JLabel" name="login_screen">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/Login Screen.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/InicioSesion/Login Screen.png"/>
             </Property>
           </Properties>
           <Constraints>

@@ -31,7 +31,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         boton_agregar_medico = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        boton_eliminar_medico = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,7 +40,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(1052, 606, 0, 0);
 
-        boton_agregar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgMedicosDef.png"))); // NOI18N
+        boton_agregar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosDef.png"))); // NOI18N
         boton_agregar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_agregar_medicoMouseEntered(evt);
@@ -63,11 +63,25 @@ public class AdministradorMedicos extends javax.swing.JFrame {
         jPanel1.add(boton_agregar_medico);
         boton_agregar_medico.setBounds(110, 200, 310, 170);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/ElimMedicosDef.png"))); // NOI18N
-        jPanel1.add(jButton2);
-        jButton2.setBounds(540, 200, 310, 170);
+        boton_eliminar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosDef.png"))); // NOI18N
+        boton_eliminar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                boton_eliminar_medicoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                boton_eliminar_medicoMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                boton_eliminar_medicoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                boton_eliminar_medicoMouseReleased(evt);
+            }
+        });
+        jPanel1.add(boton_eliminar_medico);
+        boton_eliminar_medico.setBounds(540, 200, 310, 170);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registros médicos.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/Registros médicos.png"))); // NOI18N
         jLabel3.setToolTipText("");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(0, 0, 960, 600);
@@ -87,7 +101,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_agregar_medicoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgMedicosaOver.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosaOver.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseEntered
 
@@ -96,19 +110,39 @@ public class AdministradorMedicos extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_agregar_medicoActionPerformed
 
     private void boton_agregar_medicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgMedicosPressed.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosPressed.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMousePressed
 
     private void boton_agregar_medicoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgMedicosDef.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosDef.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseExited
 
     private void boton_agregar_medicoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgMedicosDef.png"));
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosDef.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseReleased
+
+    private void boton_eliminar_medicoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseEntered
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosaOver.png"));
+        boton_eliminar_medico.setIcon(II);
+    }//GEN-LAST:event_boton_eliminar_medicoMouseEntered
+
+    private void boton_eliminar_medicoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseExited
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosDef.png"));
+        boton_eliminar_medico.setIcon(II);
+    }//GEN-LAST:event_boton_eliminar_medicoMouseExited
+
+    private void boton_eliminar_medicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMousePressed
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosPressed.png"));
+        boton_eliminar_medico.setIcon(II);
+    }//GEN-LAST:event_boton_eliminar_medicoMousePressed
+
+    private void boton_eliminar_medicoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseReleased
+        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosaOver.png"));
+        boton_eliminar_medico.setIcon(II);
+    }//GEN-LAST:event_boton_eliminar_medicoMouseReleased
 
     /**
      * @param args the command line arguments
@@ -147,7 +181,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_agregar_medico;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton boton_eliminar_medico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
