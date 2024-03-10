@@ -17,6 +17,9 @@ public class AdministradorPacientes extends javax.swing.JFrame {
      */
     public AdministradorPacientes() {
         initComponents();
+        this.setResizable(false);
+        // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
+        this.setLocationRelativeTo(null);
     }
 
     /**

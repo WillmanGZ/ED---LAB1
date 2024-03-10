@@ -48,7 +48,7 @@
         <Component class="javax.swing.JButton" name="asignar_eliminar_registros_pacientes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/Pacientesdefault.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesdefault.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -146,7 +146,7 @@
         <Component class="javax.swing.JButton" name="reiniciar_archivos_medicos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Interfaz/Imagenes/Reiniciardefault.png"/>
+              <Image iconType="3" name="/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciardefault.png"/>
             </Property>
           </Properties>
           <Events>

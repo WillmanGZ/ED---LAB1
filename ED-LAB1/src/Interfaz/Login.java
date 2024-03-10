@@ -1,15 +1,15 @@
 package Interfaz;
 
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Especialidades.mostrarEspecialidades;
 import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
-import static Logica.ArchivoUsuarios.verificarUsuarioContraseña;
+import static Logica.Usuario.ArchivoUsuarios.verificarUsuarioContraseña;
 import java.awt.Cursor;
 import java.awt.TextField;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -22,13 +22,13 @@ public class Login extends javax.swing.JFrame {
         this.setResizable(false);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Inicio de Sesion");
     }
 
     public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
         Login login = new Login();
         login.setVisible(true);
     }
-    
 
     public static void cerrarLogin() { //CIERRA LA VENTANA LOGIN
         Login login = new Login();
@@ -80,7 +80,6 @@ public class Login extends javax.swing.JFrame {
         background.add(registrate_boton);
         registrate_boton.setBounds(550, 108, 51, 10);
 
-        inicio_sesion_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesiondefault1.png"))); // NOI18N
         inicio_sesion_boton.setBorderPainted(false);
         inicio_sesion_boton.setContentAreaFilled(false);
         inicio_sesion_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -89,17 +88,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
         inicio_sesion_boton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                inicio_sesion_botonMouseEntered(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 inicio_sesion_botonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                inicio_sesion_botonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                inicio_sesion_botonMouseReleased(evt);
             }
         });
         inicio_sesion_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,22 +103,24 @@ public class Login extends javax.swing.JFrame {
         campo_usuario.setBackground(new java.awt.Color(255, 255, 255));
         campo_usuario.setForeground(new java.awt.Color(0, 0, 0));
         campo_usuario.setBorder(null);
+        campo_usuario.setOpaque(false);
         background.add(campo_usuario);
-        campo_usuario.setBounds(410, 170, 230, 30);
+        campo_usuario.setBounds(420, 160, 220, 40);
 
         campo_contraseña.setBackground(new java.awt.Color(255, 255, 255));
         campo_contraseña.setForeground(new java.awt.Color(0, 0, 0));
         campo_contraseña.setBorder(null);
+        campo_contraseña.setOpaque(false);
         background.add(campo_contraseña);
-        campo_contraseña.setBounds(410, 246, 230, 30);
+        campo_contraseña.setBounds(420, 240, 230, 40);
 
-        login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/Login Screen.png"))); // NOI18N
+        login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login Screen.png"))); // NOI18N
         background.add(login_screen);
         login_screen.setBounds(0, -20, 730, 480);
 
         menu_opciones.setText("Opciones");
 
-        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones/Instrucciones Icono.png"))); // NOI18N
+        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
         menu_instrucciones.setText("Instrucciones");
         menu_instrucciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,12 +176,16 @@ public class Login extends javax.swing.JFrame {
         String contraseña = campo_contraseña.getText();
         try {
             if (verificarUsuarioContraseña(usuario, contraseña) == 2) {
-                JOptionPane.showMessageDialog(null, "Usted ha iniciado sesión correctamente", "INICIO DE SESIóN EXITOSO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 mostrarEspecialidades();
-                JOptionPane.showMessageDialog(null, "Bienvenido a nuestro sistema de citas.", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Por favor elija la especialidad a la cual desea dirijirse.", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Bienvenido a nuestro sistema de citas", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Porfavor elija la especialidad a la cual desea dirijirse", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
 
+            } else if (verificarUsuarioContraseña(usuario, contraseña) == 1) {
+                JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                mostrarAdmin();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
@@ -204,35 +200,9 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_inicio_sesion_botonMouseMoved
 
     private void inicio_sesion_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesiondefault1.png"));
-        inicio_sesion_boton.setIcon(II); //Hace que cuando el cursor se aleje del botón, se cambie la foto de vuelta a la original
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "INICIO DE SESION" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_inicio_sesion_botonMouseExited
 
-    private void inicio_sesion_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseEntered
-//<<<<<<< Updated upstream
-        //Hace que cuando el cursor esté por encima del botón, se cambie la foto
-//=======
-//>>>>>>> Stashed changes
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionover1.png"));
-        inicio_sesion_boton.setIcon(II);
-    }//GEN-LAST:event_inicio_sesion_botonMouseEntered
-
-//<<<<<<< Updated upstream
-    private void inicio_sesion_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMousePressed
-        //Hace que cuando el cursor esté presionando del botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionpressed1.png"));
-        inicio_sesion_boton.setIcon(II);
-    }//GEN-LAST:event_inicio_sesion_botonMousePressed
-
-    private void inicio_sesion_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseReleased
-       //Hace que cuando el cursor suelte el botón, se cambie la foto
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/InicioSesion/sesionover1.png"));
-        inicio_sesion_boton.setIcon(II);
-    }//GEN-LAST:event_inicio_sesion_botonMouseReleased
-
-//=======
-//>>>>>>> Stashed changes
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

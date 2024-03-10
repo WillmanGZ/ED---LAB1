@@ -15,6 +15,9 @@ public class AdministradorCitas extends javax.swing.JFrame {
      */
     public AdministradorCitas() {
         initComponents();
+        this.setResizable(false);
+        // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
+        this.setLocationRelativeTo(null);
     }
 
     /**
