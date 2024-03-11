@@ -1,7 +1,9 @@
 package Interfaz.Administrador.Medicos;
 
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Logica.Medicos.ArchivoMedicos.verificarYAgregarMedicos;
+import java.awt.Cursor;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 
@@ -20,7 +22,6 @@ public class AgregarMedico extends javax.swing.JFrame {
         agregarMedico.setVisible(true);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,6 +33,7 @@ public class AgregarMedico extends javax.swing.JFrame {
         cedula_campo = new javax.swing.JTextField();
         correo_campo = new javax.swing.JTextField();
         especialidad_campo = new javax.swing.JTextField();
+        back_boton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -92,6 +94,27 @@ public class AgregarMedico extends javax.swing.JFrame {
         jPanel2.add(especialidad_campo);
         especialidad_campo.setBounds(70, 412, 350, 40);
 
+        back_boton.setBorder(null);
+        back_boton.setBorderPainted(false);
+        back_boton.setContentAreaFilled(false);
+        back_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                back_botonMouseMoved(evt);
+            }
+        });
+        back_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                back_botonMouseExited(evt);
+            }
+        });
+        back_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_botonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(back_boton);
+        back_boton.setBounds(10, 500, 30, 40);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/AgregarMedicos.png"))); // NOI18N
         jPanel2.add(jLabel1);
         jLabel1.setBounds(0, 0, 490, 540);
@@ -150,8 +173,22 @@ public class AgregarMedico extends javax.swing.JFrame {
 
     }//GEN-LAST:event_boton_agregar_medicoActionPerformed
 
+    private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
+        dispose();
+        mostrarAdminMedicos();
+    }//GEN-LAST:event_back_botonActionPerformed
+
+    private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_back_botonMouseMoved
+
+    private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_back_botonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_boton;
     private javax.swing.JButton boton_agregar_medico;
     private javax.swing.JTextField cedula_campo;
     private javax.swing.JTextField correo_campo;

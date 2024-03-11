@@ -102,7 +102,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
             }
         });
         background.add(back_boton);
-        back_boton.setBounds(655, 490, 40, 40);
+        back_boton.setBounds(0, 500, 40, 40);
 
         administrador_eliminar_registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarUsuario Screen.png"))); // NOI18N
         background.add(administrador_eliminar_registro_screen);

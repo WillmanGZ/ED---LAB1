@@ -2,8 +2,10 @@ package Interfaz.Administrador.Medicos;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Logica.Medicos.ArchivoMedicos.eliminarMedicos;
 import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
+import java.awt.Cursor;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -36,6 +38,7 @@ public class EliminarMedico extends javax.swing.JFrame {
         boton_eliminar_medico = new javax.swing.JButton();
         nombres_apellidos_campo = new javax.swing.JTextField();
         cedula_campo = new javax.swing.JTextField();
+        back_boton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,6 +79,26 @@ public class EliminarMedico extends javax.swing.JFrame {
         cedula_campo.setOpaque(false);
         jPanel1.add(cedula_campo);
         cedula_campo.setBounds(70, 210, 350, 30);
+
+        back_boton.setBorderPainted(false);
+        back_boton.setContentAreaFilled(false);
+        back_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                back_botonMouseMoved(evt);
+            }
+        });
+        back_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                back_botonMouseExited(evt);
+            }
+        });
+        back_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_botonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back_boton);
+        back_boton.setBounds(10, 330, 30, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/EliminarMedico.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -137,8 +160,22 @@ public class EliminarMedico extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_boton_eliminar_medicoActionPerformed
 
+    private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
+        dispose();
+        mostrarAdminMedicos();
+    }//GEN-LAST:event_back_botonActionPerformed
+
+    private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_back_botonMouseMoved
+
+    private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_back_botonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_boton;
     private javax.swing.JButton boton_eliminar_medico;
     private javax.swing.JTextField cedula_campo;
     private javax.swing.JLabel jLabel1;
