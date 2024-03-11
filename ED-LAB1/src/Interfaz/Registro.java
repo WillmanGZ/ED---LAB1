@@ -1,6 +1,5 @@
 package Interfaz;
 
-import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Login.mostrarLogin;
 import static Logica.Usuario.ArchivoUsuarios.añadirRegistrosNormal;
 import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuario;
@@ -58,9 +57,6 @@ public class Registro extends javax.swing.JFrame {
         inicio_sesion_back_boton = new javax.swing.JButton();
         terminos_condiciones_boton = new javax.swing.JButton();
         registro_screen = new javax.swing.JLabel();
-        menu_barra = new javax.swing.JMenuBar();
-        menu_bar = new javax.swing.JMenu();
-        instrucciones_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro");
@@ -188,21 +184,6 @@ public class Registro extends javax.swing.JFrame {
         Background.add(registro_screen);
         registro_screen.setBounds(0, -40, 720, 520);
 
-        menu_bar.setText("Opciones");
-
-        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
-        instrucciones_menu.setText("Instrucciones");
-        instrucciones_menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                instrucciones_menuActionPerformed(evt);
-            }
-        });
-        menu_bar.add(instrucciones_menu);
-
-        menu_barra.add(menu_bar);
-
-        setJMenuBar(menu_barra);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -229,10 +210,6 @@ public class Registro extends javax.swing.JFrame {
     private void inicio_sesion_back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_back_botonMouseExited
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "INICIA SESION" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_inicio_sesion_back_botonMouseExited
-
-    private void instrucciones_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrucciones_menuActionPerformed
-        mostrarInstrucciones(); //MUESTRA LA VENTANA DE INSTRUCCIONES
-    }//GEN-LAST:event_instrucciones_menuActionPerformed
 
     private void registrarse_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarse_botonActionPerformed
         String nombres_apellidos = nombres_apellidos_campo.getText(); //EXTRAE LOS TEXTOS DE LOS CAMPOS DE TEXTO
@@ -303,9 +280,6 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField contraseña_campo;
     private javax.swing.JTextField correo_campo;
     private javax.swing.JButton inicio_sesion_back_boton;
-    private javax.swing.JMenuItem instrucciones_menu;
-    private javax.swing.JMenu menu_bar;
-    private javax.swing.JMenuBar menu_barra;
     private javax.swing.JTextField nombres_apellidos_campo;
     private javax.swing.JButton registrarse_boton;
     private javax.swing.JLabel registro_screen;

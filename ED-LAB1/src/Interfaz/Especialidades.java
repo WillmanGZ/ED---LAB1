@@ -1,6 +1,5 @@
 package Interfaz;
 
-import static Interfaz.Instrucciones.mostrarInstrucciones;
 import java.awt.Cursor;
 
 public class Especialidades extends javax.swing.JFrame {
@@ -27,9 +26,6 @@ public class Especialidades extends javax.swing.JFrame {
         oftalmologia_pediatrica_boton = new javax.swing.JButton();
         retina_vitreo_boton = new javax.swing.JButton();
         especialidades_screen = new javax.swing.JLabel();
-        barra_menu = new javax.swing.JMenuBar();
-        opciones_menu = new javax.swing.JMenu();
-        instrucciones_menu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Especialidades");
@@ -141,21 +137,6 @@ public class Especialidades extends javax.swing.JFrame {
         Background.add(especialidades_screen);
         especialidades_screen.setBounds(-10, -30, 950, 600);
 
-        opciones_menu.setText("Opciones");
-
-        instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
-        instrucciones_menu.setText("Instrucciones");
-        instrucciones_menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                instrucciones_menuActionPerformed(evt);
-            }
-        });
-        opciones_menu.add(instrucciones_menu);
-
-        barra_menu.add(opciones_menu);
-
-        setJMenuBar(barra_menu);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,7 +150,7 @@ public class Especialidades extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE))
+                .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -239,10 +220,6 @@ public class Especialidades extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_optometria_botonActionPerformed
 
-    private void instrucciones_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrucciones_menuActionPerformed
-        mostrarInstrucciones();            //MUESTRA LA VENTANA INSTRUCCIONES
-    }//GEN-LAST:event_instrucciones_menuActionPerformed
-
     public static void mostrarEspecialidades() { //MUESTRA LA VENTANA ESPECIALIDADES
         Especialidades especialidades = new Especialidades();
         especialidades.setVisible(true);
@@ -251,14 +228,11 @@ public class Especialidades extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JMenuBar barra_menu;
     private javax.swing.JButton cataratas_boton;
     private javax.swing.JLabel especialidades_screen;
     private javax.swing.JButton glaucoma_boton;
-    private javax.swing.JMenuItem instrucciones_menu;
     private javax.swing.JButton oftalmologia_general_boton;
     private javax.swing.JButton oftalmologia_pediatrica_boton;
-    private javax.swing.JMenu opciones_menu;
     private javax.swing.JButton optometria_boton;
     private javax.swing.JButton retina_vitreo_boton;
     // End of variables declaration//GEN-END:variables

@@ -2,6 +2,8 @@ package Interfaz.Administrador;
 
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
+import static Interfaz.Login.mostrarLogin;
+import java.awt.Cursor;
 import javax.swing.ImageIcon;
 
 public class Administrador extends javax.swing.JFrame {
@@ -11,7 +13,6 @@ public class Administrador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("Administracion");
-    
 
     }
 
@@ -35,6 +36,7 @@ public class Administrador extends javax.swing.JFrame {
         boton_eliminar_cita = new javax.swing.JButton();
         asignar_eliminar_registros_medicos = new javax.swing.JButton();
         reiniciar_archivos_medicos = new javax.swing.JButton();
+        back_boton = new javax.swing.JButton();
         administrador_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -173,6 +175,26 @@ public class Administrador extends javax.swing.JFrame {
         background.add(reiniciar_archivos_medicos);
         reiniciar_archivos_medicos.setBounds(500, 310, 230, 130);
 
+        back_boton.setBorderPainted(false);
+        back_boton.setContentAreaFilled(false);
+        back_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                back_botonMouseMoved(evt);
+            }
+        });
+        back_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                back_botonMouseExited(evt);
+            }
+        });
+        back_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_botonActionPerformed(evt);
+            }
+        });
+        background.add(back_boton);
+        back_boton.setBounds(0, 530, 30, 40);
+
         administrador_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Administracion/Administración feed.png"))); // NOI18N
         background.add(administrador_screen);
         administrador_screen.setBounds(0, -30, 970, 600);
@@ -209,107 +231,107 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_reiniciar_archivos_medicosActionPerformed
 
     private void boton_asignar_citaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarover.png"));
         boton_asignar_cita.setIcon(II);
     }//GEN-LAST:event_boton_asignar_citaMouseEntered
 
     private void boton_asignar_citaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignardefault.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignardefault.png"));
         boton_asignar_cita.setIcon(II);
     }//GEN-LAST:event_boton_asignar_citaMouseExited
 
     private void boton_asignar_citaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarpressed.png"));
         boton_asignar_cita.setIcon(II);
     }//GEN-LAST:event_boton_asignar_citaMousePressed
 
     private void boton_asignar_citaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignarover.png"));
         boton_asignar_cita.setIcon(II);
     }//GEN-LAST:event_boton_asignar_citaMouseReleased
 
     private void boton_eliminar_citaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_citaMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarover.png"));
         boton_eliminar_cita.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_citaMouseEntered
 
     private void boton_eliminar_citaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_citaMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminardefault.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminardefault.png"));
         boton_eliminar_cita.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_citaMouseExited
 
     private void boton_eliminar_citaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_citaMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarpressed.png"));
         boton_eliminar_cita.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_citaMousePressed
 
     private void boton_eliminar_citaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_citaMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminarover.png"));
         boton_eliminar_cita.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_citaMouseReleased
 
     private void asignar_eliminar_registros_medicosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_medicosMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosdefault.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosdefault.png"));
         asignar_eliminar_registros_medicos.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_medicosMouseExited
 
     private void asignar_eliminar_registros_medicosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_medicosMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosover.png"));
         asignar_eliminar_registros_medicos.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_medicosMouseEntered
 
     private void asignar_eliminar_registros_medicosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_medicosMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosover.png"));
         asignar_eliminar_registros_medicos.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_medicosMouseReleased
 
     private void asignar_eliminar_registros_medicosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_medicosMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicospressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicospressed.png"));
         asignar_eliminar_registros_medicos.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_medicosMousePressed
 
     private void asignar_eliminar_registros_pacientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesover.png"));
         asignar_eliminar_registros_pacientes.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseEntered
 
     private void asignar_eliminar_registros_pacientesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesover.png"));
         asignar_eliminar_registros_pacientes.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseReleased
 
     private void asignar_eliminar_registros_pacientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesdefault.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesdefault.png"));
         asignar_eliminar_registros_pacientes.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseExited
 
     private void asignar_eliminar_registros_pacientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientespressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientespressed.png"));
         asignar_eliminar_registros_pacientes.setIcon(II);
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesMousePressed
 
     private void reiniciar_archivos_medicosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarover.png"));
         reiniciar_archivos_medicos.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_medicosMouseEntered
 
     private void reiniciar_archivos_medicosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciardefault.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciardefault.png"));
         reiniciar_archivos_medicos.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_medicosMouseExited
 
     private void reiniciar_archivos_medicosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarpressed.png"));
         reiniciar_archivos_medicos.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_medicosMousePressed
 
     private void reiniciar_archivos_medicosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciarover.png"));
         reiniciar_archivos_medicos.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_medicosMouseReleased
 
     private void asignar_eliminar_registros_pacientesMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesMouseDragged
-    
+
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesMouseDragged
 
     private void asignar_eliminar_registros_pacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_pacientesActionPerformed
@@ -317,11 +339,25 @@ public class Administrador extends javax.swing.JFrame {
         mostrarAdminPacientes();
     }//GEN-LAST:event_asignar_eliminar_registros_pacientesActionPerformed
 
+    private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
+        dispose();
+        mostrarLogin();
+    }//GEN-LAST:event_back_botonActionPerformed
+
+    private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_back_botonMouseMoved
+
+    private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_back_botonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel administrador_screen;
     private javax.swing.JButton asignar_eliminar_registros_medicos;
     private javax.swing.JButton asignar_eliminar_registros_pacientes;
+    private javax.swing.JButton back_boton;
     private javax.swing.JPanel background;
     private javax.swing.JButton boton_asignar_cita;
     private javax.swing.JButton boton_eliminar_cita;

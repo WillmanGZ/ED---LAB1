@@ -2,7 +2,6 @@ package Interfaz;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Especialidades.mostrarEspecialidades;
-import static Interfaz.Instrucciones.mostrarInstrucciones;
 import static Interfaz.Registro.mostrarRegistro;
 import static Logica.Usuario.ArchivoUsuarios.verificarUsuarioContraseña;
 import java.awt.Cursor;
@@ -48,9 +47,6 @@ public class Login extends javax.swing.JFrame {
         campo_usuario = new javax.swing.JTextField();
         campo_contraseña = new javax.swing.JTextField();
         login_screen = new javax.swing.JLabel();
-        menu_barra = new javax.swing.JMenuBar();
-        menu_opciones = new javax.swing.JMenu();
-        menu_instrucciones = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,26 +116,11 @@ public class Login extends javax.swing.JFrame {
         campo_contraseña.setBorder(null);
         campo_contraseña.setOpaque(false);
         background.add(campo_contraseña);
-        campo_contraseña.setBounds(420, 240, 230, 40);
+        campo_contraseña.setBounds(420, 240, 230, 30);
 
         login_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login Screen.png"))); // NOI18N
         background.add(login_screen);
         login_screen.setBounds(0, -20, 730, 480);
-
-        menu_opciones.setText("Opciones");
-
-        menu_instrucciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
-        menu_instrucciones.setText("Instrucciones");
-        menu_instrucciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_instruccionesActionPerformed(evt);
-            }
-        });
-        menu_opciones.add(menu_instrucciones);
-
-        menu_barra.add(menu_opciones);
-
-        setJMenuBar(menu_barra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,10 +142,6 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void menu_instruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_instruccionesActionPerformed
-        mostrarInstrucciones();  //MUESTRA LAS INSTRUCCIONES CLICKEANDO EN EL BOTON INSTRUCCIONES DEL MENU DE BARRA
-    }//GEN-LAST:event_menu_instruccionesActionPerformed
 
     private void registrate_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrate_botonMouseMoved
         this.setCursor(new Cursor(Cursor.HAND_CURSOR)); //HACE QUE CUANDO PASES EL MOUSE POR ENCIMA DEL BOTON "REGISTRARSE" CAMBIE A LA MANITO
@@ -235,9 +212,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField campo_usuario;
     private javax.swing.JButton inicio_sesion_boton;
     private javax.swing.JLabel login_screen;
-    private javax.swing.JMenuBar menu_barra;
-    private javax.swing.JMenuItem menu_instrucciones;
-    private javax.swing.JMenu menu_opciones;
     private javax.swing.JButton registrate_boton;
     // End of variables declaration//GEN-END:variables
 }
