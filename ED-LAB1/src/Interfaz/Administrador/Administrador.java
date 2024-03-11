@@ -73,7 +73,7 @@ public class Administrador extends javax.swing.JFrame {
         background.add(asignar_eliminar_registros_pacientes);
         asignar_eliminar_registros_pacientes.setBounds(230, 310, 230, 130);
 
-        boton_asignar_cita.setBackground(new java.awt.Color(255, 255, 255));
+        boton_asignar_cita.setBackground(new java.awt.Color(204, 204, 204));
         boton_asignar_cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionFeedAsignar/Asignardefault.png"))); // NOI18N
         boton_asignar_cita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         boton_asignar_cita.setBorderPainted(false);
@@ -97,7 +97,7 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
         background.add(boton_asignar_cita);
-        boton_asignar_cita.setBounds(100, 140, 250, 130);
+        boton_asignar_cita.setBounds(110, 140, 240, 130);
 
         boton_eliminar_cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminardefault.png"))); // NOI18N
         boton_eliminar_cita.addMouseListener(new java.awt.event.MouseAdapter() {
