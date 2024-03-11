@@ -5,9 +5,9 @@ import java.util.*;
 
 public class ArchivoCitas {
 
-    public static void añadirCita(String especialidad, String nombresApellidosMedico, String fecha, String hora) throws IOException {
+    public static void añadirCita(String cedulaPaciente, String especialidad, String idmedico, String fecha, String hora) throws IOException {
         List<Cita> citas = cargarCitasDesdeArchivo("listacitas.txt");
-        citas.add(new Cita(especialidad, nombresApellidosMedico, fecha, hora));
+        citas.add(new Cita(cedulaPaciente, especialidad, idmedico, fecha, hora));
         escribirCitasEnArchivo("listacitas.txt", citas);
     }
 
@@ -25,13 +25,13 @@ public class ArchivoCitas {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] campos = linea.split(";");
-                if (campos.length == 4) {
-                    Cita cita = new Cita(campos[0], campos[1], campos[2], campos[3]);
+                if (campos.length == 5) {
+                    Cita cita = new Cita(campos[0], campos[1], campos[2], campos[3], campos[4]);
                     citas.add(cita);
                 }
             }
         }
         return citas;
     }
-    
+
 }

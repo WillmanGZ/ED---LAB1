@@ -1,4 +1,4 @@
-package Logica.Usuario;
+package Logica.Pacientes;
 
 public class Paciente {
 

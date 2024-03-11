@@ -5,7 +5,7 @@ import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPaciente
 import java.awt.Cursor;
 import java.io.IOException;
 import javax.swing.ImageIcon;
-import static Logica.Usuario.ArchivoPacientes.verificarYAgregarPacienteAdmin;
+import static Logica.Pacientes.ArchivoPacientes.verificarYAgregarPacienteAdmin;
 
 public class AgregarPaciente extends javax.swing.JFrame {
 
@@ -152,11 +152,11 @@ public class AgregarPaciente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registro_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registro_botonActionPerformed
-        String nombres_apellidos = nombres_apellidos_campo.getText().trim().toLowerCase(); //EXTRAE LOS TEXTOS DE LOS CAMPOS DE TEXTO
+        String nombres_apellidos = nombres_apellidos_campo.getText().trim(); //EXTRAE LOS TEXTOS DE LOS CAMPOS DE TEXTO
         String telefono = telefono_campo.getText().trim();
         String cedula = cedula_campo.getText().trim();
         String correo = correo_campo.getText().trim();
-        String usuario = usuario_campo.getText().trim().toLowerCase();
+        String usuario = usuario_campo.getText().trim();
         String contraseña = contraseña_campo.getText().trim();
         try {
             if (verificarYAgregarPacienteAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo) == 14) {

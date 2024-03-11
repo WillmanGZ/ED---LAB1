@@ -1,22 +1,28 @@
 package Logica.Citas;
 
-import Logica.Medicos.Medico;
-import Logica.Usuario.Paciente;
-import java.util.Date;
-
 public class Cita {
 
+    private String cedulaPaciente;
     private String especialidad;
-    private String nombresApellidosMedico; // Nombre y apellido del médico
+    private String idmedico; //posicion en el archivo
     private String fecha;
     private String hora;
 
-    public Cita(String especialidad, String nombresApellidosMedico, String fecha, String hora) {
+    public Cita(String cedulaPaciente, String especialidad, String idmedico, String fecha, String hora) {
+        this.cedulaPaciente = cedulaPaciente;
         this.especialidad = especialidad;
-        this.nombresApellidosMedico = nombresApellidosMedico;
+        this.idmedico = idmedico;
         this.fecha = fecha;
         this.hora = hora;
 
+    }
+
+    public String getCedulaPaciente() {
+        return cedulaPaciente;
+    }
+
+    public void setCedulaPaciente(String cedulaPaciente) {
+        this.cedulaPaciente = cedulaPaciente;
     }
 
     public String getEspecialidad() {
@@ -27,12 +33,15 @@ public class Cita {
         this.especialidad = especialidad;
     }
 
-    public String getNombresApellidosMedico() {
-        return nombresApellidosMedico;
+    
+    
+
+    public String getIdmedico() {
+        return idmedico;
     }
 
-    public void setNombresApellidosMedico(String nombresApellidosMedico) {
-        this.nombresApellidosMedico = nombresApellidosMedico;
+    public void setIdmedico(String idmedico) {
+        this.idmedico = idmedico;
     }
 
     public String getFecha() {
@@ -53,6 +62,6 @@ public class Cita {
 
     @Override
     public String toString() {
-        return especialidad + ";" + nombresApellidosMedico + ";" + fecha + ";" + hora;
+        return cedulaPaciente + ";" + especialidad + ";" + idmedico + ";" + fecha + ";" + hora;
     }
 }

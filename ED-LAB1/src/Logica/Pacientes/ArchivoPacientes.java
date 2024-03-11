@@ -1,8 +1,7 @@
-package Logica.Usuario;
+package Logica.Pacientes;
 
-import Logica.Usuario.Paciente;
+import Logica.Pacientes.Paciente;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -11,7 +10,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -30,13 +28,11 @@ public class ArchivoPacientes {
         }
     }
 
-
     public static void añadirRegistrosAdmin(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo) throws IOException {
         List<Paciente> pacientes = new ArrayList<>();
         pacientes.add(new Paciente(usuario, contraseña, nombres_apellidos, cedula, telefono, correo));
         escribirPacientesEnArchivo("listapacientes.txt", pacientes);
     }
-
 
     public static int verificarYAgregarPacienteAdmin(String usuario, String contraseña, String nombres_apellidos, String cedula, String telefono, String correo) throws IOException {
         // Cargar usuarios existentes del archivo
@@ -106,7 +102,7 @@ public class ArchivoPacientes {
             JOptionPane.showMessageDialog(null, "La contraseña digitada es invalida, la contraseña solo puede contener letras y números, y debe tener de 4-16 dígitos, por favor digite una contraseña válida", "ERROR", JOptionPane.ERROR_MESSAGE);
             return 12; // CONTRASEÑA NO VÁLIDA
         }
-        
+
         // Si todas las verificaciones pasan, añadir el registro
         añadirRegistrosAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo);
         JOptionPane.showMessageDialog(null, "La cuenta ha sido registrada exitosamente", "REGISTRADO!", JOptionPane.INFORMATION_MESSAGE);
@@ -142,7 +138,6 @@ public class ArchivoPacientes {
         return pacientes;
     }
 
-
     public static int eliminarPacientes(String cedula, String usuario, String contraseña) throws IOException {
         List<Paciente> PacientesExistentes = cargarPacientesDesdeArchivo("listapacientes.txt");
         boolean encontrado = false;
@@ -174,6 +169,43 @@ public class ArchivoPacientes {
         } else {
             return 1; // Usuario no encontrado
         }
+    }
+
+    public static String obtenerNombreApellidoPacientePorCedula(String cedula) throws IOException {
+        Paciente paciente = buscarPacientePorCedula(cedula);
+        if (paciente != null) {
+            return paciente.getNombres_apellidos();
+        } else {
+            return "Paciente no encontrado";
+        }
+    }
+
+    public static String obtenerUsuarioPacientePorCedula(String cedula) throws IOException {
+        Paciente paciente = buscarPacientePorCedula(cedula);
+        if (paciente != null) {
+            return paciente.getUsuario();
+        } else {
+            return "Paciente no encontrado";
+        }
+    }
+
+    public static String obtenerCorreoPacientePorCedula(String cedula) throws IOException {
+        Paciente paciente = buscarPacientePorCedula(cedula);
+        if (paciente != null) {
+            return paciente.getCorreo();
+        } else {
+            return "Paciente no encontrado";
+        }
+    }
+
+    private static Paciente buscarPacientePorCedula(String cedula) throws IOException {
+        List<Paciente> pacientes = cargarPacientesDesdeArchivo("listapacientes.txt");
+        for (Paciente paciente : pacientes) {
+            if (paciente.getCedula().equals(cedula)) {
+                return paciente; // Paciente encontrado
+            }
+        }
+        return null; // No se encontró el paciente
     }
 
 }

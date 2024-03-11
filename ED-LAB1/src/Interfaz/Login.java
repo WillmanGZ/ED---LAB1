@@ -1,7 +1,6 @@
 package Interfaz;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
-import static Interfaz.Citas.mostrarCitas;
 import static Logica.Administradores.ArchivoAdministradores.verificarUsuarioContraseña;
 import java.awt.Cursor;
 import java.io.FileNotFoundException;
@@ -147,7 +146,7 @@ public class Login extends javax.swing.JFrame {
 
     private void registrate_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrate_botonActionPerformed
         dispose(); //CIERRA LA VENTANA LOGIN Y LUEGO ABRE LA VENTANA REGISTRO
-        
+
     }//GEN-LAST:event_registrate_botonActionPerformed
 
     private void inicio_sesion_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicio_sesion_botonActionPerformed
@@ -158,8 +157,6 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 mostrarAdmin();
-                JOptionPane.showMessageDialog(null, "Bienvenido a nuestro sistema de citas", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Porfavor elija la especialidad a la cual desea dirijirse", "BIENVENIDO", JOptionPane.INFORMATION_MESSAGE);
 
             } else if (verificarUsuarioContraseña(usuario, contraseña) == 1) {
                 JOptionPane.showMessageDialog(null, "Usted ha iniciado sesion correctamente", "INICIO DE SESION EXITOSO!", JOptionPane.INFORMATION_MESSAGE);

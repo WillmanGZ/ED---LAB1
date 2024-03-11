@@ -2,8 +2,12 @@ package Interfaz.Administrador;
 
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
+import static Interfaz.Administrador.Citas.GestionarCitas.mostrarGestionarCitas;
 import static Interfaz.Login.mostrarLogin;
 import java.awt.Cursor;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 public class Administrador extends javax.swing.JFrame {
@@ -214,7 +218,12 @@ public class Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_asignar_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_asignar_citaActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        try {
+            mostrarGestionarCitas();
+        } catch (IOException ex) {
+            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_boton_asignar_citaActionPerformed
 
     private void boton_eliminar_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_citaActionPerformed

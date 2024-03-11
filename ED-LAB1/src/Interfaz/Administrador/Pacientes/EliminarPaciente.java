@@ -8,7 +8,7 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static Logica.Usuario.ArchivoPacientes.eliminarPacientes;
+import static Logica.Pacientes.ArchivoPacientes.eliminarPacientes;
 
 public class EliminarPaciente extends javax.swing.JFrame {
 

@@ -8,7 +8,7 @@ import java.awt.Cursor;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static Logica.Usuario.ArchivoPacientes.eliminarPacientes;
+import static Logica.Pacientes.ArchivoPacientes.eliminarPacientes;
 
 public class EliminarMedico extends javax.swing.JFrame {
 
