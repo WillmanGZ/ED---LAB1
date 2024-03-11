@@ -1,11 +1,8 @@
 package Interfaz.Administrador.Pacientes;
 
-
-
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
-import static Interfaz.Login.mostrarLogin;
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import Interfaz.Registro;
-import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuario;
 import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuarioAdmin;
 import java.awt.Cursor;
 import java.io.IOException;
@@ -17,7 +14,7 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     public AdministradorRegistro() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setTitle("Añadir Paciente");
+        this.setTitle("Añadir Usuario");
     }
 
     public static void mostrarRegistroAdmin() {
@@ -43,6 +40,7 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         contraseña_campo = new javax.swing.JTextField();
         estado_campo = new javax.swing.JTextField();
         registro_boton = new javax.swing.JButton();
+        back_boton = new javax.swing.JButton();
         register_admin_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -113,6 +111,26 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         background.add(registro_boton);
         registro_boton.setBounds(410, 460, 230, 40);
 
+        back_boton.setBorderPainted(false);
+        back_boton.setContentAreaFilled(false);
+        back_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                back_botonMouseMoved(evt);
+            }
+        });
+        back_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                back_botonMouseExited(evt);
+            }
+        });
+        back_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_botonActionPerformed(evt);
+            }
+        });
+        background.add(back_boton);
+        back_boton.setBounds(0, 520, 40, 30);
+
         register_admin_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistroAdmin Screen.png"))); // NOI18N
         background.add(register_admin_screen);
         register_admin_screen.setBounds(0, 0, 700, 547);
@@ -158,8 +176,22 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     private void registro_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseExited
         this.setCursor(DEFAULT_CURSOR);    }//GEN-LAST:event_registro_botonMouseExited
 
+    private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
+        dispose();
+        mostrarAdminPacientes();
+    }//GEN-LAST:event_back_botonActionPerformed
+
+    private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
+        this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_back_botonMouseMoved
+
+    private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
+        this.setCursor(DEFAULT_CURSOR);
+    }//GEN-LAST:event_back_botonMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back_boton;
     private javax.swing.JPanel background;
     private javax.swing.JTextField cedula_campo;
     private javax.swing.JTextField contraseña_campo;
