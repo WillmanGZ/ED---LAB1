@@ -1,8 +1,6 @@
 package Logica.Medicos;
 
-import Logica.Usuario.Usuario;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -12,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -31,13 +28,13 @@ public class ArchivoMedicos {
         }
     }
 
-    public static void añadirMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad) throws IOException {
+    public static void añadirMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad, String citas_agendadas) throws IOException {
         List<Medico> medicos = new ArrayList<>();
-        medicos.add(new Medico(nombres_apellidos, cedula, telefono, correo, especialidad));
+        medicos.add(new Medico(nombres_apellidos, cedula, telefono, correo, especialidad, citas_agendadas));
         escribirMedicosEnArchivo("listamedicos.txt", medicos);
     }
 
-    public static int verificarYAgregarMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad) throws IOException {
+    public static int verificarYAgregarMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad, String citas_agendadas) throws IOException {
         // Cargar usuarios existentes del archivo
         List<Medico> medicosExistentes = cargarMedicosDesdeArchivo("listamedicos.txt");
 
@@ -108,7 +105,7 @@ public class ArchivoMedicos {
         }
 
         // Si todas las verificaciones pasan, añadir el registro
-        añadirMedicos(nombres_apellidos, cedula, telefono, correo, especialidad.toLowerCase());
+        añadirMedicos(nombres_apellidos, cedula, telefono, correo, especialidad.toLowerCase(), citas_agendadas);
         JOptionPane.showMessageDialog(null, "EL REGISTRO HA SIDO EXITOSO", "MEDICO REGISTRADO!", JOptionPane.INFORMATION_MESSAGE);
         return 13;
     }
@@ -121,7 +118,7 @@ public class ArchivoMedicos {
                 // Dividir la línea por el delimitador para obtener los campos individuales
                 String[] campos = linea.split(";");
                 // Asumiendo el orden de los campos: usuario, contraseña, nombres y apellidos, cédula, teléfono, correo
-                if (campos.length < 5) {  // Corrección: Si esperas 5 campos, debería ser < 5, no < 6
+                if (campos.length < 6) {  // Corrección: Si esperas 5 campos, debería ser < 5, no < 6
                     System.err.println("Línea ignorada por formato incorrecto: " + linea);
                     continue;
                 } else {
@@ -130,9 +127,10 @@ public class ArchivoMedicos {
                     String telefono = campos[2];
                     String correo = campos[3];
                     String especialidad = campos[4];
+                    String citas_agendadas = campos[5];
 
                     // Crear un nuevo objeto Usuario con los campos parseados
-                    Medico nuevoMedico = new Medico(nombresApellidos, cedula, telefono, correo, especialidad);
+                    Medico nuevoMedico = new Medico(nombresApellidos, cedula, telefono, correo, especialidad, citas_agendadas);
                     // Añadir el nuevo usuario a la lista de usuarios
                     medicos.add(nuevoMedico);
                 }
@@ -167,4 +165,5 @@ public class ArchivoMedicos {
             return 1; // Médico no encontrado
         }
     }
+    
 }

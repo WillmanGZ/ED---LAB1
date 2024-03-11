@@ -2,24 +2,21 @@ package Interfaz.Administrador.Pacientes;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
-import Interfaz.Registro;
-import static Logica.Usuario.ArchivoUsuarios.verificarYAgregarUsuarioAdmin;
 import java.awt.Cursor;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import static Logica.Usuario.ArchivoPacientes.verificarYAgregarPacienteAdmin;
 
-public class AdministradorRegistro extends javax.swing.JFrame {
+public class AgregarPaciente extends javax.swing.JFrame {
 
-    public AdministradorRegistro() {
+    public AgregarPaciente() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Añadir Usuario");
     }
 
     public static void mostrarRegistroAdmin() {
-        AdministradorRegistro administradorR = new AdministradorRegistro();
+        AgregarPaciente administradorR = new AgregarPaciente();
         administradorR.setVisible(true);
     }
 
@@ -39,7 +36,6 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         correo_campo = new javax.swing.JTextField();
         usuario_campo = new javax.swing.JTextField();
         contraseña_campo = new javax.swing.JTextField();
-        estado_campo = new javax.swing.JTextField();
         registro_boton = new javax.swing.JButton();
         back_boton = new javax.swing.JButton();
         register_admin_screen = new javax.swing.JLabel();
@@ -54,43 +50,37 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         nombres_apellidos_campo.setBorder(null);
         nombres_apellidos_campo.setOpaque(false);
         background.add(nombres_apellidos_campo);
-        nombres_apellidos_campo.setBounds(390, 90, 280, 30);
+        nombres_apellidos_campo.setBounds(380, 110, 310, 30);
 
         telefono_campo.setForeground(new java.awt.Color(255, 255, 255));
         telefono_campo.setBorder(null);
         telefono_campo.setOpaque(false);
         background.add(telefono_campo);
-        telefono_campo.setBounds(390, 140, 280, 30);
+        telefono_campo.setBounds(380, 160, 310, 40);
 
         cedula_campo.setForeground(new java.awt.Color(255, 255, 255));
         cedula_campo.setBorder(null);
         cedula_campo.setOpaque(false);
         background.add(cedula_campo);
-        cedula_campo.setBounds(390, 200, 280, 30);
+        cedula_campo.setBounds(380, 220, 310, 40);
 
         correo_campo.setForeground(new java.awt.Color(255, 255, 255));
         correo_campo.setBorder(null);
         correo_campo.setOpaque(false);
         background.add(correo_campo);
-        correo_campo.setBounds(390, 250, 280, 30);
+        correo_campo.setBounds(380, 280, 310, 40);
 
         usuario_campo.setForeground(new java.awt.Color(255, 255, 255));
         usuario_campo.setBorder(null);
         usuario_campo.setOpaque(false);
         background.add(usuario_campo);
-        usuario_campo.setBounds(390, 300, 280, 30);
+        usuario_campo.setBounds(380, 340, 310, 40);
 
         contraseña_campo.setForeground(new java.awt.Color(255, 255, 255));
         contraseña_campo.setBorder(null);
         contraseña_campo.setOpaque(false);
         background.add(contraseña_campo);
-        contraseña_campo.setBounds(390, 360, 280, 30);
-
-        estado_campo.setForeground(new java.awt.Color(255, 255, 255));
-        estado_campo.setBorder(null);
-        estado_campo.setOpaque(false);
-        background.add(estado_campo);
-        estado_campo.setBounds(390, 410, 280, 30);
+        contraseña_campo.setBounds(380, 400, 310, 40);
 
         registro_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regdef.png"))); // NOI18N
         registro_boton.setBorderPainted(false);
@@ -139,7 +129,7 @@ public class AdministradorRegistro extends javax.swing.JFrame {
             }
         });
         background.add(back_boton);
-        back_boton.setBounds(0, 520, 40, 30);
+        back_boton.setBounds(0, 510, 40, 40);
 
         register_admin_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registronuevo.png"))); // NOI18N
         background.add(register_admin_screen);
@@ -168,15 +158,13 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         String correo = correo_campo.getText().trim();
         String usuario = usuario_campo.getText().trim().toLowerCase();
         String contraseña = contraseña_campo.getText().trim();
-        String estado = estado_campo.getText().trim().toLowerCase();
         try {
-            if (verificarYAgregarUsuarioAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo, estado) == 14) {
+            if (verificarYAgregarPacienteAdmin(usuario, contraseña, nombres_apellidos, cedula, telefono, correo) == 14) {
                 dispose();
                 mostrarAdmin();
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_registro_botonActionPerformed
 
@@ -223,7 +211,6 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     private javax.swing.JTextField cedula_campo;
     private javax.swing.JTextField contraseña_campo;
     private javax.swing.JTextField correo_campo;
-    private javax.swing.JTextField estado_campo;
     private javax.swing.JTextField nombres_apellidos_campo;
     private javax.swing.JLabel register_admin_screen;
     private javax.swing.JButton registro_boton;

@@ -1,8 +1,8 @@
 package Interfaz.Administrador;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
-import static Interfaz.Administrador.Pacientes.AdministradorEliminarRegistro.mostrarEliminarRegistro;
-import static Interfaz.Administrador.Pacientes.AdministradorRegistro.mostrarRegistroAdmin;
+import static Interfaz.Administrador.Pacientes.EliminarPaciente.mostrarEliminarRegistro;
+import static Interfaz.Administrador.Pacientes.AgregarPaciente.mostrarRegistroAdmin;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 

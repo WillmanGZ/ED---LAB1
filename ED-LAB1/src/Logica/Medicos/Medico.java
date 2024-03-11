@@ -7,13 +7,23 @@ public class Medico {
     private String telefono;
     private String correo;
     private String especialidad;
+    private String citas_agendadas;
 
-    public Medico(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad) {
+    public Medico(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad, String citas_agendadas) {
         this.nombres_apellidos = nombres_apellidos;
         this.cedula = cedula;
         this.telefono = telefono;
         this.correo = correo;
         this.especialidad = especialidad;
+        this.citas_agendadas = citas_agendadas;
+    }
+
+    public String getCitas_agendadas() {
+        return citas_agendadas;
+    }
+
+    public void setCitas_agendadas(String citas_agendadas) {
+        this.citas_agendadas = citas_agendadas;
     }
 
     public String getEspecialidad() {
@@ -58,7 +68,7 @@ public class Medico {
 
     @Override
     public String toString() {
-        return nombres_apellidos + ";" + cedula + ";" + telefono + ";" + correo + ";" + especialidad;
+        return nombres_apellidos + ";" + cedula + ";" + telefono + ";" + correo + ";" + especialidad + ";" + citas_agendadas;
     }
 
 }

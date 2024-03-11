@@ -4,11 +4,11 @@ import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Logica.Medicos.ArchivoMedicos.eliminarMedicos;
-import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
 import java.awt.Cursor;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static Logica.Usuario.ArchivoPacientes.eliminarPacientes;
 
 public class EliminarMedico extends javax.swing.JFrame {
 

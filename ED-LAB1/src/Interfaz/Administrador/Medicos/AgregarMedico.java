@@ -1,7 +1,6 @@
 package Interfaz.Administrador.Medicos;
 
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
-import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Logica.Medicos.ArchivoMedicos.verificarYAgregarMedicos;
 import java.awt.Cursor;
 import java.io.IOException;
@@ -162,8 +161,9 @@ public class AgregarMedico extends javax.swing.JFrame {
         String cedula = cedula_campo.getText();
         String correo = correo_campo.getText();
         String especialidad = especialidad_campo.getText();
+        String citas_agendadas = "0";
         try {
-            if (verificarYAgregarMedicos(nombres_apellidos.trim().toLowerCase(), cedula, telefono, correo, especialidad) == 13) {
+            if (verificarYAgregarMedicos(nombres_apellidos.trim(), cedula, telefono, correo, especialidad, citas_agendadas) == 13) {
                 dispose();
                 mostrarAdminMedicos();
             }

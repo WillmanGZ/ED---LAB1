@@ -2,24 +2,24 @@ package Interfaz.Administrador.Pacientes;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
-import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
 import java.awt.Cursor;
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static Logica.Usuario.ArchivoPacientes.eliminarPacientes;
 
-public class AdministradorEliminarRegistro extends javax.swing.JFrame {
+public class EliminarPaciente extends javax.swing.JFrame {
 
-    public AdministradorEliminarRegistro() {
+    public EliminarPaciente() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setTitle("Eliminar Pacientes");
     }
 
     public static void mostrarEliminarRegistro() {
-        AdministradorEliminarRegistro eliminarRegistro = new AdministradorEliminarRegistro();
+        EliminarPaciente eliminarRegistro = new EliminarPaciente();
         eliminarRegistro.setVisible(true);
     }
 
@@ -138,7 +138,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         String usuario = usuario_campo.getText();
         String contraseña = contraseña_campo.getText();
         try {
-            int resultado = eliminarUsuario(cedula, usuario, contraseña);
+            int resultado = eliminarPacientes(cedula, usuario, contraseña);
 
             if (resultado == 0) {
                 JOptionPane.showMessageDialog(this, "El usuario ha sido eliminado exitosamente.", "Usuario Eliminado", JOptionPane.INFORMATION_MESSAGE);
