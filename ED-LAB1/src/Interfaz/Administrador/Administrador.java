@@ -45,7 +45,6 @@ public class Administrador extends javax.swing.JFrame {
 
         asignar_eliminar_registros_pacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEPacientes/Pacientesdefault.png"))); // NOI18N
         asignar_eliminar_registros_pacientes.setBorderPainted(false);
-        asignar_eliminar_registros_pacientes.setContentAreaFilled(false);
         asignar_eliminar_registros_pacientes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 asignar_eliminar_registros_pacientesMouseDragged(evt);
@@ -100,6 +99,7 @@ public class Administrador extends javax.swing.JFrame {
         boton_asignar_cita.setBounds(110, 140, 240, 130);
 
         boton_eliminar_cita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/Eliminardefault.png"))); // NOI18N
+        boton_eliminar_cita.setBorderPainted(false);
         boton_eliminar_cita.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_eliminar_citaMouseEntered(evt);
@@ -126,6 +126,7 @@ public class Administrador extends javax.swing.JFrame {
         asignar_eliminar_registros_medicos.setForeground(new java.awt.Color(28, 19, 82));
         asignar_eliminar_registros_medicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionAEMedicos/Medicosdefault.png"))); // NOI18N
         asignar_eliminar_registros_medicos.setBorder(null);
+        asignar_eliminar_registros_medicos.setBorderPainted(false);
         asignar_eliminar_registros_medicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 asignar_eliminar_registros_medicosMouseEntered(evt);
@@ -149,6 +150,7 @@ public class Administrador extends javax.swing.JFrame {
         asignar_eliminar_registros_medicos.setBounds(650, 140, 230, 130);
 
         reiniciar_archivos_medicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciardefault.png"))); // NOI18N
+        reiniciar_archivos_medicos.setBorderPainted(false);
         reiniciar_archivos_medicos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 reiniciar_archivos_medicosMouseEntered(evt);
