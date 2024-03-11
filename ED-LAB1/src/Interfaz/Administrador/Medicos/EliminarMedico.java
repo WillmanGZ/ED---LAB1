@@ -46,6 +46,7 @@ public class EliminarMedico extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         boton_eliminar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminardef.png"))); // NOI18N
+        boton_eliminar_medico.setBorderPainted(false);
         boton_eliminar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_eliminar_medicoMouseEntered(evt);

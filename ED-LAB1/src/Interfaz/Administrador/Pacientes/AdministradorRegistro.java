@@ -8,6 +8,7 @@ import java.awt.Cursor;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 public class AdministradorRegistro extends javax.swing.JFrame {
 
@@ -91,16 +92,25 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         background.add(estado_campo);
         estado_campo.setBounds(390, 410, 280, 30);
 
+        registro_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regdef.png"))); // NOI18N
         registro_boton.setBorderPainted(false);
-        registro_boton.setContentAreaFilled(false);
         registro_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 registro_botonMouseMoved(evt);
             }
         });
         registro_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                registro_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 registro_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                registro_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                registro_botonMouseReleased(evt);
             }
         });
         registro_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +141,7 @@ public class AdministradorRegistro extends javax.swing.JFrame {
         background.add(back_boton);
         back_boton.setBounds(0, 520, 40, 30);
 
-        register_admin_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistroAdmin Screen.png"))); // NOI18N
+        register_admin_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registronuevo.png"))); // NOI18N
         background.add(register_admin_screen);
         register_admin_screen.setBounds(0, 0, 700, 547);
 
@@ -173,9 +183,6 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     private void registro_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseMoved
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));    }//GEN-LAST:event_registro_botonMouseMoved
 
-    private void registro_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseExited
-        this.setCursor(DEFAULT_CURSOR);    }//GEN-LAST:event_registro_botonMouseExited
-
     private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
         dispose();
         mostrarAdminPacientes();
@@ -188,6 +195,26 @@ public class AdministradorRegistro extends javax.swing.JFrame {
     private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_back_botonMouseExited
+
+    private void registro_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regdef.png"));
+        registro_boton.setIcon(II);
+    }//GEN-LAST:event_registro_botonMouseExited
+
+    private void registro_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regover.png"));
+        registro_boton.setIcon(II);
+    }//GEN-LAST:event_registro_botonMouseEntered
+
+    private void registro_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regpressed.png"));
+        registro_boton.setIcon(II);
+    }//GEN-LAST:event_registro_botonMousePressed
+
+    private void registro_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registro_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/RegistrardeAdmin/regover.png"));
+        registro_boton.setIcon(II);
+    }//GEN-LAST:event_registro_botonMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

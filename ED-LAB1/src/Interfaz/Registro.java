@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -64,10 +65,8 @@ public class Registro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro");
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(700, 500));
         setResizable(false);
         setSize(new java.awt.Dimension(700, 460));
-        getContentPane().setLayout(null);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
         Background.setLayout(null);
@@ -114,6 +113,7 @@ public class Registro extends javax.swing.JFrame {
         Background.add(contraseña_campo);
         contraseña_campo.setBounds(390, 306, 270, 30);
 
+        registrarse_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regdefault.png"))); // NOI18N
         registrarse_boton.setBorderPainted(false);
         registrarse_boton.setContentAreaFilled(false);
         registrarse_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -122,8 +122,17 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         registrarse_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                registrarse_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 registrarse_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                registrarse_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                registrarse_botonMouseReleased(evt);
             }
         });
         registrarse_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -179,9 +188,6 @@ public class Registro extends javax.swing.JFrame {
         Background.add(registro_screen);
         registro_screen.setBounds(0, -40, 720, 520);
 
-        getContentPane().add(Background);
-        Background.setBounds(0, 0, 700, 456);
-
         menu_bar.setText("Opciones");
 
         instrucciones_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/Instrucciones Icono.png"))); // NOI18N
@@ -196,6 +202,17 @@ public class Registro extends javax.swing.JFrame {
         menu_barra.add(menu_bar);
 
         setJMenuBar(menu_barra);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -241,6 +258,8 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_registrarse_botonMouseMoved
 
     private void registrarse_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regdefault.png"));
+        registrarse_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
 
     }//GEN-LAST:event_registrarse_botonMouseExited
@@ -261,6 +280,21 @@ public class Registro extends javax.swing.JFrame {
     private void terminos_condiciones_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_terminos_condiciones_botonMouseExited
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "REGISTRARSE" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_terminos_condiciones_botonMouseExited
+
+    private void registrarse_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regover.png"));
+        registrarse_boton.setIcon(II);
+    }//GEN-LAST:event_registrarse_botonMouseEntered
+
+    private void registrarse_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regpressed.png"));
+        registrarse_boton.setIcon(II);
+    }//GEN-LAST:event_registrarse_botonMousePressed
+
+    private void registrarse_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarse_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Registro/regover.png"));
+        registrarse_boton.setIcon(II);
+    }//GEN-LAST:event_registrarse_botonMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

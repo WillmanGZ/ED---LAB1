@@ -33,7 +33,6 @@ public class Instrucciones extends javax.swing.JFrame {
         instrucciones_screen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 447));
         getContentPane().setLayout(null);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));

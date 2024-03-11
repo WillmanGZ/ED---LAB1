@@ -43,6 +43,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
         jLabel1.setBounds(1052, 606, 0, 0);
 
         boton_agregar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/AgMedicosDef.png"))); // NOI18N
+        boton_agregar_medico.setBorderPainted(false);
         boton_agregar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_agregar_medicoMouseEntered(evt);
@@ -66,6 +67,7 @@ public class AdministradorMedicos extends javax.swing.JFrame {
         boton_agregar_medico.setBounds(110, 200, 310, 170);
 
         boton_eliminar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorMedico/ElimMedicosDef.png"))); // NOI18N
+        boton_eliminar_medico.setBorderPainted(false);
         boton_eliminar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_eliminar_medicoMouseEntered(evt);

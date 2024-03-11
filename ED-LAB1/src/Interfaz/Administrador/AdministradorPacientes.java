@@ -39,6 +39,7 @@ public class AdministradorPacientes extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         boton_agregar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteDef.png"))); // NOI18N
+        boton_agregar_paciente.setBorderPainted(false);
         boton_agregar_paciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_agregar_pacienteMouseEntered(evt);
@@ -62,6 +63,7 @@ public class AdministradorPacientes extends javax.swing.JFrame {
         boton_agregar_paciente.setBounds(110, 200, 310, 170);
 
         boton_eliminar_paciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/ElPacienteDef.png"))); // NOI18N
+        boton_eliminar_paciente.setBorderPainted(false);
         boton_eliminar_paciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_eliminar_pacienteMouseEntered(evt);

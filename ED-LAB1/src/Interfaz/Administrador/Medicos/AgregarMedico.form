@@ -48,6 +48,7 @@
               <Image iconType="3" name="/Interfaz/Imagenes/AgregarMedicoFeed/Agregardef.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton1"/>
+            <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="boton_agregar_medicoMouseEntered"/>

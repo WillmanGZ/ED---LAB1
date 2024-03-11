@@ -7,6 +7,7 @@ import java.awt.Cursor;
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class AdministradorEliminarRegistro extends javax.swing.JFrame {
@@ -64,16 +65,26 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         background.add(contraseña_campo);
         contraseña_campo.setBounds(390, 292, 280, 30);
 
+        eliminar_boton.setForeground(new java.awt.Color(204, 204, 204));
+        eliminar_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminardeAdmin/elimdef.png"))); // NOI18N
         eliminar_boton.setBorderPainted(false);
-        eliminar_boton.setContentAreaFilled(false);
         eliminar_boton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 eliminar_botonMouseMoved(evt);
             }
         });
         eliminar_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                eliminar_botonMouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 eliminar_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                eliminar_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                eliminar_botonMouseReleased(evt);
             }
         });
         eliminar_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +93,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
             }
         });
         background.add(eliminar_boton);
-        eliminar_boton.setBounds(410, 353, 230, 50);
+        eliminar_boton.setBounds(410, 360, 230, 40);
 
         back_boton.setBorderPainted(false);
         back_boton.setContentAreaFilled(false);
@@ -104,7 +115,7 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
         background.add(back_boton);
         back_boton.setBounds(0, 500, 40, 40);
 
-        administrador_eliminar_registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarUsuario Screen.png"))); // NOI18N
+        administrador_eliminar_registro_screen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarUsuario.png"))); // NOI18N
         background.add(administrador_eliminar_registro_screen);
         administrador_eliminar_registro_screen.setBounds(0, -10, 710, 550);
 
@@ -149,6 +160,8 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminar_botonMouseMoved
 
     private void eliminar_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminardeAdmin/elimdef.png"));
+        eliminar_boton.setIcon(II);
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_eliminar_botonMouseExited
 
@@ -158,12 +171,27 @@ public class AdministradorEliminarRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_back_botonActionPerformed
 
     private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
-        this.setCursor(DEFAULT_CURSOR);
+       this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_back_botonMouseExited
 
     private void back_botonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseMoved
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_back_botonMouseMoved
+
+    private void eliminar_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminardeAdmin/elimover.png"));
+        eliminar_boton.setIcon(II);
+    }//GEN-LAST:event_eliminar_botonMouseEntered
+
+    private void eliminar_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminardeAdmin/elimpressed.png"));
+        eliminar_boton.setIcon(II);
+    }//GEN-LAST:event_eliminar_botonMousePressed
+
+    private void eliminar_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminardeAdmin/elimover.png"));
+        eliminar_boton.setIcon(II);
+    }//GEN-LAST:event_eliminar_botonMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

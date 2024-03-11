@@ -42,6 +42,7 @@ public class AgregarMedico extends javax.swing.JFrame {
 
         boton_agregar_medico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregardef.png"))); // NOI18N
         boton_agregar_medico.setText("jButton1");
+        boton_agregar_medico.setBorderPainted(false);
         boton_agregar_medico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton_agregar_medicoMouseEntered(evt);
