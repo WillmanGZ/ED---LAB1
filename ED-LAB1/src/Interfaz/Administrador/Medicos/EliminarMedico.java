@@ -1,25 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Interfaz.Administrador;
+package Interfaz.Administrador.Medicos;
 
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
+import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
+import static Logica.Medicos.ArchivoMedicos.eliminarMedicos;
+import static Logica.Usuario.ArchivoUsuarios.eliminarUsuario;
+import java.io.IOException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Andrea
- */
 public class EliminarMedico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EliminarMedico
-     */
     public EliminarMedico() {
         initComponents();
         this.setResizable(false);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Eliminar Medico");
+    }
+
+    public static void mostrarEliminarMedicos() {
+        EliminarMedico eliminarMedico = new EliminarMedico();
+        eliminarMedico.setVisible(true);
     }
 
     /**
@@ -33,6 +34,8 @@ public class EliminarMedico extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         boton_eliminar_medico = new javax.swing.JButton();
+        nombres_apellidos_campo = new javax.swing.JTextField();
+        cedula_campo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,8 +57,25 @@ public class EliminarMedico extends javax.swing.JFrame {
                 boton_eliminar_medicoMouseReleased(evt);
             }
         });
+        boton_eliminar_medico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_eliminar_medicoActionPerformed(evt);
+            }
+        });
         jPanel1.add(boton_eliminar_medico);
         boton_eliminar_medico.setBounds(180, 290, 130, 40);
+
+        nombres_apellidos_campo.setForeground(new java.awt.Color(0, 0, 0));
+        nombres_apellidos_campo.setBorder(null);
+        nombres_apellidos_campo.setOpaque(false);
+        jPanel1.add(nombres_apellidos_campo);
+        nombres_apellidos_campo.setBounds(70, 120, 350, 40);
+
+        cedula_campo.setForeground(new java.awt.Color(0, 0, 0));
+        cedula_campo.setBorder(null);
+        cedula_campo.setOpaque(false);
+        jPanel1.add(cedula_campo);
+        cedula_campo.setBounds(70, 210, 350, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/EliminarMedico.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -77,63 +97,52 @@ public class EliminarMedico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_eliminar_medicoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarover.png"));
         boton_eliminar_medico.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_medicoMouseEntered
 
     private void boton_eliminar_medicoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminardef.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminardef.png"));
         boton_eliminar_medico.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_medicoMouseExited
 
     private void boton_eliminar_medicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarpressed.png"));
         boton_eliminar_medico.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_medicoMousePressed
 
     private void boton_eliminar_medicoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/EliminarMedicoFeed/Eliminarover.png"));
         boton_eliminar_medico.setIcon(II);
     }//GEN-LAST:event_boton_eliminar_medicoMouseReleased
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void boton_eliminar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoActionPerformed
+        String nombres_apellidos = nombres_apellidos_campo.getText();
+        String cedula = cedula_campo.getText();
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EliminarMedico().setVisible(true);
+        try {
+            int resultado = eliminarMedicos(nombres_apellidos.trim().toLowerCase(), cedula.trim());
+
+            if (resultado == 0) {
+                JOptionPane.showMessageDialog(this, "El medico ha sido eliminado exitosamente.", "Usuario Eliminado", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                mostrarAdminMedicos();
+            } else if (resultado == 1) {
+                JOptionPane.showMessageDialog(this, "No se encontró un medico que coincida con los datos proporcionados.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (resultado == 2) {
+                JOptionPane.showMessageDialog(this, "Hubo un problema al escribir en el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        });
-    }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error al acceder al archivo de usuarios.", "Error de archivo", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_boton_eliminar_medicoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_eliminar_medico;
+    private javax.swing.JTextField cedula_campo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nombres_apellidos_campo;
     // End of variables declaration//GEN-END:variables
 }

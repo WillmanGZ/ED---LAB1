@@ -1,6 +1,8 @@
 package Interfaz.Administrador;
 
 import static Interfaz.Administrador.Administrador.mostrarAdmin;
+import static Interfaz.Administrador.Medicos.AgregarMedico.mostrarAgregarMedico;
+import static Interfaz.Administrador.Medicos.EliminarMedico.mostrarEliminarMedicos;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 
@@ -78,6 +80,11 @@ public class AdministradorMedicos extends javax.swing.JFrame {
                 boton_eliminar_medicoMouseReleased(evt);
             }
         });
+        boton_eliminar_medico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_eliminar_medicoActionPerformed(evt);
+            }
+        });
         jPanel1.add(boton_eliminar_medico);
         boton_eliminar_medico.setBounds(540, 200, 310, 170);
 
@@ -126,7 +133,8 @@ public class AdministradorMedicos extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_agregar_medicoMouseEntered
 
     private void boton_agregar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregar_medicoActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        mostrarAgregarMedico();
     }//GEN-LAST:event_boton_agregar_medicoActionPerformed
 
     private void boton_agregar_medicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMousePressed
@@ -177,6 +185,11 @@ public class AdministradorMedicos extends javax.swing.JFrame {
     private void back_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_back_botonMouseExited
         this.setCursor(DEFAULT_CURSOR);
     }//GEN-LAST:event_back_botonMouseExited
+
+    private void boton_eliminar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_medicoActionPerformed
+        dispose();
+        mostrarEliminarMedicos();
+    }//GEN-LAST:event_boton_eliminar_medicoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

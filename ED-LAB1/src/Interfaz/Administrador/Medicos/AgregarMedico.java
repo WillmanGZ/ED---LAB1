@@ -1,25 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Interfaz.Administrador;
+package Interfaz.Administrador.Medicos;
 
+import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
+import static Logica.Medicos.ArchivoMedicos.verificarYAgregarMedicos;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Andrea
- */
 public class AgregarMedico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarMedico
-     */
     public AgregarMedico() {
         initComponents();
         this.setResizable(false);
         // Opcional: Configura la ubicación de la ventana en el centro de la pantalla
         this.setLocationRelativeTo(null);
+        this.setTitle("Agregar Nuevo Medico");
+    }
+
+    public static void mostrarAgregarMedico() { //MUESTRA LA VENTANA LOGIN
+        AgregarMedico agregarMedico = new AgregarMedico();
+        agregarMedico.setVisible(true);
     }
 
     /**
@@ -33,6 +31,11 @@ public class AgregarMedico extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         boton_agregar_medico = new javax.swing.JButton();
+        nombres_apellidos_campo = new javax.swing.JTextField();
+        telefono_campo = new javax.swing.JTextField();
+        cedula_campo = new javax.swing.JTextField();
+        correo_campo = new javax.swing.JTextField();
+        especialidad_campo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +66,36 @@ public class AgregarMedico extends javax.swing.JFrame {
         jPanel2.add(boton_agregar_medico);
         boton_agregar_medico.setBounds(150, 470, 170, 40);
 
+        nombres_apellidos_campo.setForeground(new java.awt.Color(0, 0, 0));
+        nombres_apellidos_campo.setBorder(null);
+        nombres_apellidos_campo.setOpaque(false);
+        jPanel2.add(nombres_apellidos_campo);
+        nombres_apellidos_campo.setBounds(70, 92, 350, 30);
+
+        telefono_campo.setForeground(new java.awt.Color(0, 0, 0));
+        telefono_campo.setBorder(null);
+        telefono_campo.setOpaque(false);
+        jPanel2.add(telefono_campo);
+        telefono_campo.setBounds(70, 172, 350, 30);
+
+        cedula_campo.setForeground(new java.awt.Color(0, 0, 0));
+        cedula_campo.setBorder(null);
+        cedula_campo.setOpaque(false);
+        jPanel2.add(cedula_campo);
+        cedula_campo.setBounds(70, 250, 340, 40);
+
+        correo_campo.setForeground(new java.awt.Color(0, 0, 0));
+        correo_campo.setBorder(null);
+        correo_campo.setOpaque(false);
+        jPanel2.add(correo_campo);
+        correo_campo.setBounds(70, 330, 350, 40);
+
+        especialidad_campo.setForeground(new java.awt.Color(0, 0, 0));
+        especialidad_campo.setBorder(null);
+        especialidad_campo.setOpaque(false);
+        jPanel2.add(especialidad_campo);
+        especialidad_campo.setBounds(70, 412, 350, 40);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/AgregarMedicos.png"))); // NOI18N
         jPanel2.add(jLabel1);
         jLabel1.setBounds(0, 0, 490, 540);
@@ -84,67 +117,52 @@ public class AgregarMedico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_agregar_medicoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseEntered
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarover.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseEntered
 
     private void boton_agregar_medicoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseExited
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregardef.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregardef.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseExited
 
     private void boton_agregar_medicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMousePressed
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarpressed.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMousePressed
 
     private void boton_agregar_medicoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_medicoMouseReleased
-        ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AgregarMedicoFeed/Agregarover.png"));
         boton_agregar_medico.setIcon(II);
     }//GEN-LAST:event_boton_agregar_medicoMouseReleased
 
     private void boton_agregar_medicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregar_medicoActionPerformed
-        // TODO add your handling code here:
+        String nombres_apellidos = nombres_apellidos_campo.getText(); //EXTRAE LOS TEXTOS DE LOS CAMPOS DE TEXTO
+        String telefono = telefono_campo.getText();
+        String cedula = cedula_campo.getText();
+        String correo = correo_campo.getText();
+        String especialidad = especialidad_campo.getText();
+        try {
+            if (verificarYAgregarMedicos(nombres_apellidos.trim().toLowerCase(), cedula, telefono, correo, especialidad) == 13) {
+                dispose();
+                mostrarAdminMedicos();
+            }
+
+        } catch (IOException ex) {
+
+        }
+
     }//GEN-LAST:event_boton_agregar_medicoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgregarMedico().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_agregar_medico;
+    private javax.swing.JTextField cedula_campo;
+    private javax.swing.JTextField correo_campo;
+    private javax.swing.JTextField especialidad_campo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField nombres_apellidos_campo;
+    private javax.swing.JTextField telefono_campo;
     // End of variables declaration//GEN-END:variables
 }

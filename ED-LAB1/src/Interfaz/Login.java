@@ -30,10 +30,7 @@ public class Login extends javax.swing.JFrame {
         login.setVisible(true);
     }
 
-    public static void cerrarLogin() { //CIERRA LA VENTANA LOGIN
-        Login login = new Login();
-        login.setVisible(false);
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

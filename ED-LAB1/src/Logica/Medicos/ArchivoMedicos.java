@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -29,13 +31,13 @@ public class ArchivoMedicos {
         }
     }
 
-    public static void añadirMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad ) throws IOException {
+    public static void añadirMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad) throws IOException {
         List<Medico> medicos = new ArrayList<>();
         medicos.add(new Medico(nombres_apellidos, cedula, telefono, correo, especialidad));
         escribirMedicosEnArchivo("listamedicos.txt", medicos);
     }
 
-    public static int verificarYAgregarMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especilidad) throws IOException {
+    public static int verificarYAgregarMedicos(String nombres_apellidos, String cedula, String telefono, String correo, String especialidad) throws IOException {
         // Cargar usuarios existentes del archivo
         List<Medico> medicosExistentes = cargarMedicosDesdeArchivo("listamedicos.txt");
 
@@ -87,10 +89,26 @@ public class ArchivoMedicos {
             JOptionPane.showMessageDialog(null, "El correo digitado ya se encuentra registrado, porfavor digite un correo nuevo o contacte con nuestro equipo de soporte para recuperar su cuenta ya existente", "ERROR", JOptionPane.ERROR_MESSAGE);
 
             return 9; // EL CORREO ESTÁ DUPLICADO
+        } else if (true) {
+            String especialidadMin = especialidad.toLowerCase();
+
+            List<String> especialidadesValidas = Arrays.asList(
+                    "optometria ortoptica",
+                    "cataratas",
+                    "glaucoma",
+                    "oftalmologia general",
+                    "oftalmologia pediatrica",
+                    "retina y vitreo"
+            );
+
+            if (!especialidadesValidas.contains(especialidadMin)) {
+                JOptionPane.showMessageDialog(null, "La especialidad digitada es inválida. Por favor, elija una de las siguientes opciones: Optometría, Ortoptica, Cataratas, Glaucoma, Oftalmología General, Oftalmología Pediátrica, Retina y Vítreo.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return 10; // ESPECIALIDAD INVÁLIDA
+            }
         }
 
         // Si todas las verificaciones pasan, añadir el registro
-        añadirMedicos(nombres_apellidos, cedula, telefono, correo, especilidad);
+        añadirMedicos(nombres_apellidos, cedula, telefono, correo, especialidad.toLowerCase());
         JOptionPane.showMessageDialog(null, "EL REGISTRO HA SIDO EXITOSO", "MEDICO REGISTRADO!", JOptionPane.INFORMATION_MESSAGE);
         return 13;
     }
@@ -103,9 +121,9 @@ public class ArchivoMedicos {
                 // Dividir la línea por el delimitador para obtener los campos individuales
                 String[] campos = linea.split(";");
                 // Asumiendo el orden de los campos: usuario, contraseña, nombres y apellidos, cédula, teléfono, correo
-                if (campos.length < 6) {
-                    // Manejar el error adecuadamente, por ejemplo, saltando esta línea o mostrando un mensaje de error
-                    continue; // Esto saltará al siguiente ciclo del bucle si no hay suficientes campos
+                if (campos.length < 5) {  // Corrección: Si esperas 5 campos, debería ser < 5, no < 6
+                    System.err.println("Línea ignorada por formato incorrecto: " + linea);
+                    continue;
                 } else {
                     String nombresApellidos = campos[0];
                     String cedula = campos[1];
@@ -122,5 +140,31 @@ public class ArchivoMedicos {
         }
         return medicos;
     }
+
+    public static int eliminarMedicos(String nombres_apellidos, String cedula) throws IOException {
+        List<Medico> medicosExistentes = cargarMedicosDesdeArchivo("listamedicos.txt");
+        boolean encontrado = false;
+
+        for (Iterator<Medico> iterator = medicosExistentes.iterator(); iterator.hasNext();) {
+            Medico medicoActual = iterator.next();
+            if (medicoActual.getNombres_apellidos().equalsIgnoreCase(nombres_apellidos)
+                    && medicoActual.getCedula().equals(cedula)) {
+                iterator.remove();
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            try (FileWriter fw = new FileWriter("listamedicos.txt", false); PrintWriter pw = new PrintWriter(fw)) {
+                for (Medico medicoEnLista : medicosExistentes) {
+                    pw.println(medicoEnLista.toString());
+                }
+            }
+            return 0; // Éxito
+        } else {
+            System.out.println("Médico no encontrado.");
+            return 1; // Médico no encontrado
+        }
+    }
 }
- 

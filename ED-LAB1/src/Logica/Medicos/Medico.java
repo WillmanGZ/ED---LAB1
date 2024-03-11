@@ -58,7 +58,7 @@ public class Medico {
 
     @Override
     public String toString() {
-        return nombres_apellidos + cedula + telefono + correo + especialidad;
+        return nombres_apellidos + ";" + cedula + ";" + telefono + ";" + correo + ";" + especialidad;
     }
 
 }
