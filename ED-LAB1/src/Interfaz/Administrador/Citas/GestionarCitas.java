@@ -300,7 +300,7 @@ public class GestionarCitas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Cédula del médico inválida.", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
-
+            
             // Verificación adicional: el médico no debe tener más de 9 citas asignadas
             if (Integer.parseInt(medicoSeleccionado.getCitas_agendadas()) > 9) {
                 JOptionPane.showMessageDialog(null, "El médico seleccionado no tiene disponibilidad.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -315,11 +315,36 @@ public class GestionarCitas extends javax.swing.JFrame {
                 return false;
             }
 
+            // Nueva Verificación 4: Especialidad en el rango correcto
+            int especialidadNum = especialidades_jcombobox.getSelectedIndex();
+            if (especialidadNum < 1 || especialidadNum > 5) {
+                JOptionPane.showMessageDialog(null, "Número de especialidad inválido.", "Error", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
+            // Nueva Verificación 5: Fecha en el rango correcto
+            int fechaNum = fecha_jcombobox.getSelectedIndex();
+            if (fechaNum < 1 || fechaNum > 30) {
+                JOptionPane.showMessageDialog(null, "Número de fecha inválido.", "Error", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
+            // Nueva Verificación 6: Hora en el rango correcto
+            int horaNum = hora_jcombobox.getSelectedIndex();
+            if (horaNum < 1 || horaNum > 11) {
+                JOptionPane.showMessageDialog(null, "Número de hora inválido.", "Error", JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+
             // Si todas las verificaciones pasan
             return true;
         } catch (IOException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al cargar los archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error en el formato de los números.", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
     }
@@ -398,7 +423,7 @@ public class GestionarCitas extends javax.swing.JFrame {
 
             BufferedReader br = new BufferedReader(new FileReader(archivoMedicos));
             BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
-            String cedulaMedic = cedulaMedico.split(";")[1]; // Extrae la segunda posicion de la linea del medico que se escogio, es decir, su nombre
+            String cedulaMedic = cedulaMedico; // Extrae la segunda posicion de la linea del medico que se escogio, es decir, su nombre
             String linea;
 
             while ((linea = br.readLine()) != null) {
