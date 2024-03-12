@@ -1,4 +1,8 @@
 Manifest-Version: 1.0
+<<<<<<< Updated upstream
 SplashScreen-Image: Interfaz/Imagenes/Splash.gif
+=======
+SplashScreen-Image: Main/Splash.gif
+>>>>>>> Stashed changes
 
 

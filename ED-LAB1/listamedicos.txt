@@ -1,0 +1,3 @@
+Carlos Gonzales Martinez;1047823;3209875564;carlos@hotmail.com;glaucoma;0
+Martin Torres Garcia;10204090;3017836574;martint@outlook.com;optometria ortoptica;1
+Carolina Mora Pradilla;2030421;3209876678;caromora@gmail.com;oftalmologia pediatrica;0

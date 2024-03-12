@@ -1,0 +1,2 @@
+10405567;Optometria Ortoptica;10204090;Seleccione la fecha;Seleccione la hora
+1042246945;Optometria Ortoptica;10204090;13 de Junio;16:00 PM

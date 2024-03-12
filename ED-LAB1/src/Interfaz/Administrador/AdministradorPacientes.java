@@ -105,7 +105,11 @@ public class AdministradorPacientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_agregar_pacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_agregar_pacienteMouseEntered
+<<<<<<< Updated upstream
         ImageIcon II= new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteOver.png"));
+=======
+ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministradorPaciente/AgPacienteOver.png"));
+>>>>>>> Stashed changes
         boton_agregar_paciente.setIcon(II);
     }//GEN-LAST:event_boton_agregar_pacienteMouseEntered
 

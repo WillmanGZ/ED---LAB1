@@ -24,11 +24,13 @@ public class Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Inicio de Sesion");
     }
+    
 
     public static void mostrarLogin() { //MUESTRA LA VENTANA LOGIN
         Login login = new Login();
         login.setVisible(true);
     }
+    
 
     public static void cerrarLogin() { //CIERRA LA VENTANA LOGIN
         Login login = new Login();
