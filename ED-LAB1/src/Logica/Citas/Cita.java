@@ -4,14 +4,14 @@ public class Cita {
 
     private String cedulaPaciente;
     private String especialidad;
-    private String idmedico; //posicion en el archivo
+    private String cedulaMedico; //posicion en el archivo
     private String fecha;
     private String hora;
 
-    public Cita(String cedulaPaciente, String especialidad, String idmedico, String fecha, String hora) {
+    public Cita(String cedulaPaciente, String especialidad, String cedulaMedico, String fecha, String hora) {
         this.cedulaPaciente = cedulaPaciente;
         this.especialidad = especialidad;
-        this.idmedico = idmedico;
+        this.cedulaMedico = cedulaMedico;
         this.fecha = fecha;
         this.hora = hora;
 
@@ -33,15 +33,12 @@ public class Cita {
         this.especialidad = especialidad;
     }
 
-    
-    
-
-    public String getIdmedico() {
-        return idmedico;
+    public String getCedulaMedico() {
+        return cedulaMedico;
     }
 
-    public void setIdmedico(String idmedico) {
-        this.idmedico = idmedico;
+    public void setCedulaMedico(String cedulaMedico) {
+        this.cedulaMedico = cedulaMedico;
     }
 
     public String getFecha() {
@@ -62,6 +59,6 @@ public class Cita {
 
     @Override
     public String toString() {
-        return cedulaPaciente + ";" + especialidad + ";" + idmedico + ";" + fecha + ";" + hora;
+        return cedulaPaciente + ";" + especialidad + ";" + cedulaMedico + ";" + fecha + ";" + hora;
     }
 }

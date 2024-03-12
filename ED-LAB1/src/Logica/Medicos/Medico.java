@@ -26,24 +26,6 @@ public class Medico {
         this.citas_agendadas = citas_agendadas;
     }
 
-    public int getEspecialidadNumerica() {
-        switch (this.especialidad) {
-            case "Optometria Ortoptica":
-                return 1;
-            case "Glaucoma":
-                return 2;
-            case "Cataratas":
-                return 3;
-            case "Oftalmologia General":
-                return 4;
-            case "Oftalmologia Pediatrica":
-                return 5;
-            case "Retina y Vitreo":
-                return 6;
-            default:
-                return 0; // En caso de que no coincida con ninguna especialidad conocida
-        }
-    }
 
     public String getEspecialidad() {
         return especialidad;

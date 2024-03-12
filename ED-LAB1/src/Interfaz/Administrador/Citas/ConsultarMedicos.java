@@ -3,24 +3,25 @@ package Interfaz.Administrador.Citas;
 import static Logica.Medicos.ArchivoMedicos.cargarMedicosDesdeArchivo;
 import Logica.Medicos.Medico;
 import java.io.IOException;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.swing.JOptionPane;
 
 public class ConsultarMedicos extends javax.swing.JFrame {
 
-    public ConsultarMedicos() throws IOException {
+    public static String especialidad = "";
+
+    public ConsultarMedicos(String especialidad) throws IOException {
         initComponents();
         this.setLocationRelativeTo(null);
         // Aquí deberías reemplazar '1' con el número de la especialidad que quieres mostrar inicialmente
         GestionarCitas gestionarCitas = new GestionarCitas();
-        int especialidadSeleccionada = gestionarCitas.seleccionEspecialidad();
-        mostrarMedicosPorEspecialidad(especialidadSeleccionada);
+        mostrarMedicosPorEspecialidad(especialidad);
+        this.especialidad = especialidad;
     }
 
-    public static void mostrarConsultarMedicos() throws IOException {
-        ConsultarMedicos consultarMedicos = new ConsultarMedicos();
+    public static void mostrarConsultarMedicos(String especialidad) throws IOException {
+        ConsultarMedicos consultarMedicos = new ConsultarMedicos(especialidad);
         consultarMedicos.setVisible(true);
     }
 
@@ -67,22 +68,26 @@ public class ConsultarMedicos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private void mostrarMedicosPorEspecialidad(int especialidadNumerica) throws IOException {
+private void mostrarMedicosPorEspecialidad(String especialidades) throws IOException {
         List<Medico> medicos = cargarMedicosDesdeArchivo("listamedicos.txt");
-
-        // Filtra los médicos por el número de especialidad seleccionado
-        List<Medico> medicosFiltrados = medicos.stream()
-                .filter(medico -> medico.getEspecialidadNumerica() == especialidadNumerica)
-                .collect(Collectors.toList());
-
+        List<Medico> medicosSeleccionados = new ArrayList<>();
+        List<Integer> id = new ArrayList<>();
+        int i = 1;
+        for (Medico medico : medicos) {
+            if (medico.getEspecialidad().equalsIgnoreCase(especialidades)) {
+                medicosSeleccionados.add(medico);
+                id.add(i);
+            }
+            i++;
+        }
         // Actualiza el JTextArea con los médicos filtrados
         info_medicos_texto.setText(""); // Limpia el JTextArea
         info_medicos_texto.append(String.format("%-10s %-30s %s\n", "ID", "MEDICO", "ESPECIALIDAD"));
 
-        int idMedico = 1; // Iniciar ID de médico
-        for (Medico medico : medicosFiltrados) {
+        int idMedico = 0; // Iniciar ID de médico
+        for (Medico medico : medicosSeleccionados) {
             // Aumenta el espacio entre el nombre del médico y la especialidad ajustando %-30s
-            info_medicos_texto.append(String.format("%-10d %-30s %s\n", idMedico++, medico.getNombres_apellidos(), medico.getEspecialidad()));
+            info_medicos_texto.append(String.format("%-10d %-30s %s\n", id.get(idMedico++), medico.getNombres_apellidos(), medico.getEspecialidad()));
         }
     }
 

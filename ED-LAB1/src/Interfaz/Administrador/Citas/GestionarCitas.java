@@ -13,6 +13,11 @@ import static Logica.Pacientes.ArchivoPacientes.obtenerNombreApellidoPacientePor
 import static Logica.Pacientes.ArchivoPacientes.obtenerUsuarioPacientePorCedula;
 import Logica.Pacientes.Paciente;
 import java.awt.Cursor;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -56,7 +61,7 @@ public class GestionarCitas extends javax.swing.JFrame {
         consultar_medico_boton = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestionar Citas");
         setResizable(false);
 
@@ -123,10 +128,20 @@ public class GestionarCitas extends javax.swing.JFrame {
         especialidades_jcombobox.setBounds(360, 260, 260, 30);
 
         fecha_jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la fecha", "01 de Junio", "02 de Junio", "03 de Junio", "04 de Junio", "05 de Junio", "06 de Junio", "07 de Junio", "08 de Junio", "09 de Junio", "10 de Junio", "11 de Junio", "12 de Junio", "13 de Junio", "14 de Junio", "15 de Junio", "16 de Junio", "17 de Junio", "18 de Junio", "19 de Junio", "20 de Junio", "21 de Junio", "22 de Junio", "23 de Junio", "24 de Junio", "25 de Junio", "26 de Junio", "27 de Junio", "28 de Junio", "29 de Junio", "30 de Junio" }));
+        fecha_jcombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fecha_jcomboboxActionPerformed(evt);
+            }
+        });
         background.add(fecha_jcombobox);
         fecha_jcombobox.setBounds(360, 410, 260, 30);
 
         hora_jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la hora", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "14:00 PM", "15:00 PM", "16:00 PM", "17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM" }));
+        hora_jcombobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hora_jcomboboxActionPerformed(evt);
+            }
+        });
         background.add(hora_jcombobox);
         hora_jcombobox.setBounds(360, 480, 260, 30);
 
@@ -204,7 +219,8 @@ public class GestionarCitas extends javax.swing.JFrame {
 
     private void consultar_medico_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_medico_botonActionPerformed
         try {
-            mostrarConsultarMedicos();
+            String especialidades = (String) especialidades_jcombobox.getSelectedItem();
+            mostrarConsultarMedicos(especialidades);
         } catch (IOException ex) {
             Logger.getLogger(GestionarCitas.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -242,6 +258,8 @@ public class GestionarCitas extends javax.swing.JFrame {
             }
 
             if (verificarCita(cedulaPaciente, especialidad, cedulaMedico, fecha, hora)) {
+                AñadirContadorCita(cedulaMedico);
+                JOptionPane.showMessageDialog(null, "La cita ha sido agendada con exito");
                 añadirCita(cedulaPaciente, especialidad, cedulaMedico, fecha, hora);
             }
 
@@ -251,6 +269,14 @@ public class GestionarCitas extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_agregar_cita_botonActionPerformed
+
+    private void fecha_jcomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fecha_jcomboboxActionPerformed
+        manejarSeleccionFecha(fecha_jcombobox);
+    }//GEN-LAST:event_fecha_jcomboboxActionPerformed
+
+    private void hora_jcomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hora_jcomboboxActionPerformed
+        manejarSeleccionHora(hora_jcombobox);
+    }//GEN-LAST:event_hora_jcomboboxActionPerformed
     public boolean verificarCita(String cedula, String especialidad, String cedulaMedico, String fecha, String hora) {
         try {
             // Cargar listas desde archivos
@@ -329,18 +355,77 @@ public class GestionarCitas extends javax.swing.JFrame {
         return valorRetorno;
     }
 
+    private int manejarSeleccionFecha(JComboBox<String> comboBoxEspecialidad) {
+        int indexSeleccionado = comboBoxEspecialidad.getSelectedIndex();
+        int valorRetorno = 0; // Valor por defecto o valor para casos no manejados específicamente
+
+        if (indexSeleccionado == 0) {
+            // Muestra un mensaje de error si el índice es 0
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fecha", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (indexSeleccionado >= 1 && indexSeleccionado <= 30) {
+            valorRetorno = indexSeleccionado;
+        }
+        return valorRetorno;
+    }
+
+    private int manejarSeleccionHora(JComboBox<String> comboBoxEspecialidad) {
+        int indexSeleccionado = comboBoxEspecialidad.getSelectedIndex();
+        int valorRetorno = 0; // Valor por defecto o valor para casos no manejados específicamente
+
+        if (indexSeleccionado == 0) {
+            // Muestra un mensaje de error si el índice es 0
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione una hora", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (indexSeleccionado >= 1 && indexSeleccionado <= 11) {
+            valorRetorno = indexSeleccionado;
+        }
+        return valorRetorno;
+    }
+
     public String obtenerCedulaPorPosicion(int idMedico, String listamedicos) throws IOException {
         List<Medico> medicos = cargarMedicosDesdeArchivo(listamedicos);
         if (idMedico >= 0 && idMedico < medicos.size()) {
-            Medico medico = medicos.get(idMedico);
+            Medico medico = medicos.get(idMedico - 1);
             return medico.getCedula();
         } else {
             return null; // Retorna null si la posición está fuera de rango
         }
     }
 
-    public int seleccionEspecialidad() {
-        int especialidad = manejarSeleccionEspecialidad(especialidades_jcombobox);
-        return especialidad;
+    public static void AñadirContadorCita(String cedulaMedico) {
+        try {
+            File archivoMedicos = new File("listamedicos.txt");
+            File archivoTemporal = new File("MedicosTemporal.txt");
+
+            BufferedReader br = new BufferedReader(new FileReader(archivoMedicos));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
+            String cedulaMedic = cedulaMedico.split(";")[1]; // Extrae la segunda posicion de la linea del medico que se escogio, es decir, su nombre
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                if (linea.contains(cedulaMedic)) {
+
+                    String[] partes = linea.split(";");
+
+                    int numeroCitas = Integer.parseInt(partes[5]) + 1;
+
+                    partes[5] = String.valueOf(numeroCitas);
+                    linea = String.join(";", partes);
+                }
+
+                bw.write(linea);
+                bw.newLine();
+            }
+
+            br.close();
+            bw.close();
+
+            archivoMedicos.delete();
+            archivoTemporal.renameTo(archivoMedicos);
+
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al intentar actualizar el archivo de médicos.", "Error de actualización", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+
     }
 }
