@@ -418,7 +418,7 @@ public class GestionarCitas extends javax.swing.JFrame {
 
             // Verificación adicional: el médico no debe tener más de 9 citas asignadas
             if (Integer.parseInt(medicoSeleccionado.getCitas_agendadas()) > 9) {
-                JOptionPane.showMessageDialog(null, "El médico seleccionado no tiene disponibilidad.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "El médico seleccionado no tiene disponibilidad en ese horario.", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
 

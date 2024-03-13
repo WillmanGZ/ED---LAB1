@@ -2,6 +2,7 @@ package Interfaz.Administrador;
 
 import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
+import static Interfaz.Administrador.Citas.EliminarCita.mostrarEliminarCita;
 import static Interfaz.Administrador.Citas.GestionarCitas.mostrarGestionarCitas;
 import static Interfaz.Login.mostrarLogin;
 import java.awt.Cursor;
@@ -227,7 +228,8 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_asignar_citaActionPerformed
 
     private void boton_eliminar_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_eliminar_citaActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        mostrarEliminarCita();
     }//GEN-LAST:event_boton_eliminar_citaActionPerformed
 
     private void asignar_eliminar_registros_medicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignar_eliminar_registros_medicosActionPerformed

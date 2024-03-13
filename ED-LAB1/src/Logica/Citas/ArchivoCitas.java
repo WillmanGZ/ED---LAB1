@@ -5,9 +5,9 @@ import java.util.*;
 
 public class ArchivoCitas {
 
-    public static void añadirCita(String cedulaPaciente, String especialidad, String idmedico, String fecha, String hora) throws IOException {
+    public static void añadirCita(String cedulaPaciente, String especialidad, String cedulaMedica, String fecha, String hora) throws IOException {
         List<Cita> citas = cargarCitasDesdeArchivo("listacitas.txt");
-        citas.add(new Cita(cedulaPaciente, especialidad, idmedico, fecha, hora));
+        citas.add(new Cita(cedulaPaciente, especialidad, cedulaMedica, fecha, hora));
         escribirCitasEnArchivo("listacitas.txt", citas);
     }
 
