@@ -1,2 +1,7 @@
 josegl;1234;Jose Andres Garcia Lopez;10405567;3206785564;joseglopez@gmail.com
+<<<<<<< Updated upstream
 Andrea15;1234567890;andrea sofia parra;1042246945;1234567890;andrea@gmail.com
+=======
+andrea5;1234567890;andreita parra donado;1042246945;3156891814;andrea@gmail.com
+andrea;12345;andrea parra d;3156891814;3156891815;a@gmail.com
+>>>>>>> Stashed changes

@@ -4,6 +4,16 @@
  */
 package Interfaz.Administrador.Citas;
 
+<<<<<<< Updated upstream
+=======
+import static Interfaz.Administrador.Administrador.mostrarAdmin;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+>>>>>>> Stashed changes
 import javax.swing.ImageIcon;
 
 /**
@@ -43,9 +53,15 @@ public class EliminarCita extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+<<<<<<< Updated upstream
         setMaximumSize(new java.awt.Dimension(780, 605));
         setMinimumSize(new java.awt.Dimension(780, 605));
         setPreferredSize(new java.awt.Dimension(780, 605));
+=======
+        setTitle("Eliminar Cita");
+        setMinimumSize(new java.awt.Dimension(780, 605));
+        setResizable(false);
+>>>>>>> Stashed changes
 
         jPanel1.setMaximumSize(new java.awt.Dimension(779, 630));
         jPanel1.setMinimumSize(new java.awt.Dimension(779, 630));
@@ -129,8 +145,18 @@ public class EliminarCita extends javax.swing.JFrame {
 
         volver_boton.setBorderPainted(false);
         volver_boton.setContentAreaFilled(false);
+<<<<<<< Updated upstream
         jPanel1.add(volver_boton);
         volver_boton.setBounds(0, 560, 40, 30);
+=======
+        volver_boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volver_botonActionPerformed(evt);
+            }
+        });
+        background.add(volver_boton);
+        volver_boton.setBounds(0, 580, 40, 30);
+>>>>>>> Stashed changes
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionEliminarCita/elimcita (1).png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -194,6 +220,7 @@ public class EliminarCita extends javax.swing.JFrame {
         eliminarcita_boton.setIcon(II);
     }//GEN-LAST:event_eliminarcita_botonMouseReleased
 
+<<<<<<< Updated upstream
     /**
      * @param args the command line arguments
      */
@@ -203,6 +230,14 @@ public class EliminarCita extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+=======
+    private void volver_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver_botonActionPerformed
+        dispose();
+        mostrarAdmin();
+    }//GEN-LAST:event_volver_botonActionPerformed
+
+    public static void ReiniciarCitasAgendas(String cedulaMedico) {
+>>>>>>> Stashed changes
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

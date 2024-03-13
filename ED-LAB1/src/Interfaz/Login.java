@@ -106,6 +106,11 @@ public class Login extends javax.swing.JFrame {
         campo_usuario.setForeground(new java.awt.Color(0, 0, 0));
         campo_usuario.setBorder(null);
         campo_usuario.setOpaque(false);
+        campo_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_usuarioActionPerformed(evt);
+            }
+        });
         background.add(campo_usuario);
         campo_usuario.setBounds(420, 160, 220, 40);
 
@@ -205,6 +210,28 @@ public class Login extends javax.swing.JFrame {
         this.setCursor(DEFAULT_CURSOR); //HACE QUE CUANDO EL CURSOR SE ALEJE DEL BOTON "INICIO DE SESION" VUELVA A SER EL MOUSE NORMAL
     }//GEN-LAST:event_inicio_sesion_botonMouseExited
 
+<<<<<<< Updated upstream
+=======
+    private void inicio_sesion_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login/loginover.png"));
+        inicio_sesion_boton.setIcon(II);
+    }//GEN-LAST:event_inicio_sesion_botonMouseEntered
+
+    private void inicio_sesion_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login/loginpressed.png"));
+        inicio_sesion_boton.setIcon(II);
+    }//GEN-LAST:event_inicio_sesion_botonMousePressed
+
+    private void inicio_sesion_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inicio_sesion_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/Login/loginover.png"));
+        inicio_sesion_boton.setIcon(II);
+    }//GEN-LAST:event_inicio_sesion_botonMouseReleased
+
+    private void campo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_usuarioActionPerformed
+
+>>>>>>> Stashed changes
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

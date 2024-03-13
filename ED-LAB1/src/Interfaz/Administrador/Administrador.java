@@ -1,5 +1,18 @@
 package Interfaz.Administrador;
 
+<<<<<<< Updated upstream
+=======
+import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
+import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
+import static Interfaz.Administrador.Citas.GestionarCitas.mostrarGestionarCitas;
+import static Interfaz.Administrador.Medicos.ReiniciarArchivoMedico.mostrarReiniciarArchivoMedico;
+//import Interfaz.Administrador.Medicos.ReiniciarArchivoMedico;
+import static Interfaz.Login.mostrarLogin;
+import java.awt.Cursor;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+>>>>>>> Stashed changes
 import javax.swing.ImageIcon;
 
 public class Administrador extends javax.swing.JFrame {
@@ -16,6 +29,7 @@ public class Administrador extends javax.swing.JFrame {
         Administrador administrador = new Administrador();
         administrador.setVisible(true);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -194,7 +208,8 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_asignar_eliminar_registros_medicosActionPerformed
 
     private void reiniciar_archivos_medicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        mostrarReiniciarArchivoMedico();
     }//GEN-LAST:event_reiniciar_archivos_medicosActionPerformed
 
     private void boton_asignar_citaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMouseEntered
