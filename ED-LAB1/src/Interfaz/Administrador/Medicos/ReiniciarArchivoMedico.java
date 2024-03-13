@@ -47,14 +47,13 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(675, 505));
         setResizable(false);
         setSize(new java.awt.Dimension(675, 499));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(675, 505));
         jPanel1.setLayout(null);
 
-        consultar_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/condef.png"))); // NOI18N
+        consultar_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/ccdef.png"))); // NOI18N
         consultar_boton.setBorderPainted(false);
         consultar_boton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -76,9 +75,8 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
             }
         });
         jPanel1.add(consultar_boton);
-        consultar_boton.setBounds(370, 190, 140, 40);
+        consultar_boton.setBounds(270, 220, 130, 40);
 
-        volver_boton.setActionCommand("");
         volver_boton.setBorderPainted(false);
         volver_boton.setContentAreaFilled(false);
         volver_boton.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +87,7 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
         jPanel1.add(volver_boton);
         volver_boton.setBounds(0, 440, 30, 30);
 
-        reiniciar_archivos_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/reidef.png"))); // NOI18N
+        reiniciar_archivos_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/radef.png"))); // NOI18N
         reiniciar_archivos_boton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 reiniciar_archivos_botonMouseEntered(evt);
@@ -105,7 +103,7 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
             }
         });
         jPanel1.add(reiniciar_archivos_boton);
-        reiniciar_archivos_boton.setBounds(270, 320, 140, 40);
+        reiniciar_archivos_boton.setBounds(240, 300, 200, 40);
 
         cedula_medico_field.setBackground(new java.awt.Color(230, 227, 227));
         cedula_medico_field.setForeground(new java.awt.Color(0, 0, 0));
@@ -117,9 +115,9 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cedula_medico_field);
-        cedula_medico_field.setBounds(60, 190, 210, 30);
+        cedula_medico_field.setBounds(240, 160, 210, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciar archivos.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/Reiniciar archivos (4).png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, -30, 675, 499);
 
@@ -161,42 +159,42 @@ public class ReiniciarArchivoMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_volver_botonActionPerformed
 
     private void consultar_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_botonMouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/conover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/ccover.png"));
         consultar_boton.setIcon(II);
     }//GEN-LAST:event_consultar_botonMouseEntered
 
     private void consultar_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_botonMouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/condef.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/ccdef.png"));
         consultar_boton.setIcon(II);
     }//GEN-LAST:event_consultar_botonMouseExited
 
     private void consultar_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_botonMousePressed
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/conpressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/ccpressed.png"));
         consultar_boton.setIcon(II);
     }//GEN-LAST:event_consultar_botonMousePressed
 
     private void consultar_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_botonMouseReleased
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/conover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/ccover.png"));
         consultar_boton.setIcon(II);
     }//GEN-LAST:event_consultar_botonMouseReleased
 
     private void reiniciar_archivos_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_botonMouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/reiover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/raover.png"));
         reiniciar_archivos_boton.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_botonMouseEntered
 
     private void reiniciar_archivos_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_botonMouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/reidef.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/radef.png"));
         reiniciar_archivos_boton.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_botonMouseExited
 
     private void reiniciar_archivos_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_botonMousePressed
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/reipressed.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/rapressed.png"));
         reiniciar_archivos_boton.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_botonMousePressed
 
     private void reiniciar_archivos_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reiniciar_archivos_botonMouseReleased
-        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/reiover.png"));
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/AdministracionReiniciarMedicos/raover.png"));
         reiniciar_archivos_boton.setIcon(II);
     }//GEN-LAST:event_reiniciar_archivos_botonMouseReleased
 
