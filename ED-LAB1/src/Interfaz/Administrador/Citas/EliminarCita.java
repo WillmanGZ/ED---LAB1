@@ -57,7 +57,7 @@ public class EliminarCita extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Eliminar Cita");
-        setPreferredSize(new java.awt.Dimension(780, 620));
+        setPreferredSize(new java.awt.Dimension(785, 630));
         setResizable(false);
 
         background.setMaximumSize(new java.awt.Dimension(779, 630));
@@ -287,44 +287,6 @@ public class EliminarCita extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_eliminarcita_botonActionPerformed
-
-    public static void ReiniciarCitasAgendas(String cedulaMedico) {
-        try {
-            File archivoMedicos = new File("listamedicos.txt");
-            File archivoTemporal = new File("MedicosTemporal.txt");
-
-            BufferedReader br = new BufferedReader(new FileReader(archivoMedicos));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
-            String cedulaMedic = cedulaMedico; // Extrae la segunda posicion de la linea del medico que se escogio, es decir, su nombre
-            String linea;
-
-            while ((linea = br.readLine()) != null) {
-                if (linea.contains(cedulaMedic)) {
-
-                    String[] partes = linea.split(";");
-
-                    int numeroCitas = Integer.parseInt(partes[5]) * 0;
-
-                    partes[5] = String.valueOf(numeroCitas);
-                    linea = String.join(";", partes);
-                }
-
-                bw.write(linea);
-                bw.newLine();
-            }
-
-            br.close();
-            bw.close();
-
-            archivoMedicos.delete();
-            archivoTemporal.renameTo(archivoMedicos);
-
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocurrió un error al intentar actualizar el archivo de médicos.", "Error de actualización", JOptionPane.ERROR_MESSAGE);
-            ex.printStackTrace();
-        }
-
-    }
 
     public static boolean verificarCitaExistente(String cedulaPaciente, String fecha, String hora, String archivoCitas) {
         try {

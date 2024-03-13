@@ -538,12 +538,10 @@ public class GestionarCitas extends javax.swing.JFrame {
 
             BufferedReader br = new BufferedReader(new FileReader(archivoMedicos));
             BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
-            String cedulaMedic = cedulaMedico; // Extrae la segunda posicion de la linea del medico que se escogio, es decir, su nombre
+            String cedulaMedic = cedulaMedico; 
             String linea;
-
             while ((linea = br.readLine()) != null) {
                 if (linea.contains(cedulaMedic)) {
-
                     String[] partes = linea.split(";");
 
                     int numeroCitas = Integer.parseInt(partes[5]) + 1;

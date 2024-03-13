@@ -4,6 +4,7 @@ import static Interfaz.Administrador.AdministradorMedicos.mostrarAdminMedicos;
 import static Interfaz.Administrador.AdministradorPacientes.mostrarAdminPacientes;
 import static Interfaz.Administrador.Citas.EliminarCita.mostrarEliminarCita;
 import static Interfaz.Administrador.Citas.GestionarCitas.mostrarGestionarCitas;
+import static Interfaz.Administrador.Medicos.ReiniciarArchivoMedico.mostrarReiniciarArchivoMedico;
 import static Interfaz.Login.mostrarLogin;
 import java.awt.Cursor;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class Administrador extends javax.swing.JFrame {
         back_boton = new javax.swing.JButton();
         administrador_screen = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         background.setBackground(new java.awt.Color(204, 204, 204));
@@ -238,7 +239,8 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_asignar_eliminar_registros_medicosActionPerformed
 
     private void reiniciar_archivos_medicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reiniciar_archivos_medicosActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        mostrarReiniciarArchivoMedico();
     }//GEN-LAST:event_reiniciar_archivos_medicosActionPerformed
 
     private void boton_asignar_citaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boton_asignar_citaMouseEntered
