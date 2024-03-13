@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -51,7 +52,7 @@ public class GestionarCitas extends javax.swing.JFrame {
         nombre_completo_label = new javax.swing.JLabel();
         usuario_label = new javax.swing.JLabel();
         correo_label = new javax.swing.JLabel();
-        consultar_boton = new javax.swing.JButton();
+        agregar_boton1 = new javax.swing.JButton();
         back_boton = new javax.swing.JButton();
         especialidades_jcombobox = new javax.swing.JComboBox<>();
         fecha_jcombobox = new javax.swing.JComboBox<>();
@@ -72,31 +73,46 @@ public class GestionarCitas extends javax.swing.JFrame {
         cedula_campo.setBorder(null);
         cedula_campo.setOpaque(false);
         background.add(cedula_campo);
-        cedula_campo.setBounds(60, 250, 210, 30);
+        cedula_campo.setBounds(50, 250, 210, 30);
 
         nombre_completo_label.setForeground(new java.awt.Color(0, 0, 0));
         background.add(nombre_completo_label);
-        nombre_completo_label.setBounds(60, 400, 210, 30);
+        nombre_completo_label.setBounds(50, 400, 220, 30);
 
         usuario_label.setForeground(new java.awt.Color(0, 0, 0));
         background.add(usuario_label);
-        usuario_label.setBounds(60, 460, 210, 40);
+        usuario_label.setBounds(50, 470, 220, 30);
 
         correo_label.setForeground(new java.awt.Color(0, 0, 0));
         background.add(correo_label);
-        correo_label.setBounds(60, 536, 200, 30);
+        correo_label.setBounds(50, 536, 210, 30);
 
-        consultar_boton.setBorder(null);
-        consultar_boton.setBorderPainted(false);
-        consultar_boton.setContentAreaFilled(false);
-        consultar_boton.setDefaultCapable(false);
-        consultar_boton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultar_botonActionPerformed(evt);
+        agregar_boton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agdef.png"))); // NOI18N
+        agregar_boton1.setBorder(null);
+        agregar_boton1.setBorderPainted(false);
+        agregar_boton1.setContentAreaFilled(false);
+        agregar_boton1.setDefaultCapable(false);
+        agregar_boton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                agregar_boton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                agregar_boton1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                agregar_boton1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                agregar_boton1MouseReleased(evt);
             }
         });
-        background.add(consultar_boton);
-        consultar_boton.setBounds(110, 310, 100, 30);
+        agregar_boton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_boton1ActionPerformed(evt);
+            }
+        });
+        background.add(agregar_boton1);
+        agregar_boton1.setBounds(90, 310, 140, 30);
 
         back_boton.setBorderPainted(false);
         back_boton.setContentAreaFilled(false);
@@ -118,60 +134,99 @@ public class GestionarCitas extends javax.swing.JFrame {
         background.add(back_boton);
         back_boton.setBounds(0, 560, 30, 40);
 
+        especialidades_jcombobox.setBackground(new java.awt.Color(182, 222, 248));
+        especialidades_jcombobox.setForeground(new java.awt.Color(0, 0, 0));
         especialidades_jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una especialidad", "Optometria Ortoptica", "Glaucoma", "Cataratas", "Oftalmologia General", "Oftalmologia Pediatrica", "Retina y Vitreo" }));
+        especialidades_jcombobox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         especialidades_jcombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 especialidades_jcomboboxActionPerformed(evt);
             }
         });
         background.add(especialidades_jcombobox);
-        especialidades_jcombobox.setBounds(360, 260, 260, 30);
+        especialidades_jcombobox.setBounds(370, 220, 260, 30);
 
+        fecha_jcombobox.setBackground(new java.awt.Color(182, 222, 248));
+        fecha_jcombobox.setForeground(new java.awt.Color(0, 0, 0));
         fecha_jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la fecha", "01 de Junio", "02 de Junio", "03 de Junio", "04 de Junio", "05 de Junio", "06 de Junio", "07 de Junio", "08 de Junio", "09 de Junio", "10 de Junio", "11 de Junio", "12 de Junio", "13 de Junio", "14 de Junio", "15 de Junio", "16 de Junio", "17 de Junio", "18 de Junio", "19 de Junio", "20 de Junio", "21 de Junio", "22 de Junio", "23 de Junio", "24 de Junio", "25 de Junio", "26 de Junio", "27 de Junio", "28 de Junio", "29 de Junio", "30 de Junio" }));
+        fecha_jcombobox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         fecha_jcombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fecha_jcomboboxActionPerformed(evt);
             }
         });
         background.add(fecha_jcombobox);
-        fecha_jcombobox.setBounds(360, 410, 260, 30);
+        fecha_jcombobox.setBounds(370, 360, 260, 30);
 
+        hora_jcombobox.setBackground(new java.awt.Color(182, 222, 248));
+        hora_jcombobox.setForeground(new java.awt.Color(0, 0, 0));
         hora_jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la hora", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "14:00 PM", "15:00 PM", "16:00 PM", "17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM" }));
+        hora_jcombobox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         hora_jcombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hora_jcomboboxActionPerformed(evt);
             }
         });
         background.add(hora_jcombobox);
-        hora_jcombobox.setBounds(360, 480, 260, 30);
+        hora_jcombobox.setBounds(370, 430, 260, 30);
 
         medico_campo.setForeground(new java.awt.Color(0, 0, 0));
         medico_campo.setBorder(null);
         medico_campo.setOpaque(false);
         background.add(medico_campo);
-        medico_campo.setBounds(370, 330, 190, 30);
+        medico_campo.setBounds(380, 280, 190, 30);
 
+        agregar_cita_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agendardef.png"))); // NOI18N
         agregar_cita_boton.setBorderPainted(false);
         agregar_cita_boton.setContentAreaFilled(false);
+        agregar_cita_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                agregar_cita_botonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                agregar_cita_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                agregar_cita_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                agregar_cita_botonMouseReleased(evt);
+            }
+        });
         agregar_cita_boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregar_cita_botonActionPerformed(evt);
             }
         });
         background.add(agregar_cita_boton);
-        agregar_cita_boton.setBounds(590, 520, 100, 30);
+        agregar_cita_boton.setBounds(560, 510, 210, 40);
 
+        consultar_medico_boton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/condef.png"))); // NOI18N
         consultar_medico_boton.setBorderPainted(false);
         consultar_medico_boton.setContentAreaFilled(false);
+        consultar_medico_boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                consultar_medico_botonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                consultar_medico_botonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                consultar_medico_botonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                consultar_medico_botonMouseReleased(evt);
+            }
+        });
         consultar_medico_boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultar_medico_botonActionPerformed(evt);
             }
         });
         background.add(consultar_medico_boton);
-        consultar_medico_boton.setBounds(620, 300, 60, 20);
+        consultar_medico_boton.setBounds(610, 270, 100, 40);
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/GestionarCitas/AgendarCita Feed.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaz/Imagenes/GestionarCitas/Agendarcita Paciente_1.png"))); // NOI18N
         background.add(fondo);
         fondo.setBounds(0, 0, 960, 600);
 
@@ -189,7 +244,7 @@ public class GestionarCitas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void consultar_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_botonActionPerformed
+    private void agregar_boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_boton1ActionPerformed
         String cedula = cedula_campo.getText();
         try {
             nombre_completo_label.setText(obtenerNombreApellidoPacientePorCedula(cedula));
@@ -198,7 +253,7 @@ public class GestionarCitas extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(GestionarCitas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_consultar_botonActionPerformed
+    }//GEN-LAST:event_agregar_boton1ActionPerformed
 
     private void back_botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_botonActionPerformed
         dispose();
@@ -277,6 +332,66 @@ public class GestionarCitas extends javax.swing.JFrame {
     private void hora_jcomboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hora_jcomboboxActionPerformed
         manejarSeleccionHora(hora_jcombobox);
     }//GEN-LAST:event_hora_jcomboboxActionPerformed
+
+    private void agregar_boton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_boton1MouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agover.png"));
+        agregar_boton1.setIcon(II);
+    }//GEN-LAST:event_agregar_boton1MouseEntered
+
+    private void agregar_boton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_boton1MouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agdef.png"));
+        agregar_boton1.setIcon(II);
+    }//GEN-LAST:event_agregar_boton1MouseExited
+
+    private void agregar_boton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_boton1MousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agpressed.png"));
+        agregar_boton1.setIcon(II);
+    }//GEN-LAST:event_agregar_boton1MousePressed
+
+    private void agregar_boton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_boton1MouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agover.png"));
+        agregar_boton1.setIcon(II);
+    }//GEN-LAST:event_agregar_boton1MouseReleased
+
+    private void consultar_medico_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_medico_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/conover.png"));
+        consultar_medico_boton.setIcon(II);
+    }//GEN-LAST:event_consultar_medico_botonMouseEntered
+
+    private void consultar_medico_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_medico_botonMouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/condef.png"));
+        consultar_medico_boton.setIcon(II);
+    }//GEN-LAST:event_consultar_medico_botonMouseExited
+
+    private void consultar_medico_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_medico_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/conpressed.png"));
+        consultar_medico_boton.setIcon(II);
+    }//GEN-LAST:event_consultar_medico_botonMousePressed
+
+    private void consultar_medico_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultar_medico_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/conover.png"));
+        consultar_medico_boton.setIcon(II);
+    }//GEN-LAST:event_consultar_medico_botonMouseReleased
+
+    private void agregar_cita_botonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_cita_botonMouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agendarover.png"));
+        agregar_cita_boton.setIcon(II);
+    }//GEN-LAST:event_agregar_cita_botonMouseEntered
+
+    private void agregar_cita_botonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_cita_botonMouseReleased
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agendarover.png"));
+        agregar_cita_boton.setIcon(II);
+    }//GEN-LAST:event_agregar_cita_botonMouseReleased
+
+    private void agregar_cita_botonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_cita_botonMouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agendardef.png"));
+        agregar_cita_boton.setIcon(II);
+    }//GEN-LAST:event_agregar_cita_botonMouseExited
+
+    private void agregar_cita_botonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_cita_botonMousePressed
+        ImageIcon II = new ImageIcon(getClass().getResource("/Interfaz/Imagenes/BotonesAG_ELCitas/agendarpressed.png"));
+        agregar_cita_boton.setIcon(II);
+    }//GEN-LAST:event_agregar_cita_botonMousePressed
     public boolean verificarCita(String cedula, String especialidad, String cedulaMedico, String fecha, String hora) {
         try {
             // Cargar listas desde archivos
@@ -300,7 +415,7 @@ public class GestionarCitas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Cédula del médico inválida.", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
-            
+
             // Verificación adicional: el médico no debe tener más de 9 citas asignadas
             if (Integer.parseInt(medicoSeleccionado.getCitas_agendadas()) > 9) {
                 JOptionPane.showMessageDialog(null, "El médico seleccionado no tiene disponibilidad.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -351,11 +466,11 @@ public class GestionarCitas extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregar_boton1;
     private javax.swing.JButton agregar_cita_boton;
     private javax.swing.JButton back_boton;
     private javax.swing.JPanel background;
     private javax.swing.JTextField cedula_campo;
-    private javax.swing.JButton consultar_boton;
     private javax.swing.JButton consultar_medico_boton;
     private javax.swing.JLabel correo_label;
     private javax.swing.JComboBox<String> especialidades_jcombobox;
